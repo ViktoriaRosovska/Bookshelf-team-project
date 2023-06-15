@@ -48,7 +48,7 @@ section {
     color: #B4AFAF;
     font-size: 14px;
     font-weight: 400;
-    line-height: calc(18px / 14px);
+    line-height: calc(18 / 14);
     text-transform: uppercase;
     margin-bottom: 18px;
     letter-spacing: 0.03em;
@@ -62,7 +62,7 @@ section {
     text-transform: uppercase;
     margin-bottom: 4px;
     font-size: 16px;
-    line-height: calc(18px / 16px);
+    line-height: calc(18 / 16);
     font-weight: 700;
     letter-spacing: -0.04em;
 }
@@ -86,7 +86,7 @@ section {
 }
 .section-title {
     font-size: 32px;
-    line-height: calc(38px / 32px);
+    line-height: calc(38 / 32);
     letter-spacing: -0.04em;
     margin-bottom: 40px;
 }
@@ -147,7 +147,7 @@ section {
     margin-bottom: 40px;
     font-size: 28px;
     font-weight: 700;
-    line-height: calc(32px / 28px);
+    line-height: calc(32 / 28);
     letter-spacing: -0.04em;
 }
 .overlay {
@@ -161,4 +161,24 @@ section {
 }
 .sponsors-component {
     margin-bottom: 40px;
+}
+.book-category__list-item {
+    font-size: 16px;
+    line-height: calc(18 / 16);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: rgba(17, 17, 17, 0.6);
+    margin-bottom: 24px;
+}
+.book-category__list-item:last-child {
+    margin-bottom: 0;
+}
+.book-category__list-item:hover, .book-category__list-item:focus, .active {
+    color: #4F2EE8;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.book-category__container {
+    padding-bottom: 40px;
 }
