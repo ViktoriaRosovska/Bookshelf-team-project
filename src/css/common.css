@@ -1,5 +1,4 @@
 
-
 section {
     width: 375px;
     margin-left: auto;
@@ -10,6 +9,35 @@ section {
     padding-right: 20px;
     border: 1px solid blue;
 }
+
+@media screen and (min-width: 375.89px) and (max-width: 768px) {
+    section {
+        width: 375px;
+    }
+   
+}
+@media screen and (min-width: 768.89px) and (max-width: 1440px) {
+    section {
+        width: 768px;
+    } 
+    .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+@media screen and (min-width: 1440.89px) {
+    section {
+        width: 1440px;
+    }
+    .container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+
+
+
 .book-card {
     width: 335px;
     border: 1px solid green;
@@ -51,7 +79,6 @@ section {
     padding: 14px 28px;
     border: 2px solid #4F2EE8;
     border-radius: 40px;
-    /* margin-right: 0; */
     margin-left: auto;
     text-transform: uppercase;
     background-color: transparent;
@@ -62,7 +89,6 @@ section {
     line-height: calc(38px / 32px);
     letter-spacing: -0.04em;
     margin-bottom: 40px;
-   
 }
 .sponsors {
     display: flex;
@@ -79,16 +105,11 @@ section {
     padding-top: 24px;
     padding-left: 40px;
     padding-right: 40px;
-    
 }
 .js-sponsors-list {
-   /* height: 200px; */
-   /* overflow: hidden; */
     position: absolute;
     top: 0;
-    left: 0;
-    /* border: 1px solid salmon; */
-  
+    left: 0;  
 }
 .sponsor-img {
      filter: brightness(0) invert(1);
@@ -110,6 +131,11 @@ section {
     left: 50%;
     transform: translateX(-50%);
     display: block;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+    border: 1px solid transparent;
 }
 .sponsors-slideDown__btn.hide {
     display: none;
@@ -127,9 +153,12 @@ section {
 .overlay {
     position: relative;
     overflow: hidden;
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     width: 100%;
     height: 100%;
     margin: 0;
 
+}
+.sponsors-component {
+    margin-bottom: 40px;
 }

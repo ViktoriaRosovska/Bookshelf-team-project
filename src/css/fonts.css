@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../fonts/DMSans-Regular.woff2) format('woff2'),
+        url(../fonts/DMSans-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../fonts/DMSans-RegularItalic.woff2) format('woff2'),
+        url(../fonts/DMSans-RegularItalic.woff) format('woff');
+}
+
+/* Medium */
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(../fonts/DMSans-Medium.woff2) format('woff2'),
+        url(../fonts/DMSans-Medium.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url(../fonts/DMSans-MediumItalic.woff2) format('woff2'),
+        url(../fonts/DMSans-MediumItalic.woff) format('woff');
+}
+
+/* Bold */
+@font-face {
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url(../fonts/DMSans-BoldItalic.woff2) format('woff2'),
+        url(../fonts/DMSans-BoldItalic.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(../fonts/DMSans-Bold.woff2) format('woff2'),
+        url(../fonts/DMSans-Bold.woff) format('woff');
+}
