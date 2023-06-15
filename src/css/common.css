@@ -182,3 +182,7 @@ section {
 .book-category__container {
     padding-bottom: 40px;
 }
+.book-category__box {
+    height: 228px;
+    overflow-y:  scroll;
+}
