@@ -173,7 +173,10 @@ section {
 .book-category__list-item:last-child {
     margin-bottom: 0;
 }
-.book-category__list-item:hover, .book-category__list-item:focus, .active {
+
+
+
+.active {
     color: #4F2EE8;
     font-weight: 700;
     text-transform: uppercase;
