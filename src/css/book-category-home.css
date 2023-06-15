@@ -1,0 +1,27 @@
+.book-category__list-item {
+    font-size: 16px;
+    line-height: calc(18 / 16);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: rgba(17, 17, 17, 0.6);
+    margin-bottom: 24px;
+}
+
+.book-category__list-item:last-child {
+    margin-bottom: 0;
+}
+
+.book-category__container {
+    padding-bottom: 40px;
+}
+
+.book-category__box {
+    height: 228px;
+    overflow-y: scroll;
+    margin-bottom: 40px;
+}
+.active {
+    color: #4F2EE8;
+    font-weight: 700;
+    text-transform: uppercase;
+}

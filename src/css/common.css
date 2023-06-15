@@ -36,8 +36,6 @@ section {
 }
 
 
-
-
 .book-card {
     width: 335px;
     border: 1px solid green;
@@ -90,102 +88,4 @@ section {
     letter-spacing: -0.04em;
     margin-bottom: 40px;
 }
-.sponsors {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: 352px;
-    width: 335px;
-    overflow: hidden;
-    border-radius: 16px;
-    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
-    padding-bottom: 68px;
-    padding-top: 24px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-.js-sponsors-list {
-    position: absolute;
-    top: 0;
-    left: 0;  
-}
-.sponsor-img {
-     filter: brightness(0) invert(1);
-}
-.sponsor-item {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 14px;
-    align-items: center;
-}
 
-.sponsors-slideUP__btn, .sponsors-slideDown__btn {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 16px;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 10px;
-    border: 1px solid transparent;
-}
-.sponsors-slideDown__btn.hide {
-    display: none;
-}
-.sponsors-slideUP__btn.hide {
-    display: none;
-}
-.sponsors-title {
-    margin-bottom: 40px;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: calc(32 / 28);
-    letter-spacing: -0.04em;
-}
-.overlay {
-    position: relative;
-    overflow: hidden;
-    /* border: 1px solid pink; */
-    width: 100%;
-    height: 100%;
-    margin: 0;
-
-}
-.sponsors-component {
-    margin-bottom: 40px;
-}
-.book-category__list-item {
-    font-size: 16px;
-    line-height: calc(18 / 16);
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: rgba(17, 17, 17, 0.6);
-    margin-bottom: 24px;
-}
-.book-category__list-item:last-child {
-    margin-bottom: 0;
-}
-
-
-
-.active {
-    color: #4F2EE8;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.book-category__container {
-    padding-bottom: 40px;
-}
-.book-category__box {
-    height: 228px;
-    overflow-y:  scroll;
-}

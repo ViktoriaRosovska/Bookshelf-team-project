@@ -1,11 +1,16 @@
 @import '~/node_modules/modern-normalize/modern-normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
 @import url('./reset.css');
-@import url('./common.css');
 @import url('./fonts.css');
 
+@import url('./common.css');
+@import url('./book-category-home.css');
+@import url('./sponsors-home.css');
+
+@import url('./scrollBtn.css');
+
 :root {
-    
+    /* Variables */
 }
 
 body {

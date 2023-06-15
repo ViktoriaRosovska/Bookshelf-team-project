@@ -1,0 +1,17 @@
+.scrollBtn {
+    position: fixed;
+    top: 80%;
+    left: 80%;
+    width: 54px;
+    height: 54px;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 50%;
+    color: white;
+    border-color:  rgba(79, 46, 232, 0.3);
+    background-color: #4f2ee8;
+}
+
+.scrollBtn-hide {
+    display: none;
+}
