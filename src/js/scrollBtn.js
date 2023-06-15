@@ -9,7 +9,7 @@ const scrollBtn = {
     addEventListener() {
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY || document.documentElement.scrollTop;
-            scrollY > 200 ? this.show() : this.hide();
+            scrollY > 100 ? this.show() : this.hide();
         });
         document.querySelector('.scrollBtn').onclick = () => {
             window.scrollTo({

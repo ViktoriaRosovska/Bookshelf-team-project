@@ -8,10 +8,10 @@
     border-style: solid;
     border-radius: 50%;
     color: white;
-    border-color:  rgba(79, 46, 232, 0.3);
+    border-color:  rgba(255, 255, 255, 0.3);
     background-color: #4f2ee8;
 }
 
-.scrollBtn-hide {
+.scrollBtn.scrollBtn-hide {
     display: none;
 }
