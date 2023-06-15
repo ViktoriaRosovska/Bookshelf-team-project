@@ -3,46 +3,46 @@ export const sponsors =[
     title: 'Save the Children',
     url:
       'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: './images/sponsors_icon/save_the_children.png',
+    img: './sponsors_icon/save_the_children.png',
   },
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
-    img: './images/sponsors_icon/project_hope.png',
+    img: './sponsors_icon/project_hope.png',
   },
   {
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
-    img: './images/sponsors_icon/united24.png',
+    img: './sponsors_icon/united24.png',
   },
   {
     title: 'International Medical Corps',
     url: 'https://internationalmedicalcorps.org/country/ukraine/',
-    img: './images/sponsors_icon/imc.png',
+    img: './sponsors_icon/imc.png',
   },
   {
     title: 'Medicins Sans Frontieres',
     url: 'https://www.msf.org/ukraine',
-    img: './images/sponsors_icon/medecins_sans.png',
+    img: './sponsors_icon/medecins_sans.png',
   },
   {
     title: 'RAZOM',
     url: 'https://www.razomforukraine.org/',
-    img: './images/sponsors_icon/razom.png',
+    img: './sponsors_icon/razom.png',
   },
   {
     title: 'Action against hunger',
     url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-    img: './images/sponsors_icon/action_against_hunger.png',
+    img: './sponsors_icon/action_against_hunger.png',
   },
   {
     title: 'World vision',
     url: 'https://www.wvi.org/emergencies/ukraine',
-    img: './images/sponsors_icon/world_vision.png',
+    img: './sponsors_icon/world_vision.png',
   },
   {
     title: 'Serhiy Prytula Charity Foundation',
     url: 'https://prytulafoundation.org/en',
-    img: './images/sponsors_icon/sergiy_prytula.png',
+    img: './sponsors_icon/sergiy_prytula.png',
   },
 ]
