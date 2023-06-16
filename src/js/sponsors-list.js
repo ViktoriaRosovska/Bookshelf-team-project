@@ -27,7 +27,7 @@ sponsorSlideDownBtn.addEventListener('click', onScrollDownSponsors);
 function onScrollUPSponsors() {
       count++;
     console.log(step);
-   
+    
     if (count <= 6) {
          step += 52;
         sponsorsList.style.transform = `translateY(-${step}px)`;
