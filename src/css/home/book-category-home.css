@@ -26,18 +26,14 @@
     margin-bottom: 40px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1439.98px) {
     .book-category__box {
-        height: 472px;
         width: 337px;
-    }
-    .book-category__list-item {
-        max-width: 318px;
-        overflow:  hidden;
-    }
+        height: 472px;
+    }   
 }
 
-@media screen and (min-width: 1440) {
+@media screen and (min-width: 1440px) {
     .book-category__box {
         width: 356px;
     }

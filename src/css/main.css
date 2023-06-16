@@ -7,12 +7,12 @@
 
 @import url('./home/book-category-home.css');
 @import url('./home/book-card.css');
-
+@import url('./home/home-books.css');
 @import url('./common/header.css');
 
 @import url('./home/sponsors-home.css');
 
-@import url('./common/scrollBtn.css');
+@import url('./scrollBtn.css');
 
 
    

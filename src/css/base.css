@@ -60,3 +60,13 @@ body {
         }
 }
 
+.main-info {
+    display: block;
+}
+@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+    .main-info {
+       display: flex;
+       flex-direction: row;
+       gap: 32px;
+    }
+}

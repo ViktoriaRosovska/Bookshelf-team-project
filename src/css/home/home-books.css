@@ -1,0 +1,5 @@
+
+.books-collection {
+     display: flex;
+    flex-direction: row;
+}
