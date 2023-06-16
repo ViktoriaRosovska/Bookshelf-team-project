@@ -24,6 +24,21 @@
 
 .sponsor-img {
     filter: brightness(0) invert(1);
+    height: 32px;
+}
+
+.sup_number {
+    color: #FFFFFF;
+}
+
+.sup_icon{
+    width: 20px;
+    height: 32px;
+}
+
+.sup_title{
+    display: flex;
+    gap: 12px;
 }
 
 .sponsor-item {
@@ -65,6 +80,7 @@
     font-weight: 700;
     line-height: calc(32 / 28);
     letter-spacing: -0.04em;
+    color: #FFFFFF;
 }
 
 .overlay {
