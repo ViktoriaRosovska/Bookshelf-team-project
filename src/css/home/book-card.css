@@ -1,47 +1,10 @@
-
-section {
-    width: 375px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.container {
-    padding-left: 20px;
-    padding-right: 20px;
-    border: 1px solid blue;
-}
-
-@media screen and (min-width: 375.89px) and (max-width: 768px) {
-    section {
-        width: 375px;
-    }
-   
-}
-@media screen and (min-width: 768.89px) and (max-width: 1440px) {
-    section {
-        width: 768px;
-    } 
-    .container {
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-}
-@media screen and (min-width: 1440.89px) {
-    section {
-        width: 1440px;
-    }
-    .container {
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-}
-
-
 .book-card {
     width: 335px;
     border: 1px solid green;
     margin: 0;
     margin-bottom: 40px;
 }
+
 .book-category {
     color: #B4AFAF;
     font-size: 14px;
@@ -51,11 +14,13 @@ section {
     margin-bottom: 18px;
     letter-spacing: 0.03em;
 }
+
 .book-cover {
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 14px;
 }
+
 .book-name {
     text-transform: uppercase;
     margin-bottom: 4px;
@@ -64,6 +29,7 @@ section {
     font-weight: 700;
     letter-spacing: -0.04em;
 }
+
 .book-author {
     font-weight: 400;
     font-size: 12px;
@@ -73,6 +39,7 @@ section {
     font-style: italic;
     margin-bottom: 8px;
 }
+
 .book-card-btn {
     padding: 14px 28px;
     border: 2px solid #4F2EE8;
@@ -82,10 +49,10 @@ section {
     background-color: transparent;
     display: block;
 }
+
 .section-title {
     font-size: 32px;
     line-height: calc(38 / 32);
     letter-spacing: -0.04em;
     margin-bottom: 40px;
 }
-
