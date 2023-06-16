@@ -1,0 +1,32 @@
+.modal{
+    position: relative;
+    box-sizing: border-box;
+    position: relative;
+    width: 579px;
+    height: 465px;
+    background: #FFFFFF;
+    border: 2px solid #111111;
+    border-radius: 18px;
+    padding: 40px;
+    
+} 
+
+.modal__shopping-button{
+    width: 499px;
+    height: 64px;
+    border: 2px solid #4F2EE8;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4F2EE8;
+    cursor: pointer;
+} 
+
+.modal__close{
+    position: absolute;
+    top: 31px;
+    right: 31px;
+}
