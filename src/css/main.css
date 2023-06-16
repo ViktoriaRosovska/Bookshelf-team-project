@@ -1,0 +1,20 @@
+@import '~/node_modules/modern-normalize/modern-normalize.css';
+
+@import url('./reset.css');
+@import url('./fonts.css');
+
+@import url('./base.css');
+
+@import url('./home/book-category-home.css');
+@import url('./home/book-card.css');
+
+@import url('./common/header.css');
+
+@import url('./home/sponsors-home.css');
+
+@import url('./common/scrollBtn.css');
+
+
+   
+   
+    

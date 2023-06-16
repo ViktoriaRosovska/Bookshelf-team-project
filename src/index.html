@@ -4,15 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <header>Заголовок</header>
+    <header>
+      <include src="./partials/common/header.html"></include>
+    </header>
     <main>
-      <include src="./partials/book-category-list.html"></include>
-      <include src="./partials/home.html"></include>
-      <include src="./partials/scrollBtn.html"></include>
+      <section class="section">
+        <div class="container">
+          <include src="./partials/home/book-category-list.html"></include>
+          <include src="./partials/home/sponsors-home.html"></include>
+          <include src="./partials/home/home.html"></include>
+          <include src="./partials/common/scrollBtn.html"></include>
+        </div>
+      </section>
     </main>
   </body>
 </html>
