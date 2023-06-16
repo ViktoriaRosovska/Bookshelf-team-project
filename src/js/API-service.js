@@ -3,42 +3,68 @@ import axios from 'axios';
 export class APIService {
   #BASE_URL = 'https://books-backend.p.goit.global/';
 
-  //   constructor(query, page) {
-  //     this.query = query;
-  //     this.page = page;
-  //   }
+    constructor(selectedCategory, bookId) {
+      this.selectedCategory = selectedCategory;
+      this.bookId = bookId;
+    }
 
-  //axios.defaults.baseURL = #BASE_URL;
 
+  // запит на категорії книг
   fetchBooksCategoryList() {
     return axios.get(
       `${this.#BASE_URL}books/category-list`
     );
   }
 
+  // запит на популярні книги(BestSellersBooks)
   fetchBestSellersBooks() {
     return axios.get(
       `${this.#BASE_URL}books/top-books`
     );
   }
 
+  // запит на книги по категорії, приймає обрану категорію книги
   fetchBooksByCategory(selectedCategory) {
     return axios.get(
-      `${this.#BASE_URL}books/category?category=${selectedCategory}`
+      `${this.#BASE_URL}books/category?category=${this.selectedCategory}`
     );
   }
 
-  fetchBooksDescription(bookId) {
+  // запит на інформацію про книгу, приймає Іd книги
+  fetchBookInfo(bookId) {
     return axios.get(
-      `${this.#BASE_URL}books/bookId${bookId}`
+      `${this.#BASE_URL}books/${bookId}`
     );
   }
 }
 
-APIService.fetchBooksCategoryList()
-APIService.fetchBestSellersBooks()
-APIService.fetchBooksByCategory()
-APIService.fetchBooksDescription()
-console.log(APIService.fetchBooksCategoryList);
-console.log(APIService.fetchBestSellersBooks());
 
+//const api = new APIService()
+
+// getBooksCategoryList()
+// async function getBooksCategoryList(){
+//   const resp = await api.fetchBooksCategoryList()
+//   const categoryList = await resp.data
+//    //console.log(categoryList);
+//   }
+
+// getBestSellers()
+// async function getBestSellers(){
+// const response = await api.fetchBestSellersBooks()
+// const bestSellers = await response.data
+//  console.log(bestSellers);
+// }
+
+// getBooksByCategory('{list_name:"Picture Books"}')
+// async function getBooksByCategory(){
+//   const res = await api.fetchBooksByCategory()
+//   const books = await res.data
+//    //console.log(res.data);
+//   }
+
+  // getBookInfo()
+  // async function getBookInfo() {
+  //   const res = await api.fetchBookInfo()
+  //   const book = await res.data
+  //  console.log(book);
+  // }
