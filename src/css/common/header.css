@@ -1,11 +1,12 @@
-.header-section {
-    display: flex;
-    max-width: 1440px;
-    padding-top: 14px;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 13px;
+.section.header-section {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
 
+.header-container {
+    display: flex;
+    padding-top: 14px;
+    padding-bottom: 13px;
     border: 1.5px solid black;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -38,13 +39,6 @@
     margin-left: 72px;
 }
 
-button {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: calc(18 / 14);
-    text-transform: uppercase;
-
-}
 
 .home-btn {
 
@@ -55,6 +49,10 @@ button {
     margin-top: 0px;
     margin-bottom: 0px;
     cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: calc(18 / 14);
+    text-transform: uppercase;
 }
 
 .list-btn {
@@ -68,6 +66,10 @@ button {
     margin-bottom: 0px;
     border: none;
     cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: calc(18 / 14);
+    text-transform: uppercase;
 }
 
 .list-btn-svg {
@@ -98,8 +100,8 @@ button {
     border-radius: 36px;
     padding-left: 12px;
     padding-right: 18px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     align-items: center;
     cursor: pointer;
 }
@@ -129,8 +131,7 @@ button {
     width: 40px;
     height: 20px;
 
-    /* background-color: #4F2EE8; */
-    background: linear-gradient(top, #4F2EE8 0%, #DCDCDC 100%);
+    background: linear-gradient(#4F2EE8 0%, #DCDCDC 100%);
     position: relative;
     border-radius: 50px;
     box-shadow: inset 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
@@ -163,7 +164,6 @@ button {
     left: 1px;
     z-index: 1;
     background: #fcfff4;
-    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
     border-radius: 50px;
     transition: all 0.4s ease;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
@@ -175,6 +175,7 @@ button {
 
 .checkbox-input:checked+label {
     left: 21px;
+    background-color: rgb(66, 26, 145);
 }
 
 
@@ -182,11 +183,26 @@ button {
 .burger-meny-btn {
     background-color: transparent;
     border: transparent;
-    /* margin-left: auto; */
     cursor: pointer;
-    /* display: none; */
 }
 
 .burger-meny-icon {
     stroke: #111111;
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+    .burger-meny-btn {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+
+    .authorisation-btn,
+    .header-nav {
+        display: none;
+    }
+
 }
