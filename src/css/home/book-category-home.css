@@ -20,6 +20,19 @@
     overflow-y: scroll;
     margin-bottom: 40px;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+    .book-category__box {
+        width: 337px;
+    }   
+}
+
+@media screen and (min-width: 1440px) {
+    .book-category__box {
+            width: 356px;
+    }
+}
+
 .active {
     color: #4F2EE8;
     font-weight: 700;
