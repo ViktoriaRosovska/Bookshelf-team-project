@@ -7,9 +7,9 @@
     border-width: 5px;
     border-style: solid;
     border-radius: 50%;
-    color: white;
+    color: var(--ligtht-theme);
     border-color:  rgba(255, 255, 255, 0.3);
-    background-color: #4f2ee8;
+    background-color: var(--color-blue-component);
 }
 
 .scrollBtn.scrollBtn-hide {

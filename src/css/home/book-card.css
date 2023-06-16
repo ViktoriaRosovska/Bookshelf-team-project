@@ -42,7 +42,7 @@
 
 .book-card-btn {
     padding: 14px 28px;
-    border: 2px solid #4F2EE8;
+    border: 2px solid var(--color-blue-component);
     border-radius: 40px;
     margin-left: auto;
     text-transform: uppercase;
@@ -55,4 +55,5 @@
     line-height: calc(38 / 32);
     letter-spacing: -0.04em;
     margin-bottom: 40px;
+    color: var(----dark-theme-componemt);
 }

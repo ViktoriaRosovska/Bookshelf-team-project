@@ -1,4 +1,4 @@
-import { sponsors } from './sponsors';
+import { sponsors } from './sponsors-obj';
 const sponsorsList = document.querySelector('.js-sponsors-list');
 let id = 1;
 console.log(sponsors);
