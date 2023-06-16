@@ -5,7 +5,7 @@
 
 @import url('./base.css');
 
-@import url('./home/book-category-home.css');
+@import url('./home/book-category-list.css');
 @import url('./home/book-card.css');
 @import url('./home/home-books.css');
 @import url('./common/header.css');
