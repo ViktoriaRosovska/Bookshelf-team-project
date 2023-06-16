@@ -43,7 +43,24 @@ body {
         padding-left: 24px;
         padding-right: 24px;
     }
+    .position-container {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+    }
+    .main-info {
+        width: 356px;
+    }
 }
 
 
-
+.main-info {
+    display: block;
+}
+@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+    .main-info {
+       display: flex;
+       flex-direction: row;
+       gap: 32px;
+    }
+}
