@@ -56,6 +56,8 @@ function onCategoryListSearchCategory(e) {
     if (e.target.classList.contains('active')) {
         e.target.classList.remove('active');
     } else {
+        const items = document.querySelectorAll('.book-category__list-item');
+        items.forEach((el) => el.classList.remove('active'));
         e.target.classList.add('active');
     }
 }

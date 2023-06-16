@@ -5,6 +5,11 @@
     letter-spacing: -0.02em;
     color: rgba(17, 17, 17, 0.6);
     margin-bottom: 24px;
+    height: 18px;
+}
+
+.book-category__list-item:hover, .book-category__list-item:focus {
+    color: var(--color-blue-component);
 }
 
 .book-category__list-item:last-child {
@@ -20,8 +25,26 @@
     overflow-y: scroll;
     margin-bottom: 40px;
 }
+
+@media screen and (min-width: 768px) {
+    .book-category__box {
+        height: 472px;
+        width: 337px;
+    }
+    .book-category__list-item {
+        max-width: 318px;
+        overflow:  hidden;
+    }
+}
+
+@media screen and (min-width: 1440) {
+    .book-category__box {
+        width: 356px;
+    }
+}
+
 .active {
-    color: #4F2EE8;
+    color: var(--color-blue-component);
     font-weight: 700;
     text-transform: uppercase;
 }
