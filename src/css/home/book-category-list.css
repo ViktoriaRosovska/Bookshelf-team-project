@@ -21,21 +21,24 @@
 }
 
 .book-category__box {
+    width: 335px;
     height: 228px;
     overflow-y: scroll;
     margin-bottom: 40px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+@media screen and (min-width: 768px) {
     .book-category__box {
         width: 337px;
         height: 472px;
-    }   
+    }
+       
 }
 
 @media screen and (min-width: 1440px) {
     .book-category__box {
         width: 356px;
+        /* height: 472px; */
     }
 }
 
@@ -47,11 +50,26 @@
 ::-webkit-scrollbar {
     width: 10px;    
 }
+
+::-moz-scrollbar {
+    width: 10px;
+}
 ::-webkit-scrollbar-track {
     height: 167px;
     background: transparent;
 }
+
+::-moz-scrollbar-track {
+    height: 167px;
+    background: transparent;
+}
+
 ::-webkit-scrollbar-thumb {
+    background: #E0E0E0;
+    border-radius: 12px;
+}
+
+::-moz-scrollbar-thumb {
     background: #E0E0E0;
     border-radius: 12px;
 }

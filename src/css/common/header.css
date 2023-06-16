@@ -10,9 +10,7 @@
     border: 1.5px solid black;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    /* outline: 2px solid red; */
 }
-
 
 .logo {
     display: flex;
@@ -32,7 +30,6 @@
 .icon-logo {
     text-align: center;
 }
-
 
 .header-nav {
     display: flex;

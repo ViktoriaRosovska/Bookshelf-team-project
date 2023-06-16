@@ -8,7 +8,7 @@ export const sponsors =[
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
-    img: 'project_hope.png',
+    img: 'progecthope.png',
   },
   {
     title: 'UNITED24',
@@ -33,7 +33,7 @@ export const sponsors =[
   {
     title: 'Action against hunger',
     url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-    img: 'action_against_hunger.png',
+    img: 'action_against.png',
   },
   {
     title: 'World vision',
