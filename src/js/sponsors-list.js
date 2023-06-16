@@ -6,7 +6,7 @@ console.log(sponsorsList);
 function renderSponsorsList() {
     const markup = sponsors.map(({ url, title, img }) => {
         
-        return  `<li class="sponsor-item"><span>0${id++}</span><a href=${url} target="_blank"><img class="sponsor-img" src="../sponsors_icon/${img}" alt=${title}></a></li>`
+        return  `<li class="sponsor-item"><span>0${id++}</span><a href=${url} target="_blank"><img class="sponsor-img" src="./sponsors_icon/${img}" alt=${title}></a></li>`
     
     }).join("");
     sponsorsList.insertAdjacentHTML("beforeend", markup);
