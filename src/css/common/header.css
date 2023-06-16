@@ -1,7 +1,14 @@
 .section.header-section {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
+.header-container {
+    display: flex;
+    max-width: 1440px;
+    padding-top: 14px;
+    /* padding-left: 24px;
+    padding-right: 24px; */
+    padding-bottom: 13px;
 
 .header-container {
     display: flex;
