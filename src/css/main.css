@@ -16,3 +16,5 @@
 
 @import url('./shopping-list/shop-page.css');
 @import url('./shopping-list/shopping-list-card.css');
+
+@import url('./modals/modal-shopping-list.css');
