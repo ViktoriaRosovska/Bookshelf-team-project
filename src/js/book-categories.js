@@ -14,12 +14,12 @@ const categoriesList = document.querySelector('.book-category__list');
 const bookCollection = document.querySelector('.books-gallery');
 
 
-async function fetchCategory() {
-    const res = await axios("/books/category-list");
-    const data = await res.data;
-    console.log(data)
-    return data;
-}    
+// async function fetchCategory() {
+//     const res = await axios("/books/category-list");
+//     const data = await res.data;
+//     console.log(data)
+//     return data;
+// }    
 
 async function getBooksCategoryList() {
     const resp = await api.fetchBooksCategoryList()
@@ -39,8 +39,6 @@ async function renderBooksByCategory(category){
     bookCollection.innerHTML = collectionMarkup;
   }
 
-
-
 async function getBookCategory() {
     try {
        
@@ -56,7 +54,6 @@ getBookCategory();
 
 
 categoriesList.addEventListener('click', onCategoryListSearchCategory);
-
 
 async function onCategoryListSearchCategory(e) {
     if (e.target.nodeName !== 'LI') {

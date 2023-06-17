@@ -2,10 +2,10 @@
   "name": "Bookshelf-team-project",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "homepage": "https://viktoriarosovska.github.io/Bookshelf-team-project/",
   "scripts": {
     "start": "parcel src/*.html --no-cache",
-    "build": "parcel build src/*.html --public-url /bookshelf-team-project/ --no-cache"
+    "build": "parcel build src/*.html --public-url /Bookshelf-team-project/ --no-cache"
   },
   "repository": {
     "type": "git",
