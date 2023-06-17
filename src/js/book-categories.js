@@ -65,6 +65,7 @@ async function onCategoryListSearchCategory(e) {
         e.target.classList.add('active');
        
     }
+    // рендеримо по категорії
     await renderBooksByCategory(e.target.textContent);
 }
 
