@@ -29,7 +29,9 @@ axios.defaults.baseURL = BASE_URL;
 async function fetchCategory() {
     const res = await axios("/books/category-list");
     const data = await res.data;
-    return data;    
+    console.log(data) 
+    return data; 
+      
 }
 
 const categoriesList = document.querySelector('.book-category__list');
