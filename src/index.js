@@ -4,3 +4,4 @@ import './js/book-categories';
 import './js/scrollBtn';
 import './js/API-service';
 import './js/modal-book-card';
+import './js/modal-login-form';
