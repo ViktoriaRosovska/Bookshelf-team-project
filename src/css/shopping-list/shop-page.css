@@ -1,0 +1,77 @@
+.shoplist-aside {
+  display: none;
+}
+@media screen and (min-width: 1440px) {
+  .shoplist-wrapper-desc {
+    display: flex;
+    gap: 40px;
+  }
+  .shoplist-aside {
+    display: block;
+  }
+}
+.shop-main-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.19;
+  letter-spacing: -0.04em;
+
+  color: var(--dark-theme-componemt);
+}
+@media screen and (min-width: 768px) {
+  .shop-main-title {
+    font-size: 48px;
+    line-height: 1.08;
+  }
+}
+
+.shop-sub-main-title {
+  color: var(--color-blue-component);
+}
+/**
+  |============================
+  | Базовий фон
+  |============================
+*/
+.shop-text-backgr {
+  margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 265px;
+  line-height: 1.29;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.6);
+}
+@media screen and (min-width: 768px) {
+  .shop-text-backgr {
+    margin-top: 140px;
+    width: 349px;
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .shop-text-backgr {
+    margin-top: 129px;
+  }
+}
+.shop-img-backgr {
+  margin-top: 14px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: block;
+  outline: 2px solid red;
+  outline-offset: -2px;
+  width: 265px;
+  height: 198px;
+}
+@media screen and (min-width: 768px) {
+  .shop-img-backgr {
+    margin-top: 20px;
+
+    width: 322px;
+    height: 241px;
+  }
+}
