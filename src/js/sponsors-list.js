@@ -1,12 +1,14 @@
 import { sponsors } from './sponsors-obj';
+import images from '../images/sponsors/*.png';
+
 const sponsorsList = document.querySelector('.js-sponsors-list');
 let id = 0;
 console.log(sponsors);
 console.log(sponsorsList);
 function renderSponsorsList() {
     const markup = sponsors.map(({ url, title, img }) => {
-        
-        return  `<li class="sponsor-item"><span class="sup_number">0${id+=1}</span><a href=${url} target="_blank"><img class="sponsor-img" src="./sponsors_icon/${img}" alt=${title}></a></li>`
+        const image = images[img];
+        return  `<li class="sponsor-item"><span class="sup_number">${pad(id+=1)}</span><a href=${url} target="_blank"><img class="sponsor-img" src="${image}" alt=${title}></a></li>`
     
     }).join("");
     sponsorsList.insertAdjacentHTML("beforeend", markup);
@@ -14,44 +16,53 @@ function renderSponsorsList() {
 };
 renderSponsorsList();
 
-// const sponsorSlideUPBtn = document.querySelector('.sponsors-slideUP__btn');
-// const sponsorSlideDownBtn = document.querySelector('.sponsors-slideDown__btn');
+function pad(value) {
+    return String(value).padStart(2, '0');
+}
 
-// sponsorSlideDownBtn.classList.add('hide');
+const sponsorsSlideDownBtn = document.querySelector('.sponsors-slideDown__btn');
+const sponsorsSlideUpBtn = document.querySelector('.sponsors-slideUp__btn');
+
+sponsorsSlideUpBtn.classList.add('hide');
     
-// let step = 0;
-// let count = 0;
-// sponsorSlideUPBtn.addEventListener('click', onScrollUPSponsors);
-// sponsorSlideDownBtn.addEventListener('click', onScrollDownSponsors);
 
-// function onScrollUPSponsors() {
-//       count++;
-//     console.log(step);
+let step = 0;
+let count = 0;
+sponsorsSlideDownBtn.addEventListener('click', onScrollDownSponsors);
+sponsorsSlideUpBtn.addEventListener('click', onScrollUpSponsors);
+
+function onScrollDownSponsors() {
+     
+    console.log(step);
    
-//     if (count <= 6) {
-//          step += 52;
-//         sponsorsList.style.transform = `translateY(-${step}px)`;
-//         console.log(count);
-//         return;
-//     }
-    
-//     step = 0;
-//     sponsorSlideUPBtn.classList.add('hide');
-//     sponsorSlideDownBtn.classList.remove('hide');
-//     sponsorsList.style.top = "-364px";
-// }
+    if (count < 5) {
+        ++count;
+        step += 52;
+        sponsorsList.style.transform = `translateY(-${step}px)`;
+        console.log(count);
+    }
+    if (count === 5) {
+    sponsorsSlideUpBtn.classList.remove('hide');
+    sponsorsSlideDownBtn.classList.add('hide');
+    }
+   
+}
 
-// function onScrollDownSponsors() {
-//     count--;
-//     console.log(step);
-//     if (count >= 0) {
-//      step = step + 52; 
-//         sponsorsList.style.transform = `translateY(${step}px)`;
-//         console.log(count);
-//         return;
-//     }
-//     step = -52;
-//     sponsorSlideDownBtn.classList.add('hide');
-//     sponsorSlideUPBtn.classList.remove('hide');
-//     sponsorsList.style.top = "0px";
-// }
+function onScrollUpSponsors() {
+    if (count > 0) {
+        --count; 
+        step -= 52;
+        sponsorsList.style.transform = `translateY(-${step}px)`;
+        console.log(step);
+        console.log(count);
+    }
+   
+    if (count === 0) {
+        step = 0;
+        sponsorsSlideDownBtn.classList.remove('hide');
+        sponsorsSlideUpBtn.classList.add('hide');
+        
+    }
+    
+    
+}

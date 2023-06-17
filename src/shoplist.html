@@ -4,11 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping list</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script type="module" src="./index.js"></script>
   </head>
   <header>
     <include src="./partials/common/header.html"></include>
   </header>
   <body>
-    <include src="./partials/shopping-list/shop-page.html"></include>
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="shoplist-wrapper-desc">
+            <div class="shoplist-aside">
+              <include src="./partials/home/sponsors-home.html"></include>
+            </div>
+            <include src="./partials/shopping-list/shop-page.html"></include>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
