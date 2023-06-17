@@ -1,4 +1,5 @@
 .modal-login-form {
+    position: absolute;
     width: 579px;
     height: 516px;
     background-color: #F6F6F6;
@@ -25,6 +26,7 @@
 }
 
 .modal-login-form-close-btn{
+    position: absolute;
     top: 24px;
     right: 24px;
 }
