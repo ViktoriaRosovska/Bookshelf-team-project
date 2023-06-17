@@ -13,10 +13,19 @@ const api = new APIService();
 const categoriesList = document.querySelector('.book-category__list');
 const bookCollection = document.querySelector('.books-gallery');
 
+
+async function fetchCategory() {
+    const res = await axios("/books/category-list");
+    const data = await res.data;
+    console.log(data) 
+    return data; 
+      
+
 async function getBooksCategoryList() {
     const resp = await api.fetchBooksCategoryList()
     const data = await resp.data;
     return data;    
+
 }
 
 
