@@ -60,25 +60,45 @@
   margin-top: 14px;
   margin-left: auto;
   margin-right: auto;
-  /* background-image: url('/src/images/shoplist-backgr-mob@1x.png'); */
+  background-image: url('/src/images/shoplist-backgr-mob@1x.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 
-  display: block;
-  outline: 2px solid red;
-  outline-offset: -2px;
   width: 265px;
   height: 198px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
   .shop-img-backgr {
-    margin-top: 20px;
-
-    width: 322px;
-    height: 241px;
+    background-image: url('/src/images/shoplist-backgr-mob@2x.png');
   }
 }
-.shop-base-background {
-  background-image: url('/src/images/shoplist-backgr-tabl@2x.png');
+@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+  .shop-img-backgr {
+    margin-top: 20px;
+    width: 322px;
+    height: 241px;
+    background-image: url('/src/images/shoplist-backgr-tabl@1x.png');
+  }
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .shop-img-backgr {
+      background-image: url('/src/images/shoplist-backgr-tabl@2x.png');
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .shop-img-backgr {
+    background-image: url('/src/images/shoplist-backgr-desk@1x.png');
+  }
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .shop-img-backgr {
+      background-image: url('/src/images/shoplist-backgr-desk@2x.png');
+    }
+  }
 }
