@@ -61,6 +61,10 @@
   margin-top: 14px;
   margin-left: auto;
   margin-right: auto;
+  background-image: url('../../images/shopping-list/shoplist-backgr-mob@1x.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 
   display: block;
   outline: 2px solid red;
