@@ -58,7 +58,7 @@ getBookCategory();
 categoriesList.addEventListener('click', onCategoryListSearchCategory);
 
 
-
+ // рендеримо по категорії
 async function onCategoryListSearchCategory(e) {
     if (e.target.nodeName !== 'LI') {
         return;
@@ -74,7 +74,7 @@ async function onCategoryListSearchCategory(e) {
         e.target.classList.add('active');
        
     }
-    // рендеримо по категорії
+   
     await renderBooksByCategory(e.target.textContent);
 }
 
