@@ -249,7 +249,11 @@
   height: 28px;
   border-color: transparent;
   border-radius: 50% 50%;
+  background-image: url('/src/images/trash.png');
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
   background-color: var(--color-blue-component);
+  background-position: center;
   /* background-image: url('/src/images/delete-book.svg');
   background-position: center;
   background-repeat: no-repeat; */
