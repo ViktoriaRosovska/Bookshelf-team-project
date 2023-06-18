@@ -127,11 +127,13 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15), 3px 12px 38px -5px rgba(231, 166, 26, 0.72);
 }
 
-
-
-.header-nav .current {
+.current {
   background-color: var(--color-yellow-componemt);
   font-weight: 700;
+}
+
+.header-nav .current {
+ 
 }
 
 .settings-nav {
