@@ -1,4 +1,16 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+  }
+  
 .modal-login-form {
+    display: none;
     position: absolute;
     width: 579px;
     height: 516px;
