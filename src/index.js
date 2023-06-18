@@ -1,4 +1,6 @@
 import './js/API-service';
+
+import './js/header';
 import './js/shopping-list';
 import './js/sponsors-list';
 import './js/book-categories';
