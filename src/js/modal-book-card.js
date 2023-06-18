@@ -74,6 +74,7 @@ async function fetchBookById(bookId) {
       marketBookshop: data.buy_links[4].url,
       list_name: data.list_name,
       id: data._id,
+      description: data.description,
     };
     return data;
   } catch (error) {
