@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import { APIService } from './API-service';
-
+import createMarkup from './book-categories-rendering';
 
 // const BASE_URL = 'https://books-backend.p.goit.global/';
 
@@ -11,15 +11,8 @@ import { APIService } from './API-service';
 const api = new APIService();
 
 const categoriesList = document.querySelector('.book-category__list');
-const bookCollection = document.querySelector('.books-gallery');
+// const bookCollection = document.querySelector('.books-gallery');
 
-
-// async function fetchCategory() {
-//     const res = await axios("/books/category-list");
-//     const data = await res.data;
-//     console.log(data)
-//     return data;
-// }    
 
 async function getBooksCategoryList() {
     const resp = await api.fetchBooksCategoryList()
@@ -29,15 +22,15 @@ async function getBooksCategoryList() {
 }
 
 
-async function renderBooksByCategory(category){
-    const res = await api.fetchBooksByCategory(category);
-    const books = await res.data;
-    console.log(books);
-    const collectionMarkup = books.map((book) => {
-       return `<div><p>Hello I am a book ${book.title}</p></div>`
-    }).join("");
-    bookCollection.innerHTML = collectionMarkup;
-  }
+// async function renderBooksByCategory(category){
+//     const res = await api.fetchBooksByCategory(category);
+//     const books = await res.data;
+//     console.log(books);
+//     const collectionMarkup = books.map((book) => {
+//        return `<div><p>Hello I am a book ${book.title}</p></div>`
+//     }).join("");
+//     bookCollection.innerHTML = collectionMarkup;
+//   }
 
 async function getBookCategory() {
     try {
@@ -71,6 +64,7 @@ async function onCategoryListSearchCategory(e) {
        
     }
 //    рендеримо категорію
-    await renderBooksByCategory(e.target.textContent);
+    // await renderBooksByCategory(e.target.textContent);
+    await createMarkup(e.target.textContent);
 }
 
