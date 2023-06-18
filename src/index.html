@@ -34,13 +34,13 @@
     <footer>
       <include src="./partials/common/footer.html"></include>
     </footer>
-    <script type="module" defer>
+    <script type="module" async>
       import { initBookCategories } from './js/book-categories';
 
-      initBookCategories();
+      await initBookCategories();
 
       import { initBestsellers } from './js/bestsellers';
-      initBestsellers();
+      await initBestsellers();
     </script>
   </body>
 </html>
