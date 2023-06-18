@@ -258,7 +258,10 @@
   background-position: center;
   background-repeat: no-repeat; */
 }
-
+.shop-delete-btn:hover, .shop-delete-btn:focus {
+   background-color: var(--color-yellow-componemt);
+ 
+}
 @media screen and (min-width: 768px) {
   .shop-delete-btn {
     top: 24px;
