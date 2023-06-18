@@ -11,6 +11,9 @@ import './js/modal-login-form';
 
 import './js/modal-mobile-menu';
 
+
+
 import './js/bestsellers';
 
+import './js/shopping-list';
 
