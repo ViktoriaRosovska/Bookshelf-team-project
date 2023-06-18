@@ -1,0 +1,55 @@
+import { APIService } from "./API-service";
+const axios = require('axios').default;
+const api = new APIService;
+
+const bookCollection = document.querySelector('.books-collection');
+
+async function getBooks() {
+    try {
+        const response = await axios.get(`https://books-backend.p.goit.global/books/top-books`);
+        console.log(response.data)
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// async function getBestSellers() {
+//   const response = await api.fetchBestSellersBooks();
+//   const bestSellers = await response.data;
+//   console.log(bestSellers);
+// }
+
+function createBookCategoryMarkup(category) {
+  return `
+    <li class="book-category-item">
+      <p class="book-category">${category.list_name}</p>
+      <ul class="top-books js-list-rendering">
+        ${category.books
+          .map(
+            book => `
+              <li class="book-card flex-element" id=${book._id}>
+                <img class="book-cover" src="${book.book_image}" alt="${book.title}" />
+                <h2 class="book-name">${book.title}</h2>
+                <h3 class="book-author">${book.author}</h3>
+              </li>
+            `
+          )
+          .join('')}
+      </ul>
+      <button class="book-card-btn" type="button">see more</button>
+    </li>
+  `;
+};
+
+async function renderCategories() {
+    let bookCategories = '';
+    const topBooks = await getBooks();
+    console.log(topBooks);
+  for (const category of topBooks) {
+    bookCategories += createBookCategoryMarkup(category);
+  }
+  bookCollection.innerHTML = bookCategories;
+}
+
+renderCategories();
