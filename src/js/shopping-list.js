@@ -33,15 +33,18 @@ const shopList = document.querySelector('.js-shop-list');
 const shopBgd = document.querySelector('.js-shop-background');
 
 let data = JSON.parse(localStorage.getItem('storage-data'));
-console.log(data);
+// console.log(data);
 renderBookCard(data);
 
 function renderBookCard(array) {
   if (!array || array === []) {
     return;
   }
-  shopBgd.setAttribute('hidden', '');
-  const markup = array
+  if (shopBgd) {
+    shopBgd.setAttribute('hidden', '');
+  }
+  if (shopList){
+     const markup = array
     .map(el => {
       return ` <li class="shop-item-book">
             <img class="shop-book-img" alt="Wrapper of book" src="${el.book_image}" />
@@ -83,4 +86,6 @@ function renderBookCard(array) {
     })
     .join('');
   return shopList.insertAdjacentHTML('beforeend', markup);
+  }
+ 
 }

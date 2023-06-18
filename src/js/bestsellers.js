@@ -35,7 +35,7 @@ function createBookCategoryMarkup(category) {
 async function renderCategories() {
   let bookCategories = '';
   const topBooks = await getBestSellers();
-  console.log(topBooks);
+  // console.log(topBooks);
   for (let category of topBooks) {
     bookCategories += createBookCategoryMarkup(category);
   }
