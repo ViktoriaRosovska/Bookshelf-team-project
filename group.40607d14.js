@@ -38,7 +38,7 @@ var t,e,r,n,o,i="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof se
       <img src="${e}" alt="${t}">
       <h2>${t}</h2>
       <p>${r}</p>
-  </li>`).join("");e4.innerHTML=n}const e7=new e$,e9=document.querySelector(".book-category__list");async function rt(){let t=await e7.fetchBooksCategoryList(),e=await t.data;return e}async function re(t){if("LI"===t.target.nodeName){if(console.log(t.target),t.target.classList.contains("active"))t.target.classList.remove("active");else{let e=document.querySelectorAll(".book-category__list-item");e.forEach(t=>t.classList.remove("active")),t.target.classList.add("active")}await e3(t.target.textContent)}}(async function(){try{let t=await rt(),e=t.map(t=>`<li class="book-category__list-item">${t.list_name}</li>`).join("");e9.insertAdjacentHTML("beforeend",e)}catch(t){console.log(t)}})(),e9.addEventListener("click",re);const rr=new e$,rn=document.querySelector(".books-collection");async function ro(){let t=await rr.fetchBestSellersBooks(),e=await t.data;return e}!async function(){let t="",e=await ro();for(let r of(console.log(e),e))t+=`
+  </li>`).join("");e4.innerHTML=n}const e7=new e$,e9=document.querySelector(".book-category__list");async function rt(){let t=await e7.fetchBooksCategoryList(),e=await t.data;return e}async function re(){try{let t=await rt(),e=t.map(t=>`<li class="book-category__list-item">${t.list_name}</li>`).join("");e9.insertAdjacentHTML("beforeend",e)}catch(t){console.log(t)}}async function rr(t){if("LI"===t.target.nodeName){if(console.log(t.target),t.target.classList.contains("active"))t.target.classList.remove("active");else{let e=document.querySelectorAll(".book-category__list-item");e.forEach(t=>t.classList.remove("active")),t.target.classList.add("active")}await e3(t.target.textContent)}}e9&&(re(),e9.addEventListener("click",rr));const rn=new e$,ro=document.querySelector(".books-collection");async function ri(){let t=await rn.fetchBestSellersBooks(),e=await t.data;return e}async function rs(){let t="",e=await ri();for(let r of(console.log(e),e))t+=`
     <li class="book-category-item">
       <p class="book-category">${r.list_name}</p>
       <ul class="top-books js-list-rendering">
@@ -52,7 +52,7 @@ var t,e,r,n,o,i="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof se
       </ul>
       <button class="book-card-btn" type="button">see more</button>
     </li>
-  `;rn.innerHTML=t}();var ri={};ri=new URL(u("kyEFX").resolve("kRCxU"),import.meta.url).toString();var rs={};rs=new URL(u("kyEFX").resolve("45Fu3"),import.meta.url).toString();var ra={};ra=new URL(u("kyEFX").resolve("3SUJU"),import.meta.url).toString();var rl={};rl=new URL(u("kyEFX").resolve("igZ6H"),import.meta.url).toString();var ru={};ru=new URL(u("kyEFX").resolve("YfQvy"),import.meta.url).toString();var rf={};rf=new URL(u("kyEFX").resolve("5pNEw"),import.meta.url).toString();const rc=document.querySelector("#allModal"),rh=document.querySelector(".books-gallery"),rp=document.querySelector(".add-storage-button"),rd=document.querySelector(".remove-storage-btn"),rg=document.querySelector(".storage-info"),ry=new e$,rm="storage-data";let rb=[],rw={};rp.addEventListener("click",function(){let t=JSON.parse(localStorage.getItem(rm)),e=rw;t&&0!==t.length?(t.push(e),localStorage.setItem(rm,JSON.stringify(t))):(rb.push(e),localStorage.setItem(rm,JSON.stringify(rb))),rg.textContent="Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.",rO()}),rd.addEventListener("click",function(){rg.textContent="";let t=rw.id,e=JSON.parse(localStorage.getItem(rm)),r=e.findIndex(e=>e.id===t);e.splice(r,1),localStorage.setItem(rm,JSON.stringify(e)),rO()}),rh.addEventListener("click",function(t){if("BUTTON"===t.target.nodeName||"UL"===t.target.nodeName||"DIV"===t.target.nodeName||"H3"===t.target.nodeName)return;let e=t.target.closest("li").id;rE.classList.remove("is-hidden"),rv.classList.remove("is-hidden"),rS(e)});const rE=document.querySelector(".about-book-modal"),rv=document.querySelector(".card-backdrop-modal");async function rS(t){rc.innerHTML="";try{let e=await rA(t);return rO(),function(t){let e=t.book_image,r=t.title,n=t.author,o=t.buy_links[0].url,i=t.buy_links[1].url,a=t.buy_links[4].url,l=t.description,u=l;""===l&&(u="Unfortunately, a brief description of this book is currently unavailable. But let that not hinder you from opening its pages and immersing yourself in the unforgettable world it creates.");let f=`  
+  `;ro.innerHTML=t}ro&&rs();var ra={};ra=new URL(u("kyEFX").resolve("kRCxU"),import.meta.url).toString();var rl={};rl=new URL(u("kyEFX").resolve("45Fu3"),import.meta.url).toString();var ru={};ru=new URL(u("kyEFX").resolve("3SUJU"),import.meta.url).toString();var rf={};rf=new URL(u("kyEFX").resolve("igZ6H"),import.meta.url).toString();var rc={};rc=new URL(u("kyEFX").resolve("YfQvy"),import.meta.url).toString();var rh={};rh=new URL(u("kyEFX").resolve("5pNEw"),import.meta.url).toString();const rp=document.querySelector("#allModal"),rd=document.querySelector(".books-gallery"),rg=document.querySelector(".add-storage-button"),ry=document.querySelector(".remove-storage-btn"),rm=document.querySelector(".storage-info"),rb=new e$,rw="storage-data";let rE=[],rv={};rd&&(rg.addEventListener("click",function(){let t=JSON.parse(localStorage.getItem(rw)),e=rv;t&&0!==t.length?(t.push(e),localStorage.setItem(rw,JSON.stringify(t))):(rE.push(e),localStorage.setItem(rw,JSON.stringify(rE))),rm.textContent="Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.",rB()}),ry.addEventListener("click",function(){rm.textContent="";let t=rv.id,e=JSON.parse(localStorage.getItem(rw)),r=e.findIndex(e=>e.id===t);e.splice(r,1),localStorage.setItem(rw,JSON.stringify(e)),rB()}),rd.addEventListener("click",function(t){if("BUTTON"===t.target.nodeName||"UL"===t.target.nodeName||"DIV"===t.target.nodeName||"H3"===t.target.nodeName)return;let e=t.target.closest("li").id;rS.classList.remove("is-hidden"),rA.classList.remove("is-hidden"),rO(e)}));const rS=document.querySelector(".about-book-modal"),rA=document.querySelector(".card-backdrop-modal");async function rO(t){rp.innerHTML="";try{let e=await rR(t);return rB(),function(t){let e=t.book_image,r=t.title,n=t.author,o=t.buy_links[0].url,i=t.buy_links[1].url,a=t.buy_links[4].url,l=t.description,u=l;""===l&&(u="Unfortunately, a brief description of this book is currently unavailable. But let that not hinder you from opening its pages and immersing yourself in the unforgettable world it creates.");let f=`  
   <img src="${e}" alt="Book Image" class="image-about-book-modal">
   <div class="info-modal">
   <h2 class="title-about-book-modal">${r}</h2>
@@ -63,10 +63,10 @@ var t,e,r,n,o,i="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof se
      width="62"
     height="19"
     srcset="
-    ${s(ri)} 1x,
-    ${s(rs)} 2x
+    ${s(ra)} 1x,
+    ${s(rl)} 2x
   "
-   src="${s(ri)}"
+   src="${s(ra)}"
     alt="Amazon"
   /></a></li>
   <li class="shop-modal-item"><a href="${i}" target="_blank"
@@ -74,10 +74,10 @@ var t,e,r,n,o,i="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof se
     width="33"
     height="32"
     srcset="
-    ${s(ra)} 1x,
-    ${s(rl)} 2x
+    ${s(ru)} 1x,
+    ${s(rf)} 2x
   "
-   src="${s(ra)}"
+   src="${s(ru)}"
     alt="AppleBooks"
   /></a></li>
   <li class="shop-modal-item"><a href="${a}" target="_blank"
@@ -85,13 +85,13 @@ var t,e,r,n,o,i="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof se
     width="38"
     height="36"
     srcset="
-    ${s(ru)} 1x,
-    ${s(rf)} 2x
+    ${s(rc)} 1x,
+    ${s(rh)} 2x
   "
-   src="${s(ru)}"
+   src="${s(rc)}"
     alt="Book-Shop"
   /></a></li>
 </ul>
 </div>
-  `;rc.innerHTML=f}(e),e}catch(t){throw console.error("Error",t),t}}async function rA(t){try{rw={};let e=await ry.fetchBookInfo(t),r=e.data;return rw={book_image:r.book_image,title:r.title,author:r.author,marketAmazon:r.buy_links[0].url,marketAppleBooks:r.buy_links[1].url,marketBookshop:r.buy_links[4].url,list_name:r.list_name,id:r._id,description:r.description},r}catch(t){throw console.error("Error",t),t}}function rO(){let t=JSON.parse(localStorage.getItem(rm)),e=rw.id;if(t&&0!==t.length){let r=t.find(t=>t.id===e);r?(rp.style.display="none",rd.style.display="block"):(rp.style.display="block",rd.style.display="none")}else{rp.style.display="block",rd.style.display="none";return}}const rR=document.querySelector(".authorisation-btn"),rB=document.querySelector(".modal-login-form"),rk=document.querySelector(".modal-login-form-close-btn"),rU=document.querySelector(".overlayLoginForm");rR.onclick=function(){rB.style.display="block",rU.style.display="block"},rk.onclick=function(){rB.style.display="none",rU.style.display="none"},window.onclick=function(t){t.target==rB&&(rB.style.display="none")};const rL=document.querySelector("#checkbox"),rT=document.querySelector("body"),r_={LIGHT:"light-theme",DARK:"dark-theme"},rI="theme";!function(){let t=localStorage.getItem(rI);t?rT.classList.add(t):rT.classList.add(r_.LIGHT),t===r_.DARK&&rL.setAttribute("checked",!0)}(),rL.addEventListener("change",function(t){let e="";t.currentTarget.checked?(e=r_.DARK,rT.classList.add(e),rT.classList.remove(r_.LIGHT)):(e=r_.LIGHT,rT.classList.remove(r_.DARK),rT.classList.add(e)),localStorage.setItem(rI,e)});const rx={btn:document.querySelector(".scrollBtn"),show(){this.btn.classList.remove("scrollBtn-hide")},hide(){this.btn.classList.add("scrollBtn-hide")},addEventListener(){window.addEventListener("scroll",()=>{let t=window.scrollY||document.documentElement.scrollTop;t>100?this.show():this.hide()}),document.querySelector(".scrollBtn").onclick=()=>{window.scrollTo({top:0,behavior:"smooth"})}}};rx.addEventListener();
-//# sourceMappingURL=index.5834204c.js.map
+  `;rp.innerHTML=f}(e),e}catch(t){throw console.error("Error",t),t}}async function rR(t){try{rv={};let e=await rb.fetchBookInfo(t),r=e.data;return rv={book_image:r.book_image,title:r.title,author:r.author,marketAmazon:r.buy_links[0].url,marketAppleBooks:r.buy_links[1].url,marketBookshop:r.buy_links[4].url,list_name:r.list_name,id:r._id,description:r.description},r}catch(t){throw console.error("Error",t),t}}function rB(){let t=JSON.parse(localStorage.getItem(rw)),e=rv.id;if(t&&0!==t.length){let r=t.find(t=>t.id===e);r?(rg.style.display="none",ry.style.display="block"):(rg.style.display="block",ry.style.display="none")}else{rg.style.display="block",ry.style.display="none";return}}const rk=document.querySelector(".authorisation-btn"),rU=document.querySelector(".modal-login-form"),rL=document.querySelector(".modal-login-form-close-btn"),rT=document.querySelector(".overlayLoginForm");rU&&(rk.onclick=function(){rU.style.display="block",rT.style.display="block"},rL.onclick=function(){rU.style.display="none",rT.style.display="none"},window.onclick=function(t){t.target==rU&&(rU.style.display="none")});const r_=document.querySelector("#checkbox"),rI=document.querySelector("body"),rx={LIGHT:"light-theme",DARK:"dark-theme"},rC="theme";!function(){let t=localStorage.getItem(rC);t?rI.classList.add(t):rI.classList.add(rx.LIGHT),t===rx.DARK&&r_.setAttribute("checked",!0)}(),r_.addEventListener("change",function(t){let e="";t.currentTarget.checked?(e=rx.DARK,rI.classList.add(e),rI.classList.remove(rx.LIGHT)):(e=rx.LIGHT,rI.classList.remove(rx.DARK),rI.classList.add(e)),localStorage.setItem(rC,e)});const rN={btn:document.querySelector(".scrollBtn"),show(){this.btn.classList.remove("scrollBtn-hide")},hide(){this.btn.classList.add("scrollBtn-hide")},addEventListener(){this.btn&&(window.addEventListener("scroll",()=>{let t=window.scrollY||document.documentElement.scrollTop;t>100?this.show():this.hide()}),this.btn.onclick=()=>{window.scrollTo({top:0,behavior:"smooth"})})}};rN.addEventListener();
+//# sourceMappingURL=group.40607d14.js.map
