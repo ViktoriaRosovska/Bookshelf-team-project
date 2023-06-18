@@ -28,7 +28,7 @@ function renderSponsorsList() {
         return  `<li class="sponsor-item"><span class="sup_number">${pad(id+=1)}</span><a href=${url} target="_blank"><img class="sponsor-img" src="${image}" alt=${title}></a></li>`
     
     }).join("");
-    sponsorsList.insertAdjacentHTML("beforeend", markup);
+    sponsorsList?.insertAdjacentHTML("beforeend", markup);
  
 };
 renderSponsorsList();

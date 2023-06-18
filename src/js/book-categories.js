@@ -14,17 +14,6 @@ async function getBooksCategoryList() {
 
 }
 
-
-// async function renderBooksByCategory(category){
-//     const res = await api.fetchBooksByCategory(category);
-//     const books = await res.data;
-//     console.log(books);
-//     const collectionMarkup = books.map((book) => {
-//        return `<div><p>Hello I am a book ${book.title}</p></div>`
-//     }).join("");
-//     bookCollection.innerHTML = collectionMarkup;
-//   }
-
 async function getBookCategory() {
     try {
         const categories = await getBooksCategoryList();
@@ -35,11 +24,10 @@ async function getBookCategory() {
     }
 }
 
-export async function initBookCategories() {
-    await getBookCategory();
+     getBookCategory();
 
     categoriesList.addEventListener('click', onCategoryListSearchCategory);
-}
+
 
 async function onCategoryListSearchCategory(e) {
     if (e.target.nodeName !== 'LI') {
