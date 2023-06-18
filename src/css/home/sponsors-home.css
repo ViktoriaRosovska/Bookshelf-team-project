@@ -9,7 +9,7 @@
     width: 335px;
     overflow: hidden;
     border-radius: 16px;
-    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, var(--color-blue-component) 18.03%, var(--ligtht-theme) 100%);
     padding-bottom: 68px;
     padding-top: 24px;
     padding-left: 40px;
@@ -51,7 +51,7 @@
 
 .sponsors-slideUp__btn::before {
     content: '';
-    background-image: url('../../images/angle.svg');
+    background-image: url('/src/images/angle.svg');
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -63,7 +63,7 @@
 
 .sponsors-slideDown__btn::before {
     content: '';
-    background-image: url('../../images/angle.svg');
+    background-image: url('/src/images/angle.svg');
     width: 22px;
     height: 22px;
 }
@@ -88,6 +88,7 @@
     font-size: 10px;
     border: 1px solid transparent;
     background-repeat: no-repeat;
+    background-color: var(--ligtht-theme);
 }
 
 .sponsors-slideUp__btn:hover,
@@ -113,7 +114,7 @@
     color: #FFFFFF;
 }
 
-.overlay {
+.overlay-sponsor{
     position: relative;
     overflow: hidden;
     width: 100%;

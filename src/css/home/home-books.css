@@ -1,5 +1,94 @@
+.collection-title span {
+  color: var(--color-blue-component);
+}
 
 .books-collection {
-     display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-books {
+  display: flex;
+  gap: 24px;
+}
+
+.book-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-author {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-card-btn {
+    height: 46px;
+    font-weight: 700;
+}
+
+.book-category-item {
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .top-books li:nth-child(n + 2) {
+    display: none;
+  }
+  .book-cover {
+    width: 100%;
+    height: 485px;
+  }
+  .book-card {
+    max-width: 335px;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+    margin-bottom: 8px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .collection-title {
+    font-size: 48px;
+  }
+  .top-books li:nth-child(n + 4) {
+    display: none;
+  }
+  .book-cover {
+    width: 100%;
+    height: 316px;
+  }
+  .book-card {
+    max-width: 218px;
+
+    margin-bottom: 0;
+  }
+
+  .top-books {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .collection-title {
+    font-size: 48px;
+  }
+  .top-books li {
+    display: block;
+  }
+  .book-cover {
+    width: 100%;
+    height: 256px;
+  }
+  .book-card {
+    max-width: 180px;
+    margin-bottom: 0;
+  }
+  .top-books {
+    margin-bottom: 32px;
+  }
 }

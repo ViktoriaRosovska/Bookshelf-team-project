@@ -118,12 +118,13 @@
 .home-btn:focus,
 .list-btn:hover,
 .list-btn:focus {
-  color: var(--color-yellow-componemt);
-  fill: var(--color-yellow-componemt);
-  stroke: #00000030;
+  background-color: var(--color-yellow-componemt);
+  color: var(--ligtht-theme);
+  fill: var(--ligtht-theme);
+  stroke: #00000050;
   text-shadow: 0px 1px 2px #000000, -1px 11px 13px rgba(231, 166, 26, 0.72);
-  transform: scale(1.25);
-
+  transform: scale(1.01);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15), 3px 12px 38px -5px rgba(231, 166, 26, 0.72);
 }
 
 
@@ -132,15 +133,6 @@
   background-color: var(--color-yellow-componemt);
   font-weight: 700;
 }
-
-
-.current:hover,
-.current:focus {
-  color: var(--ligtht-theme);
-  fill: var(--ligtht-theme);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15), 3px 12px 38px -5px rgba(231, 166, 26, 0.72);
-}
-
 
 .settings-nav {
   display: flex;
@@ -166,6 +158,14 @@
   padding-bottom: 4px;
   align-items: center;
   cursor: pointer;
+
+  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.authorisation-btn:hover,
+.authorisation-btn:focus {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15), 3px 12px 38px -5px rgba(38, 34, 112, 0.494);
+  transform: scale(1.01);
 }
 
 .arr-icon {

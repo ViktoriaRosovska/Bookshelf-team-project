@@ -1,0 +1,102 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+  }
+  
+  .modal-login-form {
+    display: none;
+    position: fixed;
+    width: 579px;
+    height: 516px;
+    background-color: #F6F6F6;
+    border: 2px solid #111111;
+    border-radius: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+
+::placeholder {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #111111;
+}
+
+.modal-login {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    gap: 40px;
+    align-items: center;
+  }
+  
+
+.modal-login-form-close-btn{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+.modal-login-form-input {
+   display: flex;
+   flex-direction: column;  
+   margin-top: 80px;   
+   gap: 28px;
+    
+}
+
+.modal-login-form-name,
+.modal-login-form-email,
+.modal-login-form-password {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 173px 20px 40px;
+    margin: auto;
+    width: 499px;
+    height: 64px;
+    border: 2px solid #111111;
+    border-radius: 40px;
+}
+
+.modal-login-btn {
+    width: 499px;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 173px;
+    gap: 10px;
+    background: #111111;
+    border-radius: 40px;
+    margin: auto;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+
+    color: #F3F3F3;
+}
+.modal-login-list{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+    
+}
