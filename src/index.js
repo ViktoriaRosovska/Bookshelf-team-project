@@ -10,4 +10,4 @@ import './js/modal-book-card';
 
 import './js/modal-mobile-menu';
 
-
+import './js/toggleTheme';
