@@ -110,13 +110,20 @@ function createMarkup(data) {
   const marketAmazon = data.buy_links[0].url;
   const marketAppleBooks = data.buy_links[1].url;
   const marketBookshop = data.buy_links[4].url;
+  const bookDescription = data.description;
+  //перевірка на наявність опису книги в api
+  let descriptionMarkup = bookDescription;
+  if (bookDescription === '') {
+    descriptionMarkup =
+      'Unfortunately, a brief description of this book is currently unavailable. But let that not hinder you from opening its pages and immersing yourself in the unforgettable world it creates.';
+  }
 
   const html = `  
   <img src="${bookModalImage}" alt="Book Image" class="image-about-book-modal">
   <div class="info-modal">
   <h2 class="title-about-book-modal">${bookTitle}</h2>
   <p class="author-about-book-modal"> ${bookAuthor}</p>
-  <p class="text-about-book-modal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, iure nam facere exercitationem quibusdam cum in quasi impedit perferendis porro. Vero quos minima doloribus magni corporis beatae ducimus officiis! Rerum?</p>
+  <p class="text-about-book-modal">${descriptionMarkup}</p>
   <ul class="shop-modal-list"> <li class="shop-modal-item"><a href="${marketAmazon}" target="_blank"
     > <img
      width="62"
