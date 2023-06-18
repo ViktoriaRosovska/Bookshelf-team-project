@@ -28,17 +28,18 @@ async function getBooksCategoryList() {
 async function getBookCategory() {
     try {
         const categories = await getBooksCategoryList();
-        console.log(categories);
         const markup = categories.map((cat) => `<li class="book-category__list-item">${cat.list_name}</li>`).join("");
         categoriesList.insertAdjacentHTML("beforeend", markup);
     } catch (error) {
         console.log(error);
     }
 }
-getBookCategory();
 
+export async function initBookCategories() {
+    await getBookCategory();
 
-categoriesList.addEventListener('click', onCategoryListSearchCategory);
+    categoriesList.addEventListener('click', onCategoryListSearchCategory);
+}
 
 async function onCategoryListSearchCategory(e) {
     if (e.target.nodeName !== 'LI') {
@@ -55,7 +56,7 @@ async function onCategoryListSearchCategory(e) {
         e.target.classList.add('active');
        
     }
-    
+
     await createMarkup(e.target.textContent);
 }
 

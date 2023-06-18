@@ -42,4 +42,8 @@ async function renderCategories() {
   bookCollection.innerHTML = bookCategories;
 }
 
-renderCategories();
+
+export async function initBestsellers() {
+  await renderCategories();
+}
+

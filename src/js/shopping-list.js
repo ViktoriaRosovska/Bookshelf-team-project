@@ -17,8 +17,10 @@ const fakeLocalStorage = [
 ];
 
 const shopList = document.querySelector('.js-shop-list');
-console.log(shopList);
-hahdlerLocalStorage(fakeLocalStorage);
+
+export async function initShoppingList() {
+  hahdlerLocalStorage(fakeLocalStorage);
+}
 
 function hahdlerLocalStorage(array) {
   const a = array.map(elem => {
