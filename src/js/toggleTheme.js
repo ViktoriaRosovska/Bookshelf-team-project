@@ -1,4 +1,4 @@
-const checkBoxEl = document.querySelector('#theme-switch-toggle');
+const checkBoxEl = document.querySelector('#checkbox');
 const body = document.querySelector('body');
 
 const Theme = {
@@ -36,3 +36,5 @@ function savedThemeOnReloaded() {
   }
 }
 savedThemeOnReloaded();
+
+checkBoxEl.addEventListener('change', onCheckboxClick)
