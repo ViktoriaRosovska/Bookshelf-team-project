@@ -1,24 +1,14 @@
 import { APIService } from "./API-service";
-const axios = require('axios').default;
+
 const api = new APIService;
 
 const bookCollection = document.querySelector('.books-collection');
 
-async function getBooks() {
-    try {
-        const response = await axios.get(`https://books-backend.p.goit.global/books/top-books`);
-        console.log(response.data)
-        return response.data;
-    } catch (error) {
-        console.log(error);
-    }
+async function getBestSellers() {
+  const response = await api.fetchBestSellersBooks();
+  const bestSellers = await response.data;
+  return bestSellers;
 }
-
-// async function getBestSellers() {
-//   const response = await api.fetchBestSellersBooks();
-//   const bestSellers = await response.data;
-//   console.log(bestSellers);
-// }
 
 function createBookCategoryMarkup(category) {
   return `
@@ -44,7 +34,7 @@ function createBookCategoryMarkup(category) {
 
 async function renderCategories() {
     let bookCategories = '';
-    const topBooks = await getBooks();
+    const topBooks = await getBestSellers();;
     console.log(topBooks);
   for (const category of topBooks) {
     bookCategories += createBookCategoryMarkup(category);
