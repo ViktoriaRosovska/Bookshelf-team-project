@@ -42,8 +42,9 @@ async function renderCategories() {
   bookCollection.innerHTML = bookCategories;
 }
 
-
- renderCategories();
+if (bookCollection) {
+  renderCategories();
+}
 
 
 // cutting text

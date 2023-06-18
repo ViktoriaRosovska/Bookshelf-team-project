@@ -22,10 +22,12 @@ const STORAGE_KEY = 'storage-data';
 let storageArr = [];
 let storageObj = {};
 
-addStorageBtn.addEventListener('click', onStorageAdd);
-removeStorageBtn.addEventListener('click', onStorageDelete);
-bookList.addEventListener('click', onIdClick);
-
+if (bookList) {
+  addStorageBtn.addEventListener('click', onStorageAdd);
+  removeStorageBtn.addEventListener('click', onStorageDelete);
+  bookList.addEventListener('click', onIdClick);
+}
+  
 const idModal = document.querySelector('.about-book-modal');
 const idBackdropModal = document.querySelector('.card-backdrop-modal');
 

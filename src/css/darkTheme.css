@@ -1,6 +1,6 @@
 body.dark-theme {
-    background-color: #202024;
-    color: #FFFFFF;
+    background-color: var(--dark-theme);
+    color: var(--ligtht-theme);
 }
 
 /* стилі для "header" */
