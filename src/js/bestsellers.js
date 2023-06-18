@@ -44,7 +44,7 @@ async function renderCategories() {
   bookCollection.innerHTML = bookCategories;
 }
 
-renderCategories();
+
 
 // cutting text
 // const limit = 18;
@@ -55,4 +55,10 @@ renderCategories();
 //             if (text.length > limit) {
 //               cuttedText += '...';
 //             }
+
+
+export async function initBestsellers() {
+  await renderCategories();
+}
+
 

@@ -1,7 +1,7 @@
-// потрібно буде замінити назви класів на ті, які використовували члени команди, тут зараз прописані мої власні
 const allModal = document.querySelector('#allModal'); //
 
-const bookList = document.querySelector('.js-list-rendering'); // з js Сергія + я додала, що в li додавався id
+// const bookList = document.querySelector('.js-list-rendering'); // з js Сергія + я додала, що в li додавався id
+const bookList = document.querySelector('.books-gallery'); // проблема була в назві стилю
 const addStorageBtn = document.querySelector('.add-storage-button'); //
 const removeStorageBtn = document.querySelector('.remove-storage-btn'); //
 const storageDescription = document.querySelector('.storage-info'); //
