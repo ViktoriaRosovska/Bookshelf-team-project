@@ -61,9 +61,7 @@ function renderBookCard(obj) {
                         <use href=""></use></svg
                     ></a>
                     <button type="button" class="shop-delete-btn js-delete-btn">
-                      <svg class="" width="16" height="16">
-                        <use href=""></use>
-                      </svg>
+                    
                     </button>
                   </li>
                 </ul>

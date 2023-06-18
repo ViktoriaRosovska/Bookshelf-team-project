@@ -1,11 +1,9 @@
 import './js/API-service';
-
+import './js/shopping-list';
 import './js/sponsors-list';
-import './js/book-categories'; 
+import './js/book-categories';
 import './js/bestsellers';
 import './js/book-categories-rendering';
-
-import './js/shopping-list';
 
 import './js/modal-book-card';
 import './js/modal-login-form';
