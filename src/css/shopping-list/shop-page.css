@@ -121,7 +121,7 @@
 
   margin-top: 40px;
 
-  background: #ffffff;
+  background: var(--ligtht-theme);
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
 }
@@ -145,7 +145,7 @@
   line-height: 1.12;
   letter-spacing: -0.04em;
 
-  color: #111111;
+  color: var(--dark-theme-componemt);
 }
 
 .shop-book-img {
@@ -177,7 +177,7 @@
   line-height: 1.29;
   letter-spacing: -0.04em;
 
-  color: #111111;
+  color: var(--dark-theme-componemt);
   max-height: 68px;
   width: 193px;
   overflow-y: scroll;
@@ -198,7 +198,6 @@
 }
 .shop-author-wrapper {
   display: flex;
-
   margin-top: 16px;
   align-items: end;
   justify-content: space-between;
