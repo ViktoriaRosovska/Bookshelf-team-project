@@ -9,7 +9,7 @@
     width: 335px;
     overflow: hidden;
     border-radius: 16px;
-    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, var(--color-blue-component) 18.03%, var(--ligtht-theme) 100%);
     padding-bottom: 68px;
     padding-top: 24px;
     padding-left: 40px;

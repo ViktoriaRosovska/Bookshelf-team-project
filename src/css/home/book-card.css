@@ -33,7 +33,7 @@
 .book-author {
     font-weight: 400;
     font-size: 12px;
-    line-height: calc(14px/12px);
+    line-height: calc(14/ 12);
     color: #B4AFAF;
     letter-spacing: -0.04em;
     font-style: italic;

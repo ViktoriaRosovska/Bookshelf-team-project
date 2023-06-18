@@ -2,9 +2,10 @@ import { sponsors } from './sponsors-obj';
 import images from '../images/sponsors/*.png';
 
 const sponsorsList = document.querySelector('.js-sponsors-list');
+let distance = 5;
 let id = 0;
-console.log(sponsors);
 console.log(sponsorsList);
+
 function renderSponsorsList() {
     const markup = sponsors.map(({ url, title, img }) => {
         const image = images[img];
@@ -35,20 +36,21 @@ function onScrollDownSponsors() {
      
     console.log(step);
    
-    if (count < 5) {
+    if (count < distance) {
         ++count;
         step += 52;
         sponsorsList.style.transform = `translateY(-${step}px)`;
         console.log(count);
     }
+
     if (count === 5) {
-    sponsorsSlideUpBtn.classList.remove('hide');
-    sponsorsSlideDownBtn.classList.add('hide');
+        sponsorsSlideUpBtn.classList.remove('hide');
+        sponsorsSlideDownBtn.classList.add('hide');
     }
-   
 }
 
 function onScrollUpSponsors() {
+   
     if (count > 0) {
         --count; 
         step -= 52;
@@ -60,9 +62,6 @@ function onScrollUpSponsors() {
     if (count === 0) {
         step = 0;
         sponsorsSlideDownBtn.classList.remove('hide');
-        sponsorsSlideUpBtn.classList.add('hide');
-        
-    }
-    
-    
+        sponsorsSlideUpBtn.classList.add('hide');  
+    } 
 }
