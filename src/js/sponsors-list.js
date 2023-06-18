@@ -1,12 +1,14 @@
 import { sponsors } from './sponsors-obj';
+import images from '../images/sponsors/*.png';
+
 const sponsorsList = document.querySelector('.js-sponsors-list');
 let id = 0;
 console.log(sponsors);
 console.log(sponsorsList);
 function renderSponsorsList() {
     const markup = sponsors.map(({ url, title, img }) => {
-        
-        return  `<li class="sponsor-item"><span class="sup_number">${pad(id+=1)}</span><a href=${url} target="_blank"><img class="sponsor-img" src="./images/${img}" alt=${title}></a></li>`
+        const image = images[img];
+        return  `<li class="sponsor-item"><span class="sup_number">${pad(id+=1)}</span><a href=${url} target="_blank"><img class="sponsor-img" src="${image}" alt=${title}></a></li>`
     
     }).join("");
     sponsorsList.insertAdjacentHTML("beforeend", markup);

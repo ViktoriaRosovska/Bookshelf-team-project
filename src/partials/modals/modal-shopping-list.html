@@ -1,1 +1,77 @@
-<div>Файл для розмітки модального вінка - shopping list (pop up)</div>
+<div class="card-backdrop-modal is-hidden">
+  <!-- Вова, щоб бачити модалку видаляй клас is-hidden, але потім його додавай назад -->
+  <div class="modal is-hidden about-book-modal">
+    <button
+      id="modal-close"
+      class="close-modal-btn"
+      type="button"
+      aria-label="close"
+    >
+      <svg class="button-close-icon" width="28" height="28">
+        <use href="./images/symbol-defs.svg#close-btn-icon"></use>
+        <!-- Вова, перевір чи підтягується зі спрайту іконка закриття, я прописала шлях, однак у мене вона не відображається -->
+      </svg>
+    </button>
+    <div id="allModal"></div>
+    <!-- в цей дів буде передаватись розмітка в js
+    <img src="${bookModalImage}" alt="Book Image" class="image-about-book-modal">
+  <div class="info-modal">
+  <h2 class="title-about-book-modal">${bookTitle}</h2>
+  <p class="author-about-book-modal"> ${bookAuthor}</p>
+  <p class="text-about-book-modal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, iure nam facere exercitationem quibusdam cum in quasi impedit perferendis porro. Vero quos minima doloribus magni corporis beatae ducimus officiis! Rerum?</p>
+  <ul class="shop-modal-list"> <li class="shop-modal-item"><a href="${marketAmazon}" target="_blank"
+    > <img
+     width="62"
+    height="19"
+    srcset="
+    ${amazonPng} 1x,
+    ${amazonPng2x} 2x
+  "
+   src="${amazonPng}"
+    alt="Amazon"
+  /></a></li>
+  <li class="shop-modal-item"><a href="${marketAppleBooks}" target="_blank"
+    > <img
+    width="33"
+    height="32"
+    srcset="
+    ${appleBookPng} 1x,
+    ${appleBookPng2x} 2x
+  "
+   src="${appleBookPng}"
+    alt="AppleBooks"
+  /></a></li>
+  <li class="shop-modal-item"><a href="${marketBookshop}" target="_blank"
+    > <img
+    width="38"
+    height="36"
+    srcset="
+    ${bookShopPng} 1x,
+    ${bookShopPng2x} 2x
+  "
+   src="${bookShopPng}"
+    alt="Book-Shop"
+  /></a></li>
+</ul>
+</div>
+    
+Вова, подивись мою розмітку і випиши стилі для відповідних елементів в css-файл modal-shoping-list.css
+можеш по ходу одразу оформлення накидатиі
+    -->
+    <div class="storage-button-wrapper">
+      <button type="button" class="add-storage-button modal__shopping-button">
+        Add to shopping list
+      </button>
+
+      <div class="remove-storage-btn">
+        <button
+          type="button"
+          class="storage-delete-button modal__shopping-button"
+        >
+          Remove from the shopping list
+        </button>
+        <p class="storage-info"></p>
+      </div>
+    </div>
+  </div>
+</div>

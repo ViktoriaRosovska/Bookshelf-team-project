@@ -29,6 +29,7 @@ export class APIService {
   fetchBookInfo(bookId) {
     return axios.get(`${this.#BASE_URL}books/${bookId}`);
   }
+  
 }
 
 //const api = new APIService();
