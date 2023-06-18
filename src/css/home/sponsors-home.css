@@ -16,6 +16,15 @@
     padding-right: 40px;
 }
 
+@media screen and (min-width: 768px) {
+    .sponsors {
+        height: 490px;
+        padding-bottom: 102px;
+    }
+}
+
+
+
 .js-sponsors-list {
     position: absolute;
     top: 0;

@@ -1,4 +1,4 @@
-import trash from '../images/symbol-defs.svg#logo';
+
 // import { APIService } from './API-service';
 
 // const api = new APIService();
@@ -75,9 +75,6 @@ function renderBookCard(array) {
                         <use href=""></use></svg
                     ></a>
                     <button type="button" class="shop-delete-btn js-delete-btn">
-                     <svg class="icon-delete" >
-                    <use href="${trash}"></use>
-                    </svg>
                     </button>
                   </li>
                 </ul>
