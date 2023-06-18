@@ -11,6 +11,8 @@
 
 .book-category__list-item:hover, .book-category__list-item:focus {
     color: var(--color-blue-component);
+    width: 318px;
+    overflow: hidden;
 }
 
 .book-category__list-item:last-child {
