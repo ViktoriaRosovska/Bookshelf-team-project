@@ -147,6 +147,10 @@
   letter-spacing: -0.04em;
 
   color: var(--dark-theme-componemt);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media screen and (min-width: 768px) {
@@ -154,7 +158,7 @@
     width: 100%;
   }
 }
-.shopinfo-book {
+.shop-info-book {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -246,10 +250,11 @@
   border-color: transparent;
   border-radius: 50% 50%;
   background-color: var(--color-blue-component);
-  background-image: url('/src/images/delete-book.svg');
+  /* background-image: url('/src/images/delete-book.svg');
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
+
 @media screen and (min-width: 768px) {
   .shop-delete-btn {
     top: 24px;
@@ -257,6 +262,10 @@
     width: 34px;
     height: 34px;
   }
+}
+.icon-delete {
+  width: 12px;
+  height: 12px;
 }
 .shop-link-platform {
   outline: 2px solid red;
