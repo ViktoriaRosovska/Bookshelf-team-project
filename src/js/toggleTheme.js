@@ -37,4 +37,4 @@ function savedThemeOnReloaded() {
 }
 savedThemeOnReloaded();
 
-checkBoxEl.addEventListener('change', onCheckboxClick)
+checkBoxEl.addEventListener('change', onCheckboxClick);
