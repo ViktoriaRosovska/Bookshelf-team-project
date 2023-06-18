@@ -46,6 +46,7 @@ async function renderCategories() {
 
 
 
+
 // cutting text
 // const limit = 18;
 //             const text = book.title;
@@ -57,8 +58,8 @@ async function renderCategories() {
 //             }
 
 
+
 export async function initBestsellers() {
   await renderCategories();
 }
-
 
