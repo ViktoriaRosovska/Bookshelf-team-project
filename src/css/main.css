@@ -5,17 +5,20 @@
 
 @import url('./base.css');
 
+@import url('./common/header.css');
+
 @import url('./home/book-category-list.css');
 @import url('./home/book-card.css');
 @import url('./home/home-books.css');
-@import url('./common/header.css');
-
+@import url('./home/book-categories-rendering.css');
 @import url('./home/sponsors-home.css');
 
-@import url('./scrollBtn.css');
 
 @import url('./shopping-list/shop-page.css');
 @import url('./shopping-list/shopping-list-card.css');
 
+@import url('./modals/modal-login-form.css');
 @import url('./modals/modal-shopping-list.css');
+@import url('./modals/modal-mobile-menu.css');
 
+@import url('./scrollBtn.css');

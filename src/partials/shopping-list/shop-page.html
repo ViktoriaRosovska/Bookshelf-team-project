@@ -1,10 +1,20 @@
-<h1 class="shop-main-title">
-  Shopping <span class="shop-sub-main-title">List</span>
-</h1>
+<div>
+  <h1 class="shop-main-title">
+    Shopping <span class="shop-sub-main-title">List</span>
+  </h1>
 
-<div class="shop-base-background">
-  <p class="shop-text-backgr">
-    This page is empty, add some books and proceed to order.
-  </p>
-  <div class="shop-img-backgr"></div>
+  <div class="shop-base-background" hidden>
+    <p class="shop-text-backgr">
+      This page is empty, add some books and proceed to order.
+    </p>
+    <div class="shop-img-backgr"></div>
+  </div>
+
+  <ul class="shop-list-books js-shop-list"></ul>
 </div>
+
+<script type="module">
+  import { initShoppingList } from './js/shopping-list';
+
+  initShoppingList();
+</script>
