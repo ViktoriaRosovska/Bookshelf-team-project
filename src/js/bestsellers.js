@@ -36,21 +36,13 @@ async function renderCategories() {
   let bookCategories = '';
   const topBooks = await getBestSellers();
   console.log(topBooks);
-  for (const category of topBooks) {
-    console.log();
-
+  for (let category of topBooks) {
     bookCategories += createBookCategoryMarkup(category);
   }
   bookCollection.innerHTML = bookCategories;
 }
 
-
-
-export async function initBestsellers() {
-  await renderCategories();
-}
-
-
+ renderCategories();
 
 // cutting text
 // const limit = 18;
