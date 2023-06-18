@@ -125,3 +125,8 @@
 .sponsors-component {
     margin-bottom: 40px;
 }
+
+.beating {
+	-webkit-animation: heart-beats 3s infinite;
+	animation: heart-beats 2s infinite;
+}
