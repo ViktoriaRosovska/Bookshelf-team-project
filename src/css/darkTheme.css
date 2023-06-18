@@ -1,0 +1,60 @@
+body.dark-theme {
+    background-color: #202024;
+    color: #FFFFFF;
+}
+
+/* стилі для "header" */
+
+body.dark-theme .header-container { 
+    background-color: var(--dark-theme-componemt);
+    color: rgba(255, 255, 255, 0.6);
+    border: 1.5px solid #FFFFFF;
+}
+
+body.dark-theme .icon-bookshelf{
+    fill: #F3F3F3;
+}
+
+body.dark-theme .logo-link:hover,
+body.dark-theme .logo-link:focus,
+body.dark-theme .icon-bookshelf:hover,
+body.dark-theme .icon-bookshelf:focus {
+  fill: var(--color-blue-component);
+}
+
+body.dark-theme .home-btn:hover,
+body.dark-theme .home-btn:focus,
+body.dark-theme .list-btn:hover,
+body.dark-theme .list-btn:focus {
+  color: var(--color-yellow-componemt);
+  fill: var(--color-yellow-componemt);
+  stroke: #00000030;
+  text-shadow: 0px 1px 2px #000000, -1px 11px 13px rgba(231, 166, 26, 0.72);
+  transform: scale(1.25);
+
+}
+
+body.dark-theme .header-nav .current {
+    color: #111111;
+}
+
+body.dark-theme .current:hover,
+body.dark-theme .current:focus {
+  color: var(--ligtht-theme);
+  fill: var(--ligtht-theme);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15), 3px 12px 38px -5px rgba(231, 166, 26, 0.72);
+}
+
+
+
+
+/* стилі для "book-category" */
+
+body.dark-theme .book-category__list-item {
+    color: rgba(255, 255, 255, 0.6);  
+}
+
+body.dark-theme .book-category__list-item:hover,
+body.dark-theme .book-category__list-item:focus {
+    color: #EAC645;
+}
