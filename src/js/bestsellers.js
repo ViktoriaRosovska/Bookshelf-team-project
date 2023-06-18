@@ -46,11 +46,6 @@ async function renderCategories() {
 
 
 
-export async function initBestsellers() {
-  await renderCategories();
-}
-
-
 
 // cutting text
 // const limit = 18;
@@ -62,4 +57,9 @@ export async function initBestsellers() {
 //               cuttedText += '...';
 //             }
 
+
+
+export async function initBestsellers() {
+  await renderCategories();
+}
 
