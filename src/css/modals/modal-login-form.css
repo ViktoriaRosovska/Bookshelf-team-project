@@ -24,7 +24,6 @@
     z-index: 1000;
   }
   
-
 ::placeholder {
     font-family: 'DM Sans';
     font-style: normal;
@@ -43,13 +42,11 @@
     gap: 40px;
     align-items: center;
   }
-  
 
 .modal-login-form-close-btn{
     position: absolute;
     top: 24px;
     right: 24px;
-
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -58,8 +55,8 @@
     padding: 0;
     background: transparent;
     border: transparent;
-
 }
+
 .modal-login-form-close-btn::before {
   content: '';
   background-image: url('/src/images/modal-login-form-close-btn.svg');
@@ -73,7 +70,6 @@
    flex-direction: column;  
    margin-top: 80px;   
    gap: 28px;
-    
 }
 
 .modal-login-form-name,
@@ -86,7 +82,7 @@
     margin: auto;
     width: 499px;
     height: 64px;
-    border: 2px solid #111111;
+    border: 2px solid var(--dark-theme-componemt);
     border-radius: 40px;
 }
 
@@ -99,7 +95,7 @@
     align-items: flex-start;
     padding: 20px 173px;
     gap: 10px;
-    background: #111111;
+    background: var(--dark-theme-componemt);
     border-radius: 40px;
     margin: auto;
     font-family: 'DM Sans';
