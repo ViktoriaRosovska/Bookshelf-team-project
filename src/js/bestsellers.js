@@ -19,7 +19,12 @@ function createBookCategoryMarkup(category) {
           .map(book => {
             return `
               <li class="book-card flex-element" id=${book._id}>
+              <div class="book-thumb">
                 <img class="book-cover" src="${book.book_image}" alt="${book.title}" />
+                <div class="quick-view">
+                <p class="quick-view-text">QUICK VIEW</p>
+                </div>
+                </div>
                 <h2 class="book-name">${book.title}</h2>
                 <h3 class="book-author">${book.author}</h3>
               </li>
@@ -27,7 +32,7 @@ function createBookCategoryMarkup(category) {
           })
           .join('')}
       </ul>
-      <button class="book-card-btn" type="button">see more</button>
+      <button class="book-card-btn" type="button" data-category="${category.list_name}">see more</button>
     </li>
   `;
 }
