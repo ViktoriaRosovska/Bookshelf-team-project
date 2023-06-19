@@ -132,9 +132,6 @@
   font-weight: 700;
 }
 
-.header-nav .current {
- 
-}
 
 .settings-nav {
   display: flex;
@@ -228,10 +225,11 @@
   top: 1px;
   left: 1px;
   z-index: 1;
-  background: var(--ligtht-theme);
+  background: var(--color-blue-component);
   border-radius: 50px;
   transition: all 0.4s ease;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3); */
+  box-shadow: inset 0px 2px 5px 0px var(--ligtht-theme);
 }
 
 .checkbox-input {
@@ -240,7 +238,8 @@
 
 .checkbox-input:checked+label {
   left: 21px;
-  background-color: rgb(66, 26, 145);
+  background-color: var(--ligtht-theme);
+  box-shadow: inset 0px -3px 5px 0px var(--color-blue-component);
 }
 
 .burger-meny-btn {
@@ -286,7 +285,7 @@
   display: none;
 }
 
-.close-modal-btn {
+.close-menu-btn {
   width: 28px;
   height: 28px;
   padding: 0px;
@@ -297,7 +296,7 @@
   margin-left: auto;
 }
 
-.close-modal-icon {
+.close-menu-icon {
   stroke: var(--dark-theme-componemt);
 
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
