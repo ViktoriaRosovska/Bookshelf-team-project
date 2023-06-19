@@ -1,0 +1,44 @@
+
+/* .team-title {
+  text-align: center;
+}
+
+.team-paragraph {
+  text-align: center;
+} */
+
+.team-list {
+  justify-content: center;
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 394px;
+  height: 397px;
+  position: relative;
+  stroke: var(--main-clearance-color);
+}
+
+.team-ring {
+  position: absolute;
+  z-index: -1;
+  stroke: var(--color-blue-component);
+}
+
+.team_people {
+  position: absolute;
+  bottom: 35px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* .team-item:hover,
+.favorites-item:focus {
+} */
