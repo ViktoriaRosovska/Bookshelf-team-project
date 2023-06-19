@@ -16,13 +16,31 @@
   pointer-events: none;
 }
 .modal {
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 579px;
   height: 465px;
   background: #ffffff;
   border: 2px solid #111111;
   border-radius: 18px;
   padding: 40px;
+}
+
+.close-modal-btn{
+  position: absolute;
+  top: 31px;
+  right: 31px;
+}
+
+.button-close-icon{
+  fill: #111111;
+  border: #111111;
+}
+
+.storage-button-wrapper{
+  margin-top: 321px;
 }
 
 .modal__shopping-button {
@@ -92,5 +110,16 @@ margin-right: auto;
   gap: 20px;
 }
 
-
+.storage-info{
+  width: 324px;
+  height: 28px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: rgba(17, 17, 17, 0.5);
+}
 
