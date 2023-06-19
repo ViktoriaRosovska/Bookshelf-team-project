@@ -19,12 +19,7 @@ function createBookCategoryMarkup(category) {
           .map(book => {
             return `
               <li class="book-card flex-element" id=${book._id}>
-              <div class="book-thumb">
                 <img class="book-cover" src="${book.book_image}" alt="${book.title}" />
-                <div class="quick-view">
-                <p class="quick-view-text">QUICK VIEW</p>
-                </div>
-                </div>
                 <h2 class="book-name">${book.title}</h2>
                 <h3 class="book-author">${book.author}</h3>
               </li>
@@ -32,9 +27,7 @@ function createBookCategoryMarkup(category) {
           })
           .join('')}
       </ul>
-      <button class="book-card-btn" type="button" data-category="${
-        category.list_name
-      }">see more</button>
+      <button class="book-card-btn" type="button">see more</button>
     </li>
   `;
 }
@@ -42,7 +35,7 @@ function createBookCategoryMarkup(category) {
 async function renderCategories() {
   let bookCategories = '';
   const topBooks = await getBestSellers();
-  // console.log(topBooks);
+  console.log(topBooks);
   for (let category of topBooks) {
     bookCategories += createBookCategoryMarkup(category);
   }
@@ -53,7 +46,7 @@ async function renderCategories() {
 if (bookCollection) {
   renderCategories();
   bookCollection?.addEventListener('click', onSeeMoreBtnClick);
-
+}
 
 // cutting text
 // const limit = 18;
@@ -64,36 +57,3 @@ if (bookCollection) {
 //             if (text.length > limit) {
 //               cuttedText += '...';
 //             }
-const titleC = document.querySelector('.collection-title');
-
-async function onSeeMoreBtnClick(e) {
-  if (e.target.nodeName !== 'BUTTON') {
-    return;
-  }
-  const target = e.target;
-  if (target.matches('button[data-category]')) {
-    const category = target.dataset.category;
-    console.log(category);
-
-    const res = await api.fetchBooksByCategory(category);
-    const books = await res.data;
-    console.log(books);
-    const collectionMarkup = books
-      .map(({ title, book_image, author, _id }) => {
-        titleC.textContent = category;
-        console.log(titleC.textContent);
-        return `<li class="book-card flex-element" id="${_id}">
-       <div class="book-thumb">
-      <img class="book-cover" src="${book_image}" alt="${title}">
-      <div class="quick-view">
-      <p class="quick-view-text">QUICK VIEW</p>
-        </div>
-        </div>
-      <h2 class="book-name">${title}</h2>
-      <h3 class="book-author">${author}</h3>
-  </li>`;
-      })
-      .join('');
-    bookCollection.innerHTML = collectionMarkup;
-  }
-}
