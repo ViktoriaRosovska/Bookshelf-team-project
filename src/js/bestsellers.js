@@ -49,6 +49,7 @@ async function renderCategories() {
 
 if (bookCollection) {
   renderCategories();
+  bookCollection.addEventListener('click', onSeeMoreBtnClick);
 }
 
 
@@ -62,8 +63,6 @@ if (bookCollection) {
 //               cuttedText += '...';
 //             }
 const titleC = document.querySelector('.collection-title')
-
-bookCollection.addEventListener('click', onSeeMoreBtnClick);
 
 async function onSeeMoreBtnClick(e) {
   if (e.target.nodeName !== 'BUTTON') {
