@@ -191,3 +191,40 @@ function onStorageDelete() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(storageArr));
   storageCheck();
 }
+
+
+
+// Функція, яка закриває модальне вікно
+const backdrop = document.querySelector('.card-backdrop-modal');
+const modal = document.querySelector('.modal');
+const closeButton = document.getElementById('modal-close');
+
+function closeModal() {
+  backdrop.classList.add('is-hidden');
+  modal.classList.add('is-hidden');
+  document.body.classList.remove('modal-open');
+  document.removeEventListener('keydown', closeModalOnEsc);
+}
+
+// Функція, яка закриває модальне вікно при кліку на backdrop
+function closeModalOnBackdropClick(event) {
+  if (event.target === backdrop) {
+    closeModal();
+  }
+}
+
+// Функція, яка закриває модальне вікно при кліку на хрестик
+function closeModalOnButton() {
+  closeModal();
+}
+
+// Функція, яка закриває модальне вікно при натисканні на ESC
+function closeModalOnEsc(event) {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+}
+
+// Додавання обробників подій
+backdrop.addEventListener('click', closeModalOnBackdropClick);
+closeButton.addEventListener('click', closeModalOnButton);
