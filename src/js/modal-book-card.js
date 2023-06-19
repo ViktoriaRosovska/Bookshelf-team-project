@@ -223,6 +223,8 @@ function closeModalOnEsc(event) {
   }
 }
 
-// Додавання обробників подій
-backdrop.addEventListener('click', closeModalOnBackdropClick);
-closeButton.addEventListener('click', closeModalOnButton);
+if (modal) {
+  // Додавання обробників подій
+  backdrop.addEventListener('click', closeModalOnBackdropClick);
+  closeButton.addEventListener('click', closeModalOnButton);
+}

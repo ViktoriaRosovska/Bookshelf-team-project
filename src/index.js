@@ -1,7 +1,6 @@
 import './js/API-service';
 
 import './js/header';
-import './js/shopping-list';
 import './js/sponsors-list';
 import './js/book-categories';
 import './js/bestsellers';
@@ -13,6 +12,5 @@ import './js/modal-mobile-menu';
 
 
 import './js/toggleTheme';
-
 import './js/scrollBtn';
 

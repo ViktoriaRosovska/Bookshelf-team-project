@@ -1,3 +1,4 @@
+
 import { APIService } from './API-service';
 
 const api = new APIService();
@@ -15,6 +16,7 @@ const fakeLocalStorage = [
   '643282b1e85766588626a0c4',
   '643282b2e85766588626a0fa',
 ];
+
 
 hahdlerLocalStorage(fakeLocalStorage);
 
@@ -48,6 +50,7 @@ function renderBookCard(el) {
     shopBgd.setAttribute('hidden', ''); //додаємо на обгортку атрибут hidden
   }
 
+
   if (shopList) {
     // створюємо розмітку
     const markup =
@@ -55,7 +58,7 @@ function renderBookCard(el) {
       // .map(el => {
       //   return
       ` <li class="shop-item-book">
-            <img class="shop-book-img" alt="Wrapper of book" src="${el.book_image}" />
+      <img class="shop-book-img" alt="Wrapper of book" src="${el.book_image}" />
             <div class="shop-info-book">
               <h2 class="shop-secondary-title">${el.title}</h2>
               <p class="shop-category">${el.list_name}</p>
@@ -64,21 +67,18 @@ function renderBookCard(el) {
                 <p class="shop-author">${el.author}</p>
                 <ul class="shop-platform-list">
                   <li>
-                    <a href="${el.marketAmazon}" class="shop-link-platform" noopener noreferrer>
-                      <svg class="" width="32" height="11">
-                        <use href=""></use>
-                      </svg>
-                    </a>
+                    <a href="${el.marketAmazon}" class="shop-link-amazon" noopener noreferrer>
+                                         </a>
                   </li>
                   <li>
-                    <a href="${el.marketAppleBooks}" class="shop-link-platform" noopener noreferrer>
-                      ></a>
+
+                    <a href="${el.marketAppleBooks}" class="shop-link-applebook" noopener noreferrer>
+                      </a>
+
                   </li>
                   <li>
-                    <a href="${el.marketBookshop}" class="shop-link-platform">
-                      <svg class="" width="16" height="16">
-                        <use href=""></use></svg
-                    ></a>
+                    <a href="${el.marketBookshop}" class="shop-link-bookshop">
+                      </a>
                     <button type="button" class="shop-delete-btn js-delete-btn">
                     </button>
                   </li>
@@ -86,6 +86,7 @@ function renderBookCard(el) {
               </div>
             </div>
           </li>`;
+
     // }
     //     )
     //     .join('');
