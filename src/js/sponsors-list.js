@@ -6,7 +6,7 @@ let id = 0;
 // console.log(sponsorsList);
 
 const mqLarge  = window.matchMedia( '(min-width: 768px)' );
-mqLarge.addEventListener('change', () => distance = mqLarge.matches ? 3 : 5);
+mqLarge?.addEventListener('change', () => distance = mqLarge.matches ? 3 : 5);
 
 let distance = mqLarge.matches ? 3 : 5;
 
@@ -28,13 +28,13 @@ function pad(value) {
 const sponsorsSlideDownBtn = document.querySelector('.sponsors-slideDown__btn');
 const sponsorsSlideUpBtn = document.querySelector('.sponsors-slideUp__btn');
 
-sponsorsSlideUpBtn.classList.add('hide');
+sponsorsSlideUpBtn?.classList.add('hide');
     
 
 let step = 0;
 let count = 0;
-sponsorsSlideDownBtn.addEventListener('click', onScrollDownSponsors);
-sponsorsSlideUpBtn.addEventListener('click', onScrollUpSponsors);
+sponsorsSlideDownBtn?.addEventListener('click', onScrollDownSponsors);
+sponsorsSlideUpBtn?.addEventListener('click', onScrollUpSponsors);
 
 function onScrollDownSponsors() {
      
@@ -48,8 +48,8 @@ function onScrollDownSponsors() {
     }
 
     if (count === distance) {
-        sponsorsSlideUpBtn.classList.remove('hide');
-        sponsorsSlideDownBtn.classList.add('hide');
+        sponsorsSlideUpBtn?.classList.remove('hide');
+        sponsorsSlideDownBtn?.classList.add('hide');
     }
 }
 
@@ -65,7 +65,7 @@ function onScrollUpSponsors() {
    
     if (count === 0) {
         step = 0;
-        sponsorsSlideDownBtn.classList.remove('hide');
-        sponsorsSlideUpBtn.classList.add('hide');  
+        sponsorsSlideDownBtn?.classList.remove('hide');
+        sponsorsSlideUpBtn?.classList.add('hide');  
     } 
 }
