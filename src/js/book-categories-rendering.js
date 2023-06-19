@@ -17,10 +17,10 @@ export default async function createMarkup(category) {
   console.log(books);
   function collectionMarkup() {
     return `<h1 class="collection-title">Books</h1>
-    <ul class="top-books js-list-rendering">
+    <ul class="top-books rendering-gap js-list-rendering">
     ${books
       .map(({ title, book_image, author, _id }) => {
-        return `<li class="book-card " id="${_id}">
+        return `<li class="book-card" id="${_id}">
       <img class="book-cover" src="${book_image}" alt="${title}">
       <h2 class="book-name">${title}</h2>
       <h3 class="book-author">${author}</h3>
