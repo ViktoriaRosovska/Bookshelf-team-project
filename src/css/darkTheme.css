@@ -42,8 +42,7 @@ body.dark-theme .checkbox {
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-body.dark-theme .close-menu-btn,
-body.dark-theme .close-modal-btn {
+body.dark-theme .close-menu-btn {
   color: #ffffff;
   background-color: var(--dark-theme-componemt);
 }
@@ -80,10 +79,10 @@ body.dark-theme .book-card-btn {
 
 body.dark-theme .book-card-btn:hover,
 body.dark-theme .book-card-btn:focus {
-  background-color: #4f2ee8;
+  background-color: var(--color-blue-component);
 }
 
-/* стилі для "shopping-list" */
+/* стилі для "page shopping-list" */
 
 body.dark-theme .shop-main-title {
   color: #ffffff;
@@ -96,6 +95,23 @@ body.dark-theme .shop-item-book {
 body.dark-theme .shop-secondary-title,
 body.dark-theme .shop-desc {
   color: #ffffff;
+}
+
+body.dark-theme .shop-link-amazon {
+  filter: brightness(0) invert(1);
+}
+
+body.dark-theme .shop-link-amazon:hover,
+body.dark-theme .shop-link-applebook:hover,
+body.dark-theme .shop-link-bookshop:hover,
+body.dark-theme .shop-link-amazon:focus,
+body.dark-theme .shop-link-applebook:focus,
+body.dark-theme .shop-link-bookshop:focus{
+  box-shadow: 0px 3px 3px rgba(251, 251, 251, 0.15);
+}
+
+body.dark-theme .shop-text-backgr {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* стилі для "footer" */
@@ -125,6 +141,13 @@ body.dark-theme .button-close-icon {
   stroke: #ffffff;
 }
 
+
+body.dark-theme .close-modal-btn {
+   color: #fff;
+   background-color: transparent;
+}
+
+
 /* стилі для "modal-login-form" */
 
 body.dark-theme .modal-login-form,
@@ -146,4 +169,11 @@ body.dark-theme .modal-login-btn {
 
 body.dark-theme .modal-login-form-close-btn {
   background-color: #eac645;
+}
+
+
+body.dark-theme .modal-login-btn:hover,
+body.dark-theme .modal-login-btn:focus {
+  color: #ffffff;
+  background: var(--color-blue-component);
 }
