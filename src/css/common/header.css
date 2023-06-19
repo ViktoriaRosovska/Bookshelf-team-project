@@ -277,7 +277,7 @@
 
 
 
-.is-hidden {
+.is-hidden-mobile {
   opacity: 0;
 }
 
@@ -302,8 +302,8 @@
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.close-modal-icon:hover,
-.close-modal-icon:focus {
+.close-menu-icon:hover,
+.close-menu-icon:focus {
 
   stroke: var(--color-yellow-componemt);
   transform: rotate(360deg);
