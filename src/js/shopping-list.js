@@ -1,63 +1,28 @@
-
-import { APIService } from './API-service';
-
-const api = new APIService();
-const fakeLocalStorage = [
-  '643282b1e85766588626a0ca',
-  '643282b2e85766588626a166',
-  '643282b1e85766588626a0a0',
-  '643282b1e85766588626a07c',
-  '643282b2e85766588626a120',
-  '643282b2e85766588626a10c',
-  '643282b2e85766588626a12e',
-  '643282b1e85766588626a0ae',
-  '643282b1e85766588626a0ce',
-  '643282b2e85766588626a104',
-  '643282b1e85766588626a0c4',
-  '643282b2e85766588626a0fa',
-];
-
-
-hahdlerLocalStorage(fakeLocalStorage);
-
-function hahdlerLocalStorage(array) {
-  const a = array.map(elem => {
-    getBookInfo(elem);
-  });
-}
-
-async function getBookInfo(bookId) {
-  const res = await api.fetchBookInfo(bookId);
-  const book = await res.data;
-  renderBookCard(book);
-}
 //оголошення змінних
 const shopList = document.querySelector('.js-shop-list'); //посидання на список, куди додаються картки книжок
 const shopBgd = document.querySelector('.js-shop-background'); //посилання на div з базовою картинкою
 
-// let data = JSON.parse(localStorage.getItem('storage-data')); // отримаємо данні з localStorage
-// // console.log(data);
-// renderBookCard(data);// визиваємо функцію рендера розмітки карток
+shopList.addEventListener('click', onBtnTrashClick);
 
-// функція пендеру карток з книгами з localStorage
+let data = JSON.parse(localStorage.getItem('storage-data')); // отримаємо данні з localStorage
 
-function renderBookCard(el) {
-  if (!el || el === []) {
+renderBookCard(data); // визиваємо функцію рендера розмітки карток
+
+// функція pендеру карток з книгами з localStorage
+
+function renderBookCard(array) {
+  if (!array || array.length === 0) {
     //якщо в localStorage відсутні данні, виходимо з функції
     return;
   }
   if (shopBgd) {
-    shopBgd.setAttribute('hidden', ''); //додаємо на обгортку атрибут hidden
+    shopBgd.setAttribute('hidden', ''); //додаємо на базову картинку атрибут hidden
   }
 
-
   if (shopList) {
-    // створюємо розмітку
-    const markup =
-      // array
-      // .map(el => {
-      //   return
-      ` <li class="shop-item-book">
+    const markup = array
+      .map(el => {
+        return ` <li id=${el.id} class="shop-item-book">
       <img class="shop-book-img" alt="Wrapper of book" src="${el.book_image}" />
             <div class="shop-info-book">
               <h2 class="shop-secondary-title">${el.title}</h2>
@@ -79,17 +44,35 @@ function renderBookCard(el) {
                   <li>
                     <a href="${el.marketBookshop}" class="shop-link-bookshop">
                       </a>
-                    <button type="button" class="shop-delete-btn js-delete-btn">
-                    </button>
+                   
                   </li>
                 </ul>
               </div>
             </div>
+             <button type="button" class="shop-delete-btn js-delete-btn">
+                    </button>
           </li>`;
+      })
+      .join('');
 
-    // }
-    //     )
-    //     .join('');
     return shopList.insertAdjacentHTML('beforeend', markup);
+  }
+}
+
+function onBtnTrashClick(evt) {
+  if (evt.target.nodeName === 'BUTTON') {
+    const id = evt.target.parentNode.getAttribute('id');
+    removeBookFromLocalStorage(id);
+  }
+}
+
+function removeBookFromLocalStorage(bookId) {
+  const data = JSON.parse(localStorage.getItem('storage-data'));
+  const newData = data.filter(({ id }) => id !== bookId);
+  localStorage.setItem('storage-data', JSON.stringify(newData));
+  shopList.innerHTML = '';
+  renderBookCard(newData);
+  if (!newData || newData.length === 0) {
+    shopBgd.removeAttribute('hidden', '');
   }
 }

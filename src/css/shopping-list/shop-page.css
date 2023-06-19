@@ -285,6 +285,7 @@
   background-repeat: no-repeat;
   background-size: 32px 11px;
   background-position: center;
+  filter: grayscale(100%);
 }
 .shop-link-applebook {
   width: 16px;
