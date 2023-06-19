@@ -42,14 +42,18 @@ function createBookCategoryMarkup(category) {
 async function renderCategories() {
   let bookCategories = '';
   const topBooks = await getBestSellers();
-  console.log(topBooks);
+  // console.log(topBooks);
   for (let category of topBooks) {
     bookCategories += createBookCategoryMarkup(category);
   }
   bookCollection.innerHTML = bookCategories;
 }
 
-renderCategories();
+
+if (bookCollection) {
+  renderCategories();
+  bookCollection?.addEventListener('click', onSeeMoreBtnClick);
+
 
 // cutting text
 // const limit = 18;
@@ -61,8 +65,6 @@ renderCategories();
 //               cuttedText += '...';
 //             }
 const titleC = document.querySelector('.collection-title');
-
-bookCollection.addEventListener('click', onSeeMoreBtnClick);
 
 async function onSeeMoreBtnClick(e) {
   if (e.target.nodeName !== 'BUTTON') {
