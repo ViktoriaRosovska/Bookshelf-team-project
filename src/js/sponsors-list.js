@@ -2,35 +2,13 @@ import { sponsors } from './sponsors-obj';
 import images from '../images/sponsors/*.png';
 
 const sponsorsList = document.querySelector('.js-sponsors-list');
-let distance = 5;
 let id = 0;
 // console.log(sponsorsList);
 
-let tablet = window.matchMedia('(min-width: 767px)'); 
-let mobile = window.matchMedia('(min-width: 375px)');
-let desktop = window.matchMedia('(min-width: 1440px)');
-if (tablet) {
-    distance = 7;
-    console.log(distance);
-}
-if (desktop) {
-    distance = 2;
-    console.log(distance);
-}
-if (mobile) {
-    distance = 5;
-    console.log(distance);
-}
 const mqLarge  = window.matchMedia( '(min-width: 768px)' );
-mqLarge.addEventListener('change', mqHandler);
+mqLarge.addEventListener('change', () => distance = mqLarge.matches ? 3 : 5);
 
-// media query handler function
-function mqHandler(e) {
- 
-    distance = 3;
-}
-
-mqHandler(mqLarge);
+let distance = mqLarge.matches ? 3 : 5;
 
 function renderSponsorsList() {
     const markup = sponsors.map(({ url, title, img }) => {

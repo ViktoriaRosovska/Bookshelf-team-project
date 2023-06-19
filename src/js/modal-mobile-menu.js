@@ -6,9 +6,12 @@ const closeModalBtnEl = document.querySelector('.js-close-modal')
 const header = document.querySelector('.header-container')
 const body = document.body;
 
+// TODO: media query
+burgerBtnEl?.addEventListener('click', showModal);
+closeModalBtnEl?.addEventListener('click', closeModal);  
+   
 
-burgerBtnEl.addEventListener('click', showModal)
-closeModalBtnEl.addEventListener('click', closeModal)
+
 
 function showModal(elem) {
     header.classList.add('index')
