@@ -57,3 +57,37 @@ if (bookCollection) {
 //             if (text.length > limit) {
 //               cuttedText += '...';
 //             }
+const titleCollection = document.querySelector('.collection-title')
+
+bookCollection.addEventListener('click', onSeeMoreBtnClick);
+
+async function onSeeMoreBtnClick(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  const target = e.target;
+  if (target.matches('button[data-category]')) {
+    const category = target.dataset.category;
+    console.log(category);
+
+
+    const res = await api.fetchBooksByCategory(category);
+    const books = await res.data;
+    console.log(books);
+    const collectionMarkup = books.map(({title,
+        book_image,
+        author,
+      _id, }) => {
+      
+      titleCollection.textContent = category;
+      console.log(titleCollection.textContent);
+       return  `<li class="flex-element" id="${_id}">
+      <img src="${book_image}" alt="${title}">
+      <h2>${title}</h2>
+      <p>${author}</p>
+  </li>`
+    })
+    .join('');
+    bookCollection.innerHTML = collectionMarkup;
+  }
+ }
