@@ -14,3 +14,4 @@ import './js/modal-mobile-menu';
 import './js/toggleTheme';
 import './js/scrollBtn';
 
+import './js/service-firebase';
