@@ -75,7 +75,7 @@
     background-image: url('/src/images/shoplist-backgr-mob@2x.png');
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+@media screen and (min-width: 768px) {
   .shop-img-backgr {
     margin-top: 20px;
     width: 322px;
@@ -91,6 +91,9 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .shop-base-background {
+    margin-left: 300px;
+  }
   .shop-img-backgr {
     background-image: url('/src/images/shoplist-backgr-desk@1x.png');
   }
@@ -117,10 +120,7 @@
   padding: 14px;
   gap: 14px;
   width: 335px;
-  /* height: 170px; */
-
   margin-top: 40px;
-
   background: var(--ligtht-theme);
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
@@ -130,13 +130,11 @@
     padding: 24px;
     gap: 24px;
     width: 704px;
-    /* height: 161px; */
   }
 }
 @media screen and (min-width: 1440px) {
   .shop-item-book {
     width: 996px;
-    /* height: 182px; */
   }
 }
 .shop-secondary-title {
@@ -249,25 +247,26 @@
   height: 28px;
   border-color: transparent;
   border-radius: 50% 50%;
-  background-image: url('/src/images/trash.png');
+  /* background-image: url('/src/images/trash.png'); */
   background-repeat: no-repeat;
-  background-size: 22px 22px;
+  background-size: 16px 16px;
   background-color: var(--color-blue-component);
   background-position: center;
-  /* background-image: url('/src/images/delete-book.svg');
-  background-position: center;
-  background-repeat: no-repeat; */
+  background-image: url('/src/images/delete-book.svg');
 }
-.shop-delete-btn:hover, .shop-delete-btn:focus {
-   background-color: var(--color-yellow-componemt);
- 
+
+.shop-delete-btn:hover,
+.shop-delete-btn:focus {
+  background-color: var(--color-yellow-componemt);
 }
+
 @media screen and (min-width: 768px) {
   .shop-delete-btn {
     top: 24px;
     right: 24px;
     width: 34px;
     height: 34px;
+    background-size: 18px 18px;
   }
 }
 
