@@ -9,11 +9,11 @@ import { APIService } from "./API-service";
 // const loadMore = document.querySelector('.js-load_more-rendering');
 
 const bookCollection = document.querySelector('.books-gallery');
-const api1 = new APIService();
+const api = new APIService();
 
 
 export default  async function createMarkup(category){
-    const res = await api1.fetchBooksByCategory(category);
+    const res = await api.fetchBooksByCategory(category);
     const books = await res.data;
     console.log(books);
     const collectionMarkup = books.map(({title,
