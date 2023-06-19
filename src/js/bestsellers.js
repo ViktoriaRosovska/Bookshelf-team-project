@@ -42,7 +42,6 @@ async function renderCategories() {
   bookCollection.innerHTML = bookCategories;
 }
 
-
 if (bookCollection) {
   renderCategories();
   bookCollection?.addEventListener('click', onSeeMoreBtnClick);
