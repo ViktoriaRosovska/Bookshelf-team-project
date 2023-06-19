@@ -1,3 +1,4 @@
+
 .card-backdrop-modal {
   position: fixed;
   z-index: 23;
@@ -16,13 +17,31 @@
   pointer-events: none;
 }
 .modal {
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 579px;
   height: 465px;
   background: #ffffff;
   border: 2px solid #111111;
   border-radius: 18px;
   padding: 40px;
+}
+
+.close-modal-btn{
+  position: absolute;
+  top: 31px;
+  right: 31px;
+}
+
+.button-close-icon{
+  fill: #111111;
+  border: #111111;
+}
+
+.storage-button-wrapper{
+  margin-top: 321px;
 }
 
 .modal__shopping-button {
@@ -37,4 +56,70 @@
   font-weight: bold;
   color: #4f2ee8;
   cursor: pointer;
+}
+
+.image-about-book-modal{
+width: 192px;
+height: 281px;
+margin-right: auto;
+}
+
+.info-modal{
+  display: block;
+  margin-left: 24px;
+  margin-bottom: 121px;
+}
+
+.title-about-book-modal{
+  width: 192px;
+  height: 28px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.04em;
+  color: #111111;
+}
+
+.author-about-book-modal{
+  width: 92px;
+  height: 18px;
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: #B4AFAF;
+}
+
+.text-about-book-modal{
+  width: 279px;
+  height: 70px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: #111111;
+}
+
+.shop-modal-list{
+  display: flex;
+  gap: 20px;
+}
+
+.storage-info{
+  width: 324px;
+  height: 28px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: rgba(17, 17, 17, 0.5);
 }
