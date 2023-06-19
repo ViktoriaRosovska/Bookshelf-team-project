@@ -1,11 +1,13 @@
+/* ============================ */
 /* всплывающий текст при ховере */
+/* ============================ */
 
 .book-thumb {
   position: relative;
   overflow: hidden;
 
   border-radius: 8px;
-    margin-bottom: 14px;
+  margin-bottom: 14px;
 }
 
 .quick-view {
@@ -34,7 +36,7 @@
 .quick-view-text {
   font-size: 18px;
   font-weight: 600;
-  
+
 }
 
 /* =============================== */

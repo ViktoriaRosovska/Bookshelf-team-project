@@ -61,7 +61,9 @@ if (bookCollection) {
 //             if (text.length > limit) {
 //               cuttedText += '...';
 //             }
-const titleC = document.querySelector('.collection-title')
+
+
+const titleCollection = document.querySelector('.collection-title')
 
 bookCollection.addEventListener('click', onSeeMoreBtnClick);
 
@@ -83,8 +85,8 @@ async function onSeeMoreBtnClick(e) {
         author,
       _id, }) => {
       
-      titleC.textContent = category;
-      console.log(titleC.textContent);
+      titleCollection.textContent = category;
+      console.log(titleCollection.textContent);
        return  `<li class="flex-element" id="${_id}">
       <img src="${book_image}" alt="${title}">
       <h2>${title}</h2>
