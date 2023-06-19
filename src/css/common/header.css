@@ -289,7 +289,7 @@
   width: 28px;
   height: 28px;
   padding: 0px;
-  background-color: var(--ligtht-theme);
+  background-color: transparent;
   border: transparent;
   color: var(--dark-theme-componemt);
   cursor: pointer;
