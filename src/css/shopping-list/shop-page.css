@@ -270,11 +270,57 @@
     height: 34px;
   }
 }
-.icon-delete {
-  width: 12px;
-  height: 12px;
-}
+
 .shop-link-platform {
   outline: 2px solid red;
   outline-offset: -2px;
+}
+.shop-link-amazon,
+.shop-link-applebook,
+.shop-link-bookshop {
+  display: block;
+  width: 32px;
+  height: 11px;
+
+  background-image: url('/src/images/amazon.svg');
+  background-repeat: no-repeat;
+  background-size: 32px 11px;
+  background-position: center;
+}
+.shop-link-applebook {
+  width: 16px;
+  height: 16px;
+  background-image: url('/src/images/applebook.svg');
+  background-size: 16px 16px;
+}
+.shop-link-bookshop {
+  width: 16px;
+  height: 16px;
+  background-image: url('/src/images/bookshop.svg');
+  background-size: 16px 16px;
+}
+@media screen and (min-width: 768px) {
+  .shop-link-amazon {
+    width: 48px;
+    height: 15px;
+    background-size: 48px 15px;
+  }
+  .shop-link-applebook {
+    width: 28px;
+    height: 27px;
+    background-size: 28px 27px;
+  }
+  .shop-link-bookshop {
+    width: 32px;
+    height: 30px;
+    background-size: 32px 30px;
+  }
+}
+.shop-link-amazon:hover,
+.shop-link-amazon:focus,
+.shop-link-applebook:hover,
+.shop-link-applebook:focus,
+.shop-link-bookshop:hover,
+.shop-link-bookshop:focus {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
 }

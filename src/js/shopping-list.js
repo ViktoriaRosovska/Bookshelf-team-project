@@ -1,4 +1,3 @@
-
 // import { APIService } from './API-service';
 
 // const api = new APIService();
@@ -44,10 +43,10 @@ function renderBookCard(array) {
   if (shopBgd) {
     shopBgd.setAttribute('hidden', '');
   }
-  if (shopList){
-     const markup = array
-    .map(el => {
-      return ` <li class="shop-item-book">
+  if (shopList) {
+    const markup = array
+      .map(el => {
+        return ` <li class="shop-item-book">
             <img class="shop-book-img" alt="Wrapper of book" src="${el.book_image}" />
             <div class="shop-info-book">
               <h2 class="shop-secondary-title">${el.title}</h2>
@@ -57,23 +56,16 @@ function renderBookCard(array) {
                 <p class="shop-author">${el.author}</p>
                 <ul class="shop-platform-list">
                   <li>
-                    <a href="${el.marketAmazon}" class="shop-link-platform" noopener noreferrer>
-                      <svg class="" width="32" height="11">
-                        <use href=""></use>
-                      </svg>
-                    </a>
+                    <a href="${el.marketAmazon}" class="shop-link-amazon" noopener noreferrer>
+                                         </a>
                   </li>
                   <li>
-                    <a href="${el.marketAppleBooks}" class="shop-link-platform" noopener noreferrer>
-                      <svg class="" width="16" height="16">
-                        <use href=""></use></svg
-                    ></a>
+                    <a href="${el.marketAppleBooks}" class="shop-link-applebook" noopener noreferrer>
+                      </a>
                   </li>
                   <li>
-                    <a href="${el.marketBookshop}" class="shop-link-platform">
-                      <svg class="" width="16" height="16">
-                        <use href=""></use></svg
-                    ></a>
+                    <a href="${el.marketBookshop}" class="shop-link-bookshop">
+                      </a>
                     <button type="button" class="shop-delete-btn js-delete-btn">
                     </button>
                   </li>
@@ -81,11 +73,8 @@ function renderBookCard(array) {
               </div>
             </div>
           </li>`;
-    })
-    .join('');
-  return shopList.insertAdjacentHTML('beforeend', markup);
+      })
+      .join('');
+    return shopList.insertAdjacentHTML('beforeend', markup);
   }
- 
 }
-
- 
