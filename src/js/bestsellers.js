@@ -53,7 +53,7 @@ async function renderCategories() {
 if (bookCollection) {
   renderCategories();
   bookCollection?.addEventListener('click', onSeeMoreBtnClick);
-
+}
 
 // cutting text
 // const limit = 18;
