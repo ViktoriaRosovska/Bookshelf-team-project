@@ -111,7 +111,7 @@
 
 .list-btn-svg {
   margin-left: 4px;
-
+  fill: var(--dark-theme-componemt)
 }
 
 .home-btn:hover,
