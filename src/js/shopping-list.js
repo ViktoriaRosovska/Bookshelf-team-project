@@ -1,3 +1,4 @@
+
 import { APIService } from './API-service';
 
 const api = new APIService();
@@ -16,11 +17,8 @@ const fakeLocalStorage = [
   '643282b2e85766588626a0fa',
 ];
 
-const shopList = document.querySelector('.js-shop-list');
 
-
-  hahdlerLocalStorage(fakeLocalStorage);
-
+hahdlerLocalStorage(fakeLocalStorage);
 
 function hahdlerLocalStorage(array) {
   const a = array.map(elem => {
@@ -33,42 +31,65 @@ async function getBookInfo(bookId) {
   const book = await res.data;
   renderBookCard(book);
 }
+//оголошення змінних
+const shopList = document.querySelector('.js-shop-list'); //посидання на список, куди додаються картки книжок
+const shopBgd = document.querySelector('.js-shop-background'); //посилання на div з базовою картинкою
 
-function renderBookCard(obj) {
-  const markup = ` <li class="shop-item-book">
-            <img class="shop-book-img" alt="Wrapper of book" src="${obj.book_image}" />
-            <div class="shopinfo-book">
-              <h2 class="shop-secondary-title">${obj.title}</h2>
-              <p class="shop-category">${obj.list_name}</p>
-              <p class="shop-desc">${obj.description}</p>
+// let data = JSON.parse(localStorage.getItem('storage-data')); // отримаємо данні з localStorage
+// // console.log(data);
+// renderBookCard(data);// визиваємо функцію рендера розмітки карток
+
+// функція пендеру карток з книгами з localStorage
+
+function renderBookCard(el) {
+  if (!el || el === []) {
+    //якщо в localStorage відсутні данні, виходимо з функції
+    return;
+  }
+  if (shopBgd) {
+    shopBgd.setAttribute('hidden', ''); //додаємо на обгортку атрибут hidden
+  }
+
+
+  if (shopList) {
+    // створюємо розмітку
+    const markup =
+      // array
+      // .map(el => {
+      //   return
+      ` <li class="shop-item-book">
+      <img class="shop-book-img" alt="Wrapper of book" src="${el.book_image}" />
+            <div class="shop-info-book">
+              <h2 class="shop-secondary-title">${el.title}</h2>
+              <p class="shop-category">${el.list_name}</p>
+              <p class="shop-desc">${el.description}</p>
               <div class="shop-author-wrapper">
-                <p class="shop-author">${obj.author}</p>
+                <p class="shop-author">${el.author}</p>
                 <ul class="shop-platform-list">
                   <li>
-                    <a href="${obj.buy_links[0].url}" class="shop-link-platform" noopener noreferrer>
-                      <svg class="" width="32" height="11">
-                        <use href=""></use>
-                      </svg>
-                    </a>
+                    <a href="${el.marketAmazon}" class="shop-link-amazon" noopener noreferrer>
+                                         </a>
                   </li>
                   <li>
-                    <a href="${obj.buy_links[1].url}" class="shop-link-platform" noopener noreferrer>
-                      <svg class="" width="16" height="16">
-                        <use href=""></use></svg
-                    ></a>
+
+                    <a href="${el.marketAppleBooks}" class="shop-link-applebook" noopener noreferrer>
+                      </a>
+
                   </li>
                   <li>
-                    <a href="${obj.buy_links[2].url}" class="shop-link-platform">
-                      <svg class="" width="16" height="16">
-                        <use href=""></use></svg
-                    ></a>
+                    <a href="${el.marketBookshop}" class="shop-link-bookshop">
+                      </a>
                     <button type="button" class="shop-delete-btn js-delete-btn">
-                    
                     </button>
                   </li>
                 </ul>
               </div>
             </div>
           </li>`;
-  shopList.insertAdjacentHTML('beforeend', markup);
+
+    // }
+    //     )
+    //     .join('');
+    return shopList.insertAdjacentHTML('beforeend', markup);
+  }
 }

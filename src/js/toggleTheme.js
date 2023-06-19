@@ -8,6 +8,11 @@ const Theme = {
 
 const STORAGE_KEY = 'theme';
 
+
+checkBoxEl.addEventListener('change', onCheckboxClick);
+
+savedThemeOnReloaded();
+
 export default function onCheckboxClick(evt) {
   let value = '';
   if (evt.currentTarget.checked) {
@@ -32,9 +37,9 @@ function savedThemeOnReloaded() {
   }
 
   if (savedValue === Theme.DARK) {
-    checkBoxEl.setAttribute('checked', true);
+    checkBoxEl.checked = true;
+  } else {
+    checkBoxEl.checked = false;
   }
 }
-savedThemeOnReloaded();
 
-checkBoxEl.addEventListener('change', onCheckboxClick)

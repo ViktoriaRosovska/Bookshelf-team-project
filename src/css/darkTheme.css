@@ -1,18 +1,17 @@
 body.dark-theme {
-    background-color: #202024;
-    color: #FFFFFF;
+    background-color: var(--dark-theme);
+    color: var(--ligtht-theme);
 }
 
 /* стилі для "header" */
 
 body.dark-theme .header-container { 
-    background-color: var(--dark-theme-componemt);
-    color: rgba(255, 255, 255, 0.6);
-    border: 1.5px solid #FFFFFF;
+  background-color: var(--dark-theme-componemt);
+  border: 1.5px solid #FFFFFF;
 }
 
 body.dark-theme .icon-bookshelf{
-    fill: #F3F3F3;
+    fill:  #F3F3F3;
 }
 
 body.dark-theme .logo-link:hover,
@@ -22,16 +21,9 @@ body.dark-theme .icon-bookshelf:focus {
   fill: var(--color-blue-component);
 }
 
-body.dark-theme .home-btn:hover,
-body.dark-theme .home-btn:focus,
-body.dark-theme .list-btn:hover,
-body.dark-theme .list-btn:focus {
-  color: var(--color-yellow-componemt);
-  fill: var(--color-yellow-componemt);
-  stroke: #00000030;
-  text-shadow: 0px 1px 2px #000000, -1px 11px 13px rgba(231, 166, 26, 0.72);
-  transform: scale(1.25);
 
+body.dark-theme .list-btn {
+  fill:  #FFFFFF;
 }
 
 body.dark-theme .header-nav .current {
@@ -45,7 +37,10 @@ body.dark-theme .current:focus {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15), 3px 12px 38px -5px rgba(231, 166, 26, 0.72);
 }
 
-
+body.dark-theme .checkbox {
+  background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
 
 
 /* стилі для "book-category" */
@@ -57,4 +52,38 @@ body.dark-theme .book-category__list-item {
 body.dark-theme .book-category__list-item:hover,
 body.dark-theme .book-category__list-item:focus {
     color: #EAC645;
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb {
+  background: rgba(17, 17, 17, 0.6);
+}
+
+/* стилі для "home-books" */
+
+body.dark-theme .book-card-btn {
+  color: #FFFFFF;
+}
+
+body.dark-theme .book-card-btn:hover,
+body.dark-theme .book-card-btn:focus {
+  background-color: #4F2EE8;
+}
+
+/* стилі для "shopping-list" */
+
+body.dark-theme .shop-main-title {
+  color: #FFFFFF;
+}
+
+
+/* стилі для "footer" */
+
+body.dark-theme .footer_container {
+  border: 1.5px solid #FFFFFF;
+  background-color: var(--dark-theme-componemt);
+}
+
+body.dark-theme .footer_text_right,
+body.dark-theme .footer_text_left {
+  color: #FFFFFF;
 }

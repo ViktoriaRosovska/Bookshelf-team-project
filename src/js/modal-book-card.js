@@ -22,9 +22,11 @@ const STORAGE_KEY = 'storage-data';
 let storageArr = [];
 let storageObj = {};
 
-addStorageBtn.addEventListener('click', onStorageAdd);
-removeStorageBtn.addEventListener('click', onStorageDelete);
-bookList.addEventListener('click', onIdClick);
+if (bookList) {
+  addStorageBtn.addEventListener('click', onStorageAdd);
+  removeStorageBtn.addEventListener('click', onStorageDelete);
+  bookList.addEventListener('click', onIdClick);
+}
 
 const idModal = document.querySelector('.about-book-modal');
 const idBackdropModal = document.querySelector('.card-backdrop-modal');
@@ -74,6 +76,7 @@ async function fetchBookById(bookId) {
       marketBookshop: data.buy_links[4].url,
       list_name: data.list_name,
       id: data._id,
+      description: data.description,
     };
     return data;
   } catch (error) {
@@ -109,13 +112,20 @@ function createMarkup(data) {
   const marketAmazon = data.buy_links[0].url;
   const marketAppleBooks = data.buy_links[1].url;
   const marketBookshop = data.buy_links[4].url;
+  const bookDescription = data.description;
+  //перевірка на наявність опису книги в api
+  let descriptionMarkup = bookDescription;
+  if (bookDescription === '') {
+    descriptionMarkup =
+      'Unfortunately, a brief description of this book is currently unavailable. But let that not hinder you from opening its pages and immersing yourself in the unforgettable world it creates.';
+  }
 
   const html = `  
   <img src="${bookModalImage}" alt="Book Image" class="image-about-book-modal">
   <div class="info-modal">
   <h2 class="title-about-book-modal">${bookTitle}</h2>
   <p class="author-about-book-modal"> ${bookAuthor}</p>
-  <p class="text-about-book-modal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, iure nam facere exercitationem quibusdam cum in quasi impedit perferendis porro. Vero quos minima doloribus magni corporis beatae ducimus officiis! Rerum?</p>
+  <p class="text-about-book-modal">${descriptionMarkup}</p>
   <ul class="shop-modal-list"> <li class="shop-modal-item"><a href="${marketAmazon}" target="_blank"
     > <img
      width="62"
@@ -180,4 +190,41 @@ function onStorageDelete() {
   storageArr.splice(indexToDelete, 1);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(storageArr));
   storageCheck();
+}
+
+// Функція, яка закриває модальне вікно
+const backdrop = document.querySelector('.card-backdrop-modal');
+const modal = document.querySelector('.modal');
+const closeButton = document.getElementById('modal-close');
+
+function closeModal() {
+  backdrop.classList.add('is-hidden');
+  modal.classList.add('is-hidden');
+  document.body.classList.remove('modal-open');
+  document.removeEventListener('keydown', closeModalOnEsc);
+}
+
+// Функція, яка закриває модальне вікно при кліку на backdrop
+function closeModalOnBackdropClick(event) {
+  if (event.target === backdrop) {
+    closeModal();
+  }
+}
+
+// Функція, яка закриває модальне вікно при кліку на хрестик
+function closeModalOnButton() {
+  closeModal();
+}
+
+// Функція, яка закриває модальне вікно при натисканні на ESC
+function closeModalOnEsc(event) {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+}
+
+if (modal) {
+  // Додавання обробників подій
+  backdrop.addEventListener('click', closeModalOnBackdropClick);
+  closeButton.addEventListener('click', closeModalOnButton);
 }
