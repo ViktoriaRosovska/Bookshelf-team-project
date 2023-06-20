@@ -75,7 +75,7 @@
     background-image: url('/src/images/shoplist-backgr-mob@2x.png');
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+@media screen and (min-width: 768px) {
   .shop-img-backgr {
     margin-top: 20px;
     width: 322px;
@@ -91,6 +91,9 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .shop-base-background {
+    margin-left: 300px;
+  }
   .shop-img-backgr {
     background-image: url('/src/images/shoplist-backgr-desk@1x.png');
   }
@@ -117,10 +120,7 @@
   padding: 14px;
   gap: 14px;
   width: 335px;
-  /* height: 170px; */
-
   margin-top: 40px;
-
   background: var(--ligtht-theme);
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
@@ -130,13 +130,11 @@
     padding: 24px;
     gap: 24px;
     width: 704px;
-    /* height: 161px; */
   }
 }
 @media screen and (min-width: 1440px) {
   .shop-item-book {
     width: 996px;
-    /* height: 182px; */
   }
 }
 .shop-secondary-title {
@@ -249,32 +247,80 @@
   height: 28px;
   border-color: transparent;
   border-radius: 50% 50%;
-  background-image: url('/src/images/trash.png');
+  /* background-image: url('/src/images/trash.png'); */
   background-repeat: no-repeat;
-  background-size: 22px 22px;
+  background-size: 16px 16px;
   background-color: var(--color-blue-component);
   background-position: center;
-  /* background-image: url('/src/images/delete-book.svg');
-  background-position: center;
-  background-repeat: no-repeat; */
+  background-image: url('/src/images/delete-book.svg');
 }
-.shop-delete-btn:hover, .shop-delete-btn:focus {
-   background-color: var(--color-yellow-componemt);
- 
+
+.shop-delete-btn:hover,
+.shop-delete-btn:focus {
+  background-color: var(--color-yellow-componemt);
 }
+
 @media screen and (min-width: 768px) {
   .shop-delete-btn {
     top: 24px;
     right: 24px;
     width: 34px;
     height: 34px;
+    background-size: 18px 18px;
   }
 }
-.icon-delete {
-  width: 12px;
-  height: 12px;
-}
+
 .shop-link-platform {
   outline: 2px solid red;
   outline-offset: -2px;
+}
+.shop-link-amazon,
+.shop-link-applebook,
+.shop-link-bookshop {
+  display: block;
+  width: 32px;
+  height: 11px;
+
+  background-image: url('/src/images/amazon.svg');
+  background-repeat: no-repeat;
+  background-size: 32px 11px;
+  background-position: center;
+  filter: grayscale(100%);
+}
+.shop-link-applebook {
+  width: 16px;
+  height: 16px;
+  background-image: url('/src/images/applebook.svg');
+  background-size: 16px 16px;
+}
+.shop-link-bookshop {
+  width: 16px;
+  height: 16px;
+  background-image: url('/src/images/bookshop.svg');
+  background-size: 16px 16px;
+}
+@media screen and (min-width: 768px) {
+  .shop-link-amazon {
+    width: 48px;
+    height: 15px;
+    background-size: 48px 15px;
+  }
+  .shop-link-applebook {
+    width: 28px;
+    height: 27px;
+    background-size: 28px 27px;
+  }
+  .shop-link-bookshop {
+    width: 32px;
+    height: 30px;
+    background-size: 32px 30px;
+  }
+}
+.shop-link-amazon:hover,
+.shop-link-amazon:focus,
+.shop-link-applebook:hover,
+.shop-link-applebook:focus,
+.shop-link-bookshop:hover,
+.shop-link-bookshop:focus {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
 }

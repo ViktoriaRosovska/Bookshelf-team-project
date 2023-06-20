@@ -27,7 +27,7 @@ if (bookList) {
   removeStorageBtn.addEventListener('click', onStorageDelete);
   bookList.addEventListener('click', onIdClick);
 }
-  
+
 const idModal = document.querySelector('.about-book-modal');
 const idBackdropModal = document.querySelector('.card-backdrop-modal');
 
@@ -192,8 +192,6 @@ function onStorageDelete() {
   storageCheck();
 }
 
-
-
 // Функція, яка закриває модальне вікно
 const backdrop = document.querySelector('.card-backdrop-modal');
 const modal = document.querySelector('.modal');
@@ -231,6 +229,3 @@ if (modal) {
   document.addEventListener('keydown', closeModalOnEsc);
 }
 
-
-
-// Прокрутка

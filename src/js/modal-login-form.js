@@ -1,30 +1,40 @@
-// кнопка, откр мод окно
+// кнопка, що відкриває модальне вікно
 const btn = document.querySelector('.authorisation-btn');
 
-// мод окно
+// модальне вікно
 const modal = document.querySelector('.modal-login-form');
 
-// крестик для закр мод окна
+// хрестик для закриття модального вікна
 const closeBtn = document.querySelector('.modal-login-form-close-btn');
 const overlayLoginForm = document.querySelector('.overlayLoginForm');
 
+// Функція приховування модального вікна
+function hideModal() {
+  modal.style.display = 'none';
+  overlayLoginForm.style.display = 'none';
+}
+
 if (modal) {
-  // клик откр мод окно
+  // клік відкриває модальне вікно
   btn.onclick = function () {
-    modal.style.display = "block";
+    modal.style.display = 'block';
     overlayLoginForm.style.display = 'block';
   };
 
-  // При клике на крестик закр мод окно
-  closeBtn.onclick = function () {
-    modal.style.display = "none";
-    overlayLoginForm.style.display = "none";
-  };
+  // При натисканні на хрестик закриваємо модальне вікно
+  closeBtn.onclick = hideModal;
 
-  // При клике вне мод окна закр его
+  // При кліку поза модальним вікном або на бекдропі закриваємо його
   window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    if (event.target === modal || event.target === overlayLoginForm) {
+      hideModal();
     }
   };
+
+  // При натисканні кнопки Esc закриваємо модальне вікно
+  window.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      hideModal();
+    }
+  });
 }
