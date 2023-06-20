@@ -13,8 +13,32 @@ const api = new APIService();
 
 export default async function createMarkup(category) {
   const res = await api.fetchBooksByCategory(category);
+  console.log(res);
   const books = await res.data;
   console.log(books);
+
+// =======================load_more================
+  const loadMoreBtn = document.querySelector('.js-load_more-rendering');
+  let page = 1;
+
+  
+  function handlerPagination(){
+    page += 1;
+    createMarkup(page)
+    .then(data => {
+      bookCollection.innerHTML = collectionMarkup();
+    })
+
+  }
+
+
+
+
+  function collectionMarkup() {
+    return `<h1 class="collection-title">${category}</h1>
+    
+    <ul class="top-books js-list-rendering rendering-gap">
+
 
   function removeLastWord(category) {
     let words = category.split(' ');
@@ -30,6 +54,7 @@ export default async function createMarkup(category) {
   function collectionMarkup() {
     return `<h1 class="collection-title">${removeLastWord(category)} <span>${LastWord(category)}</span></h1>
     <ul class="top-books rendering-gap js-list-rendering">
+
     ${books
       .map(({ title, book_image, author, _id }) => {
         return `<li class="book-card" id="${_id}">
@@ -44,9 +69,14 @@ export default async function createMarkup(category) {
   </li>`;
       })
       .join('')}
-    </ul>`;
+      <button class="js-load_more-rendering">load more</button>
+    </ul>
+    
+    `;
   }
   bookCollection.innerHTML = collectionMarkup();
+  loadMoreBtn.addEventListener('click', handlerPagination)
+
 }
 
 // const collectionMarkup = books

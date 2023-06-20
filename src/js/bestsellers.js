@@ -52,6 +52,11 @@ export default async function renderCategories() {
   bookCollectionBest.insertAdjacentHTML('beforeend', bookCategories);
 }
 
+
+
+ renderCategories();
+
+
 if (bookCollection) {
   renderCategories();
   bookCollection?.addEventListener('click', onSeeMoreBtnClick);
@@ -102,7 +107,15 @@ async function createBooksOnSeeMoreBtn(category) {
   bookCollection.innerHTML = collectionMarkup();
 }
 
+
 // ========================//
 // On All Categories Click //
 // ========================//
+
+
+//             if (text.length > limit) {
+//               cuttedText += '...';
+//             }
+
+
 

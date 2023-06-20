@@ -25,11 +25,17 @@ async function getBookCategory() {
   }
 }
 
+     getBookCategory();
+
+    categoriesList.addEventListener('click', onCategoryListSearchCategory);
+
+
 if (categoriesList) {
   getBookCategory();
 
   categoriesList.addEventListener('click', onCategoryListSearchCategory);
 }
+
 
 async function onCategoryListSearchCategory(e) {
   if (e.target.nodeName !== 'LI') {
