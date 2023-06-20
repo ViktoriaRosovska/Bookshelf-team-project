@@ -24,12 +24,10 @@ async function getBookCategory() {
     }
 }
 
-if (categoriesList)
-{
-    getBookCategory();
+     getBookCategory();
 
     categoriesList.addEventListener('click', onCategoryListSearchCategory);
-}
+
 
 async function onCategoryListSearchCategory(e) {
     if (e.target.nodeName !== 'LI') {
