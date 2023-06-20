@@ -1,16 +1,29 @@
 <div class="card-backdrop-modal is-hidden">
-    <div class="modal is-hidden about-book-modal">
-      <button
-        id="modal-close"
-        class="close-modal-btn"
-        type="button"
-        aria-label="close"
-      >
-         <svg class="button-close-icon" width="28" height="28"> 
-          <use href="./images/symbol-defs.svg#close-btn-icon"></use>
-        </svg> 
+  <div class="modal is-hidden about-book-modal">
+    <button
+      id="modal-close"
+      class="close-modal-btn"
+      type="button"
+      aria-label="close"
+    >
+      <svg class="button-close-icon" width="28" height="28">
+        <use href="./images/symbol-defs.svg#close-btn-icon"></use>
+      </svg>
+    </button>
+    <div id="allModal" class="book-info-modal-tablet"></div>
+    <div class="storage-button-wrapper">
+      <button type="button" class="add-storage-button modal__shopping-button">
+        Add to shopping list
       </button>
-      <div id="allModal" class="book-info-modal-tablet"></div>
+      <div class="remove-storage-btn">
+        <button
+          type="button"
+          class="storage-delete-button modal__shopping-button">
+          Remove from the shopping list
+        </button>
+        <p class="storage-info"></p>
+      </div>
     </div>
   </div>
-  
+</div>
+

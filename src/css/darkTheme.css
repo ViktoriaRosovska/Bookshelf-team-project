@@ -21,13 +21,18 @@ body.dark-theme .icon-bookshelf:focus {
   fill: var(--color-blue-component);
 }
 
-body.dark-theme .list-btn {
+body.dark-theme .list-btn-svg {
   fill: #ffffff;
+}
+
+body.dark-theme .list-btn.current .list-btn-svg {
+  fill: #111111;
 }
 
 body.dark-theme .header-nav .current {
   color: #111111;
 }
+
 
 body.dark-theme .current:hover,
 body.dark-theme .current:focus {
@@ -141,12 +146,19 @@ body.dark-theme .button-close-icon {
   stroke: #ffffff;
 }
 
-
+body.dark-theme .add-storage-button,
+body.dark-theme .storage-delete-button,
 body.dark-theme .close-modal-btn {
    color: #fff;
    background-color: transparent;
 }
 
+body.dark-theme .add-storage-button:hover,
+body.dark-theme .storage-delete-button:hover,
+body.dark-theme .add-storage-button:focus,
+body.dark-theme .storage-delete-button:focus {
+  background: var(--color-blue-component);
+}
 
 /* стилі для "modal-login-form" */
 
@@ -168,7 +180,7 @@ body.dark-theme .modal-login-btn {
 }
 
 body.dark-theme .modal-login-form-close-btn {
-  background-color: #eac645;
+  background-color: #61ea45;
 }
 
 
