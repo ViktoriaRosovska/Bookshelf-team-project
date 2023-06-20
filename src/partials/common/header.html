@@ -45,16 +45,52 @@
           <use href="./images/symbol-defs.svg#close-btn-icon"></use>
         </svg>
       </button>
-      <button class="user-btn is-hidden-btn">
-        <svg class="user-icon" width="19" height="19">
-          <use href="./images/symbol-defs.svg#icon-user-fill"></use>
-        </svg>
-        user
-        <svg class="arr-icon" width="14" height="8">
-          <use href="./images/symbol-defs.svg#icon-arr-down"></use>
-        </svg>
-      </button>
-      <button class="authorisation-btn">
+      <div class="select-user-container">
+        <button class="user-btn">
+          <svg class="user-icon" width="19" height="19">
+            <use href="./images/symbol-defs.svg#icon-user-fill"></use>
+          </svg>
+          user
+          <svg class="arr-icon" width="14" height="8">
+            <use href="./images/symbol-defs.svg#icon-arr-down"></use>
+          </svg>
+        </button>
+        <ul class="user-select js-user-select wraper-user-select is-hidden">
+          <li>
+            <button class="log-out-btn-big user-select-btn" type="button">
+              Log out
+              <svg
+                class="log-out-icon big js-log-out-btn"
+                width="14"
+                height="10"
+              >
+                <use href="./images/symbol-defs.svg#icon-arrow"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button class="log-out-btn-big user-select-btn js-user-select-btn">
+              settings
+              <svg class="user-select-icon" width="18" height="14">
+                <use href="./images/symbol-defs.svg#icon-settings-3"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+        <!-- <button class="log-out-btn-big user-select-btn">
+            Log out
+            <svg class="log-out-icon big js-log-out-btn" width="14" height="10">
+              <use href="./images/symbol-defs.svg#icon-arrow"></use>
+            </svg>
+          </button> -->
+        <!-- <button class="log-out-btn-big user-select-btn js-user-select-btn">
+            settings
+            <svg class="log-out-icon big" width="18" height="14">
+              <use href="./images/symbol-defs.svg#icon-settings-3"></use>
+            </svg>
+          </button> -->
+      </div>
+      <button class="authorisation-btn is-hidden-btn">
         Sign up
         <svg class="arr-icon-yellow" width="14" height="10">
           <use href="./images/symbol-defs.svg#icon-arrow"></use>
