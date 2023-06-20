@@ -78,7 +78,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .top-books li:nth-child(n + 2) {
+  .bestsel-books li:nth-child(n + 2) {
     display: none;
   }
   .book-cover {
@@ -96,7 +96,7 @@
   .collection-title {
     font-size: 48px;
   }
-  .top-books li:nth-child(n + 4) {
+  .bestsel-books li:nth-child(n + 4) {
     display: none;
   }
   .book-cover {
@@ -120,7 +120,7 @@
   .collection-title {
     font-size: 48px;
   }
-  .top-books li {
+  .bestsel-books li {
     display: block;
   }
   .book-cover {
