@@ -1,17 +1,17 @@
 body.dark-theme {
-    background-color: var(--dark-theme);
-    color: var(--ligtht-theme);
+  background-color: var(--dark-theme);
+  color: var(--ligtht-theme);
 }
 
 /* стилі для "header" */
 
-body.dark-theme .header-container { 
+body.dark-theme .header-container {
   background-color: var(--dark-theme-componemt);
-  border: 1.5px solid #FFFFFF;
+  border: 1.5px solid #ffffff;
 }
 
-body.dark-theme .icon-bookshelf{
-    fill:  #F3F3F3;
+body.dark-theme .icon-bookshelf {
+  fill: #f3f3f3;
 }
 
 body.dark-theme .logo-link:hover,
@@ -21,37 +21,55 @@ body.dark-theme .icon-bookshelf:focus {
   fill: var(--color-blue-component);
 }
 
+body.dark-theme .list-btn-svg {
+  fill: #ffffff;
+}
 
-body.dark-theme .list-btn {
-  fill:  #FFFFFF;
+body.dark-theme .list-btn.current .list-btn-svg {
+  fill: #111111;
 }
 
 body.dark-theme .header-nav .current {
-    color: #111111;
+  color: #111111;
 }
+
 
 body.dark-theme .current:hover,
 body.dark-theme .current:focus {
   color: var(--ligtht-theme);
   fill: var(--ligtht-theme);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15), 3px 12px 38px -5px rgba(231, 166, 26, 0.72);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15),
+    3px 12px 38px -5px rgba(231, 166, 26, 0.72);
 }
 
 body.dark-theme .checkbox {
-  background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+  background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+body.dark-theme .close-menu-btn {
+  color: #ffffff;
+  background-color: var(--dark-theme-componemt);
+}
+
+body.dark-theme .close-menu-icon,
+body.dark-theme .burger-meny-icon {
+  stroke: #ffffff;
+}
 
 /* стилі для "book-category" */
 
 body.dark-theme .book-category__list-item {
-    color: rgba(255, 255, 255, 0.6);  
+  color: rgba(255, 255, 255, 0.6);
 }
 
 body.dark-theme .book-category__list-item:hover,
 body.dark-theme .book-category__list-item:focus {
-    color: #EAC645;
+  color: #eac645;
+}
+
+body.dark-theme .active {
+  color: #eac645;
 }
 
 body.dark-theme ::-webkit-scrollbar-thumb {
@@ -61,29 +79,113 @@ body.dark-theme ::-webkit-scrollbar-thumb {
 /* стилі для "home-books" */
 
 body.dark-theme .book-card-btn {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 body.dark-theme .book-card-btn:hover,
 body.dark-theme .book-card-btn:focus {
-  background-color: #4F2EE8;
+  background-color: var(--color-blue-component);
 }
 
-/* стилі для "shopping-list" */
+/* стилі для "page shopping-list" */
 
 body.dark-theme .shop-main-title {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
+body.dark-theme .shop-item-book {
+  background: #111111;
+}
+
+body.dark-theme .shop-secondary-title,
+body.dark-theme .shop-desc {
+  color: #ffffff;
+}
+
+body.dark-theme .shop-link-amazon {
+  filter: brightness(0) invert(1);
+}
+
+body.dark-theme .shop-link-amazon:hover,
+body.dark-theme .shop-link-applebook:hover,
+body.dark-theme .shop-link-bookshop:hover,
+body.dark-theme .shop-link-amazon:focus,
+body.dark-theme .shop-link-applebook:focus,
+body.dark-theme .shop-link-bookshop:focus{
+  box-shadow: 0px 3px 3px rgba(251, 251, 251, 0.15);
+}
+
+body.dark-theme .shop-text-backgr {
+  color: rgba(255, 255, 255, 0.6);
+}
 
 /* стилі для "footer" */
 
 body.dark-theme .footer_container {
-  border: 1.5px solid #FFFFFF;
+  border: 1.5px solid #ffffff;
   background-color: var(--dark-theme-componemt);
 }
 
 body.dark-theme .footer_text_right,
 body.dark-theme .footer_text_left {
-  color: #FFFFFF;
+  color: #ffffff;
+}
+
+/* стилі для "modal-shopping-list" */
+
+body.dark-theme .modal {
+  background: #202024;
+}
+
+body.dark-theme .title-about-book-modal,
+body.dark-theme .text-about-book-modal {
+  color: #ffffff;
+}
+
+body.dark-theme .button-close-icon {
+  stroke: #ffffff;
+}
+
+body.dark-theme .add-storage-button,
+body.dark-theme .storage-delete-button,
+body.dark-theme .close-modal-btn {
+   color: #fff;
+   background-color: transparent;
+}
+
+body.dark-theme .add-storage-button:hover,
+body.dark-theme .storage-delete-button:hover,
+body.dark-theme .add-storage-button:focus,
+body.dark-theme .storage-delete-button:focus {
+  background: var(--color-blue-component);
+}
+
+/* стилі для "modal-login-form" */
+
+body.dark-theme .modal-login-form,
+body.dark-theme .modal-login-form-name,
+body.dark-theme .modal-login-form-email,
+body.dark-theme .modal-login-form-password {
+  background: #202024;
+  border: 2px solid #f6f6f6;
+}
+
+body.dark-theme ::placeholder {
+  color: #f6f6f6;
+}
+
+body.dark-theme .modal-login-btn {
+  background: #f6f6f6;
+  color: #202024;
+}
+
+body.dark-theme .modal-login-form-close-btn {
+  background-color: #61ea45;
+}
+
+
+body.dark-theme .modal-login-btn:hover,
+body.dark-theme .modal-login-btn:focus {
+  color: #ffffff;
+  background: var(--color-blue-component);
 }

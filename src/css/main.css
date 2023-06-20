@@ -21,9 +21,11 @@
 @import url('./modals/modal-shopping-list.css');
 @import url('./modals/modal-mobile-menu.css');
 
-@import url('./common/footer.css');
 @import url('./darkTheme.css');
 
 @import url('./scrollBtn.css');
 
 @import url('./modals/modal-mobile-menu.css');
+
+@import url('./team-page/teamPage.css');
+@import url('./common/footer.css');

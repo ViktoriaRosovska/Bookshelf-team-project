@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping list</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/tui-pagination/dist/tui-pagination.css"
+    />
     <link rel="stylesheet" href="./css/main.css" />
-    <script type="module" src="./index.js"></script>
   </head>
   <header>
     <include src="./partials/common/header.html"></include>
     <include src="./partials/modals/modal-mobile-menu.html"></include>
+    <include src="./partials/modals/modal-login-form.html"></include>
   </header>
   <body>
     <main>
@@ -28,6 +32,6 @@
     <footer>
       <include src="./partials/common/footer.html"></include>
     </footer>
-    <!--    -->
+    <script type="module" src="./shoplist.js"></script>
   </body>
 </html>

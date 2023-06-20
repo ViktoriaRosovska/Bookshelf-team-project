@@ -1,11 +1,12 @@
 /* всплывающий текст при ховере */
+/* ============================ */
 
 .book-thumb {
   position: relative;
   overflow: hidden;
 
   border-radius: 8px;
-    margin-bottom: 14px;
+  margin-bottom: 14px;
 }
 
 .quick-view {
@@ -34,7 +35,7 @@
 .quick-view-text {
   font-size: 18px;
   font-weight: 600;
-  
+
 }
 
 /* =============================== */
@@ -77,7 +78,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .top-books li:nth-child(n + 2) {
+  .bestsel-books li:nth-child(n + 2) {
     display: none;
   }
   .book-cover {
@@ -95,7 +96,7 @@
   .collection-title {
     font-size: 48px;
   }
-  .top-books li:nth-child(n + 4) {
+  .bestsel-books li:nth-child(n + 4) {
     display: none;
   }
   .book-cover {
@@ -119,7 +120,7 @@
   .collection-title {
     font-size: 48px;
   }
-  .top-books li {
+  .bestsel-books li {
     display: block;
   }
   .book-cover {

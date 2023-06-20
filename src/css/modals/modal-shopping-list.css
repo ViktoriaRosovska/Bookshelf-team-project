@@ -28,63 +28,79 @@
   border-radius: 18px;
   padding: 40px;
 }
-
-.close-modal-btn{
+.close-modal-btn {
   position: absolute;
-  top: 31px;
-  right: 31px;
+  padding: 0;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+  transition: fill 0.3s ease;
+  background: #f6f6f6;
+  fill: #111111;
+}
+.close-modal-btn:hover {
+  fill: #4f2ee8;
 }
 
-.button-close-icon{
+.button-close-icon {
   fill: #111111;
   border: #111111;
 }
 
-.storage-button-wrapper{
-  margin-top: 321px;
+.book-info-modal-tablet {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
 }
-
+.image-about-book-modal{
+  width: 287px;
+  height: 408px;
+  margin: auto;
+}
+.add-storage-button {
+  padding: 14px 28px;
+}
 .modal__shopping-button {
-  width: 499px;
-  height: 64px;
   border: 2px solid #4f2ee8;
   border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  line-height: 18px;
+  width: 499px;
+  text-transform: uppercase;
   font-weight: bold;
-  color: #4f2ee8;
+  color: #111111;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+.storage-delete-button {
+  padding: 14px 23px;
+  margin-bottom: 8px;
 }
 
-.image-about-book-modal{
-width: 192px;
-height: 281px;
-margin-right: auto;
-}
+
 
 .info-modal{
   display: block;
-  margin-left: 24px;
-  margin-bottom: 121px;
+
 }
 
 .title-about-book-modal{
-  width: 192px;
-  height: 28px;
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 18px;
   letter-spacing: -0.04em;
   color: #111111;
+  margin-bottom: 4px;
 }
 
 .author-about-book-modal{
-  width: 92px;
-  height: 18px;
   font-family: 'DM Sans';
   font-style: italic;
   font-weight: 400;
@@ -92,11 +108,10 @@ margin-right: auto;
   line-height: 18px;
   letter-spacing: -0.04em;
   color: #B4AFAF;
+  margin-bottom: 18px;
 }
 
 .text-about-book-modal{
-  width: 279px;
-  height: 70px;
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
@@ -104,16 +119,18 @@ margin-right: auto;
   line-height: 18px;
   letter-spacing: -0.04em;
   color: #111111;
+  margin-bottom: 20px;
 }
 
 .shop-modal-list{
   display: flex;
   gap: 20px;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .storage-info{
-  width: 324px;
-  height: 28px;
+
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
@@ -124,3 +141,45 @@ margin-right: auto;
   color: rgba(17, 17, 17, 0.5);
 }
 
+
+/* мобільна версія */
+@media (max-width: 767px) {
+
+  .modal {
+    width: 335px;
+    height: 762px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+  
+  }
+
+  .close-modal-btn {
+    top: 18px;
+    right: 18px;
+    width: 12px;
+    height: 12px;
+    
+  }
+  
+  .book-info-modal-tablet {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .image-about-book-modal{
+    width: 287px;
+    height: 408px;
+    margin: auto
+  }
+
+  .author-about-book-modal{
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .text-about-book-modal{
+    margin-bottom: 14px;
+  }
+
+}
