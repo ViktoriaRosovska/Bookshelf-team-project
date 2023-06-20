@@ -23,17 +23,17 @@ let storageArr = [];
 let storageObj = {};
 
 if (bookList) {
-  addStorageBtn.addEventListener('click', onStorageAdd);
-  removeStorageBtn.addEventListener('click', onStorageDelete);
-  bookList.addEventListener('click', onIdClick);
+  addStorageBtn?.addEventListener('click', onStorageAdd);
+  removeStorageBtn?.addEventListener('click', onStorageDelete);
+  bookList?.addEventListener('click', onIdClick);
 }
 
 const idModal = document.querySelector('.about-book-modal');
 const idBackdropModal = document.querySelector('.card-backdrop-modal');
 
 function openModalId() {
-  idModal.classList.remove('is-hidden');
-  idBackdropModal.classList.remove('is-hidden');
+  idModal?.classList.remove('is-hidden');
+  idBackdropModal?.classList.remove('is-hidden');
 }
 
 function onIdClick(e) {
@@ -50,15 +50,18 @@ function onIdClick(e) {
 }
 
 async function createModal(bookId) {
-  allModal.innerHTML = '';
+  if (allModal) {
+     allModal.innerHTML = '';
+  }
+ 
   try {
     const data = await fetchBookById(bookId);
     storageCheck();
     createMarkup(data);
     return data;
   } catch (error) {
-    console.error('Error', error);
-    throw error;
+    console.log('Error', error);
+    // throw error;
   }
 }
 
@@ -80,16 +83,17 @@ async function fetchBookById(bookId) {
     };
     return data;
   } catch (error) {
-    console.error('Error', error);
-    throw error;
+    console.log('Error', error);
+    // throw error;
   }
 }
 
 function storageCheck() {
   const storageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
   const idToFind = storageObj.id;
-
+ console.log(addStorageBtn);
   if (!storageArr || storageArr.length === 0) {
+   
     addStorageBtn.style.display = 'block';
     removeStorageBtn.style.display = 'none';
     return;
@@ -97,7 +101,7 @@ function storageCheck() {
     const objToFind = storageArr.find(obj => obj.id === idToFind);
     if (!objToFind) {
       addStorageBtn.style.display = 'block';
-      removeStorageBtn.style.display = 'none';
+      removeStorageBtn?.style.display = 'none';
     } else {
       addStorageBtn.style.display = 'none';
       removeStorageBtn.style.display = 'block';
@@ -203,9 +207,9 @@ const modal = document.querySelector('.modal');
 const closeButton = document.getElementById('modal-close');
 
 function closeModal() {
-  backdrop.classList.add('is-hidden');
-  modal.classList.add('is-hidden');
-  document.body.classList.remove('modal-open');
+  backdrop?.classList.add('is-hidden');
+  modal?.classList.add('is-hidden');
+  document.body?.classList.remove('modal-open');
   document.removeEventListener('keydown', closeModalOnEsc);
 }
 
@@ -223,13 +227,13 @@ function closeModalOnButton() {
 
 // Функція, яка закриває модальне вікно при натисканні на ESC
 function closeModalOnEsc(event) {
-  if (event.key === 'Escape') {
+  if (event.code === 'Escape') {
     closeModal();
   }
 }
 
 if (modal) {
-  backdrop.addEventListener('click', closeModalOnBackdropClick);
-  closeButton.addEventListener('click', closeModalOnButton);
-  document.addEventListener('keydown', closeModalOnEsc);
+  backdrop?.addEventListener('click', closeModalOnBackdropClick);
+  closeButton?.addEventListener('click', closeModalOnButton);
+  window.addEventListener('keydown', closeModalOnEsc);
 }
