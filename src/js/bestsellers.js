@@ -4,6 +4,7 @@ const api = new APIService();
 
 const bookCollection = document.querySelector('.books-collection');
 
+
 async function getBestSellers() {
   const response = await api.fetchBestSellersBooks();
   const bestSellers = await response.data;
@@ -14,7 +15,7 @@ function createBookCategoryMarkup(category) {
   return `
     <li class="book-category-item">
       <p class="book-category">${category.list_name}</p>
-      <ul class="top-books js-list-rendering">
+      <ul class="top-books bestsel-books js-list-rendering">
         ${category.books
           .map(book => {
             return `
@@ -52,15 +53,6 @@ if (bookCollection) {
   bookCollection?.addEventListener('click', onSeeMoreBtnClick);
 }
 
-// cutting text
-// const limit = 18;
-//             const text = book.title;
-//             console.log(text);
-//             let cuttedText = text.slice(0, limit);
-
-//             if (text.length > limit) {
-//               cuttedText += '...';
-//             }
 const titleCollection = document.querySelector('.collection-title')
 
 bookCollection.addEventListener('click', onSeeMoreBtnClick);
@@ -73,25 +65,37 @@ async function onSeeMoreBtnClick(e) {
   if (target.matches('button[data-category]')) {
     const category = target.dataset.category;
     console.log(category);
-
-
-    const res = await api.fetchBooksByCategory(category);
-    const books = await res.data;
-    console.log(books);
-    const collectionMarkup = books.map(({title,
-        book_image,
-        author,
-      _id, }) => {
-      
-      titleCollection.textContent = category;
-      console.log(titleCollection.textContent);
-       return  `<li class="flex-element" id="${_id}">
-      <img src="${book_image}" alt="${title}">
-      <h2>${title}</h2>
-      <p>${author}</p>
-  </li>`
-    })
-    .join('');
-    bookCollection.innerHTML = collectionMarkup;
+    titleCollection.textContent = category;
+    createBooksOnSeeMoreBtn(category);
   }
- }
+}
+ 
+async function createBooksOnSeeMoreBtn(category) {
+  const res = await api.fetchBooksByCategory(category);
+  const books = await res.data;
+  console.log(books);
+  function collectionMarkup() {
+    return `
+    <ul class="top-books rendering-gap js-list-rendering">
+    ${books
+      .map(({ title, book_image, author, _id }) => {
+        return `
+        <li class="book-card" id=${_id}>
+        <div class="book-thumb">
+         <img class="book-cover" src="${book_image}" alt="${title}">
+         <div class="quick-view">
+          <p class="quick-view-text">QUICK VIEW</p>
+         </div>
+        </div>
+      <h2 class="book-name">${title}</h2>
+      <h3 class="book-author">${author}</h3>
+  </li>
+  `;
+      })
+      .join('')}
+    </ul>`;
+  }
+  bookCollection.innerHTML = collectionMarkup();
+}
+
+// ====================//
