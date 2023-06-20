@@ -1,4 +1,4 @@
-
+/* 
 .card-backdrop-modal {
   position: fixed;
   z-index: 23;
@@ -30,7 +30,7 @@
 }
 
 .close-modal-btn{
-  position: absolute;
+  background-image: url('/src/images/modal-login-form-close-btn.svg');
   top: 31px;
   right: 31px;
 }
@@ -122,5 +122,166 @@ margin-right: auto;
   text-align: center;
   letter-spacing: -0.04em;
   color: rgba(17, 17, 17, 0.5);
+} */
+body.modal-open {
+  overflow: hidden;
 }
 
+
+.card-backdrop-modal {
+  position: fixed;
+  z-index: 23;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.4);
+  overflow: auto;
+  opacity: 1;
+  transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 579px;
+  height: 465px;
+  background: #ffffff;
+  border: 2px solid #111111;
+  border-radius: 18px;
+  padding: 40px;
+}
+.close-modal-btn {
+  position: absolute;
+  padding: 0;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+  transition: fill 0.3s ease;
+  background: #f6f6f6;
+  fill: #111111;
+}
+.close-modal-btn:hover {
+  fill: #4f2ee8;
+}
+
+.button-close-icon {
+  fill: #111111;
+  border: #111111;
+}
+
+.add-storage-button {
+  padding: 14px 28px;
+}
+.modal__shopping-button {
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  line-height: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #111111;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+.storage-delete-button {
+  padding: 14px 23px;
+  margin-bottom: 8px;
+}
+.image-about-book-modal{
+width: 287px;
+height: 408px;
+margin: auto;
+}
+
+.info-modal{
+  display: block;
+
+}
+
+.title-about-book-modal{
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.author-about-book-modal{
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: #B4AFAF;
+  margin-bottom: 18px;
+}
+
+.text-about-book-modal{
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: #111111;
+  margin-bottom: 14px;
+}
+
+.shop-modal-list{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.storage-info{
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: rgba(17, 17, 17, 0.5);
+}
+
+/* тут я лише частково поправила, пройдись по макету і поправ до кінця */
+@media (min-width: 768px) {
+  .modal__shopping-button {
+    width: 499px;
+  }
+  .modal__shopping-button {
+    width: 499px;
+  }
+  .modal {
+    width: 579px; 
+  }
+  .book-info-modal-tablet {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .image-about-book-modal{
+    width: 192px;
+    height: 281px;    }
+    .modal {
+      padding: 40px 40px;
+    }
+}
