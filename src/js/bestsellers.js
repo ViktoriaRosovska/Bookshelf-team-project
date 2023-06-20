@@ -3,7 +3,7 @@ import { APIService } from './API-service';
 const api = new APIService();
 
 const bookCollection = document.querySelector('.books-collection');
-const allCategoriesBooks = document.querySelector('.js-all-categories');
+// const allCategoriesBooks = document.querySelector('.js-all-categories');
 const bookCollectionBest = document.querySelector('.books-gallery');
 
 async function getBestSellers() {
@@ -14,7 +14,7 @@ async function getBestSellers() {
 
 function createBookCategoryMarkup(category) {
   return `
-  <h1 class="collection-title">Best Sellers <span>Books</span></h1>
+  
     <li class="book-category-item">
       <p class="book-category">${category.list_name}</p>
       <ul class="top-books bestsel-books js-list-rendering">
@@ -48,7 +48,8 @@ export default async function renderCategories() {
     console.log(category);
     bookCategories += createBookCategoryMarkup(category);
   }
-  bookCollectionBest.innerHTML = bookCategories;
+  bookCollectionBest.innerHTML = `<h1 class="collection-title">Best Sellers <span>Books</span></h1>`;
+  bookCollectionBest.insertAdjacentHTML('beforeend', bookCategories);
 }
 
 if (bookCollection) {
