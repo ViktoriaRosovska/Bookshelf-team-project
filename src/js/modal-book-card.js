@@ -142,7 +142,7 @@ function createMarkup(data) {
     alt="Amazon"
   /></a></li>
   <li class="shop-modal-item"><a href="${marketAppleBooks}" target="_blank"
-    > <img 
+    > <img class="marketApple"
     width="33"
     height="32"
     srcset="

@@ -82,7 +82,7 @@
   margin-bottom: 8px;
 }
 
-.amazon {
+.amazon, .marketApple {
   filter: grayscale(100%);
 }
 
