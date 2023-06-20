@@ -8,7 +8,6 @@ const Theme = {
 
 const STORAGE_KEY = 'theme';
 
-
 checkBoxEl.addEventListener('change', onCheckboxClick);
 
 savedThemeOnReloaded();
@@ -42,4 +41,3 @@ function savedThemeOnReloaded() {
     checkBoxEl.checked = false;
   }
 }
-
