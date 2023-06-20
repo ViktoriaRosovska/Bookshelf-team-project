@@ -25,7 +25,7 @@ let storageObj = {};
 if (bookList) {
   addStorageBtn?.addEventListener('click', onStorageAdd);
   removeStorageBtn?.addEventListener('click', onStorageDelete);
-  bookList?.addEventListener('click', onIdClick);
+  bookList.addEventListener('click', onIdClick);
 }
 
 const idModal = document.querySelector('.about-book-modal');
@@ -118,11 +118,11 @@ function createMarkup(data) {
   const marketBookshop = data.buy_links[4].url;
   const bookDescription = data.description;
   // //перевірка на наявність опису книги в api
-  // let descriptionMarkup = bookDescription;
-  // if (bookDescription === '') {
-  //   descriptionMarkup =
-  //     'Unfortunately, a brief description of this book is currently unavailable. But let that not hinder you from opening its pages and immersing yourself in the unforgettable world it creates.';
-  // }
+  let descriptionMarkup = bookDescription;
+  if (bookDescription === '') {
+    descriptionMarkup =
+      'Unfortunately, a brief description of this book is currently unavailable. But let that not hinder you from opening its pages and immersing yourself in the unforgettable world it creates.';
+  }
 
   const html = `  
   <img src="${bookModalImage}" alt="Book Image" class="image-about-book-modal">
