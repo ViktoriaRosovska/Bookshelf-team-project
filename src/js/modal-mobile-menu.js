@@ -17,7 +17,7 @@ function showModal(elem) {
     headerEl?.classList.add('index')
     wraperMobileMenuEl?.classList.add('no-scroll')
     body?.classList.add('no-scroll')
-    // wraperMobileMenuEl?.classList.remove('is-hidden-mobile')
+    wraperMobileMenuEl?.classList.remove('is-hidden-mobile')
      menuMobileEl.classList.add('active-mobile-menu')
     burgerBtnEl?.classList.add('is-hidden-btn')
     closeModalBtnEl?.classList.remove('is-hidden-btn')
