@@ -17,39 +17,17 @@ export default async function createMarkup(category) {
   const books = await res.data;
   console.log(books);
 
-// =======================load_more================
-  const loadMoreBtn = document.querySelector('.js-load_more-rendering');
-  let page = 1;
-
-  
-  function handlerPagination(){
-    page += 1;
-    createMarkup(page)
-    .then(data => {
-      bookCollection.innerHTML = collectionMarkup();
-    })
-
-  }
-
-
-
-
-  function collectionMarkup() {
-    return `<h1 class="collection-title">${category}</h1>
-    
-    <ul class="top-books js-list-rendering rendering-gap">
-
-
   function removeLastWord(category) {
     let words = category.split(' ');
     words.pop();
     let result = words.join(' ');
     return result;
   }
-      function LastWord(category) {
+  
+  function LastWord(category) {
       var words = category.trim().split(" "); //Splitting sentence into words
       return words[words.length - 1]; //Returning the last word
-    }
+  }
 
   function collectionMarkup() {
     return `<h1 class="collection-title">${removeLastWord(category)} <span>${LastWord(category)}</span></h1>
@@ -69,14 +47,12 @@ export default async function createMarkup(category) {
   </li>`;
       })
       .join('')}
-      <button class="js-load_more-rendering">load more</button>
     </ul>
     
     `;
   }
-  bookCollection.innerHTML = collectionMarkup();
-  loadMoreBtn.addEventListener('click', handlerPagination)
 
+  bookCollection.innerHTML = collectionMarkup();
 }
 
 // const collectionMarkup = books

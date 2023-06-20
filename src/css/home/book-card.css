@@ -1,10 +1,14 @@
 .book-card {
     width: 335px;
-    /* border: 1px solid green; */
     margin: 0;
     margin-bottom: 40px;
 }
 
+.book-card-btn:hover,
+.book-card-btn:focus {
+    background-color: var(--color-blue-component);
+    color: var(--ligtht-theme);
+}
 .book-category {
     color: #B4AFAF;
     font-size: 14px;
