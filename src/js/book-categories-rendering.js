@@ -22,7 +22,7 @@ export default async function createMarkup(category) {
       .map(({ title, book_image, author, _id }) => {
         return `<li class="book-card" id="${_id}">
         <div class="book-thumb">
-      <img class="book-cover" src="${book_image}" alt="${title}">
+      <img class="book-cover" src="${book_image}" alt="${title}" loading="lazy">
       <div class="quick-view">
                 <p class="quick-view-text">QUICK VIEW</p>
                 </div>

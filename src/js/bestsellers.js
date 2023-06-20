@@ -1,10 +1,11 @@
 import { APIService } from './API-service';
+import createMarkup from './book-categories-rendering';
 
 const api = new APIService();
 
-const bookCollection = document.querySelector('.books-collection');
+// const bookCollection = document.querySelector('.books-collection');
 // const allCategoriesBooks = document.querySelector('.js-all-categories');
-const bookCollectionBest = document.querySelector('.books-gallery');
+const bookCollection = document.querySelector('.books-gallery');
 
 async function getBestSellers() {
   const response = await api.fetchBestSellersBooks();
@@ -23,7 +24,7 @@ function createBookCategoryMarkup(category) {
             return `
               <li class="book-card flex-element" id=${book._id}>
               <div class="book-thumb">
-                <img class="book-cover" src="${book.book_image}" alt="${book.title}" />
+                <img class="book-cover" src="${book.book_image}" alt="${book.title}" loading="lazy"/>
                 <div class="quick-view">
                 <p class="quick-view-text">QUICK VIEW</p>
                 </div>
@@ -48,8 +49,8 @@ export default async function renderCategories() {
     console.log(category);
     bookCategories += createBookCategoryMarkup(category);
   }
-  bookCollectionBest.innerHTML = `<h1 class="collection-title">Best Sellers <span>Books</span></h1>`;
-  bookCollectionBest.insertAdjacentHTML('beforeend', bookCategories);
+  bookCollection.innerHTML = `<h1 class="collection-title">Best Sellers <span>Books</span></h1>`;
+  bookCollection.insertAdjacentHTML('beforeend', bookCategories);
 }
 
 if (bookCollection) {
@@ -57,7 +58,7 @@ if (bookCollection) {
   bookCollection?.addEventListener('click', onSeeMoreBtnClick);
 }
 
-const titleCollection = document.querySelector('.collection-title')
+// const titleCollection = document.querySelector('.collection-title')
 
 bookCollection.addEventListener('click', onSeeMoreBtnClick);
 
@@ -69,38 +70,36 @@ async function onSeeMoreBtnClick(e) {
   if (target.matches('button[data-category]')) {
     const category = target.dataset.category;
     console.log(category);
-    titleCollection.textContent = category;
-    createBooksOnSeeMoreBtn(category);
+    // titleCollection.textContent = category;
+    createMarkup(category);
   }
 }
  
-async function createBooksOnSeeMoreBtn(category) {
-  const res = await api.fetchBooksByCategory(category);
-  const books = await res.data;
-  console.log(books);
-  function collectionMarkup() {
-    return `
-    <ul class="top-books rendering-gap js-list-rendering">
-    ${books
-      .map(({ title, book_image, author, _id }) => {
-        return `
-        <li class="book-card" id=${_id}>
-        <div class="book-thumb">
-         <img class="book-cover" src="${book_image}" alt="${title}">
-         <div class="quick-view">
-          <p class="quick-view-text">QUICK VIEW</p>
-         </div>
-        </div>
-      <h2 class="book-name">${title}</h2>
-      <h3 class="book-author">${author}</h3>
-  </li>
-  `;
-      })
-      .join('')}
-    </ul>`;
-  }
-  bookCollection.innerHTML = collectionMarkup();
-}
+// async function createBooksOnSeeMoreBtn(category) {
+//   const res = await api.fetchBooksByCategory(category);
+//   const books = await res.data;
+//   console.log(books);
+//   function collectionMarkup() {
+//     return `<h1 class="collection-title">${category}</h1>
+//     <ul class="top-books rendering-gap js-list-rendering">
+//     ${books
+//       .map(({ title, book_image, author, _id }) => {
+//         return `<li class="book-card" id="${_id}">
+//         <div class="book-thumb">
+//       <img class="book-cover" src="${book_image}" alt="${title}">
+//       <div class="quick-view">
+//                 <p class="quick-view-text">QUICK VIEW</p>
+//                 </div>
+//                 </div>
+//       <h2 class="book-name">${title}</h2>
+//       <h3 class="book-author">${author}</h3>
+//   </li>`;
+//       })
+//       .join('')}
+//     </ul>`;
+//   }
+//   bookCollection.innerHTML = collectionMarkup();
+// }
 
 // ========================//
 // On All Categories Click //
