@@ -15,3 +15,5 @@ import './js/toggleTheme';
 import './js/scrollBtn';
 
 import './js/service-firebase';
+
+import './js/notificationsNotiflix';

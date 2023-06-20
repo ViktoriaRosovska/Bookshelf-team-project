@@ -224,7 +224,8 @@ function closeModalOnEsc(event) {
 }
 
 if (modal) {
-  // Додавання обробників подій
   backdrop.addEventListener('click', closeModalOnBackdropClick);
   closeButton.addEventListener('click', closeModalOnButton);
+  document.addEventListener('keydown', closeModalOnEsc);
 }
+
