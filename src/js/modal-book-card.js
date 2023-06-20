@@ -194,7 +194,6 @@ function onStorageDelete() {
 
 
 
-
 // Функція, яка закриває модальне вікно
 const backdrop = document.querySelector('.card-backdrop-modal');
 const modal = document.querySelector('.modal');
