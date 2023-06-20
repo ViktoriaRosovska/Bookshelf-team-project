@@ -38,8 +38,7 @@
   border: none;
   cursor: pointer;
   transition: fill 0.3s ease;
-  background: #f6f6f6;
-  fill: #111111;
+  stroke: #111111;
 }
 .close-modal-btn:hover {
   fill: #4f2ee8;
