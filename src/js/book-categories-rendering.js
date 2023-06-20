@@ -15,8 +15,20 @@ export default async function createMarkup(category) {
   const res = await api.fetchBooksByCategory(category);
   const books = await res.data;
   console.log(books);
+
+  function removeLastWord(category) {
+    let words = category.split(' ');
+    words.pop();
+    let result = words.join(' ');
+    return result;
+  }
+      function LastWord(category) {
+      var words = category.trim().split(" "); //Splitting sentence into words
+      return words[words.length - 1]; //Returning the last word
+    }
+
   function collectionMarkup() {
-    return `<h1 class="collection-title">${category}</h1>
+    return `<h1 class="collection-title">${removeLastWord(category)} <span>${LastWord(category)}</span></h1>
     <ul class="top-books rendering-gap js-list-rendering">
     ${books
       .map(({ title, book_image, author, _id }) => {
