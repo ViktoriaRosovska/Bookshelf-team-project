@@ -56,8 +56,8 @@
   margin-bottom: 40px;
 }
 .image-about-book-modal{
-  width: 287px;
-  height: 408px;
+  width: 192px;
+  height: 281px;
   margin: auto;
 }
 .add-storage-button {
@@ -82,7 +82,9 @@
   margin-bottom: 8px;
 }
 
-
+.amazon, .marketApple {
+  filter: grayscale(100%);
+}
 
 .info-modal{
   display: block;
@@ -182,4 +184,16 @@
     margin-bottom: 14px;
   }
 
+  .modal__shopping-button {
+    width: 211px;
+    height: 46px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #111111;
+  }
 }
