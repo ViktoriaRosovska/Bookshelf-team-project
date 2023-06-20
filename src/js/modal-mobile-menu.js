@@ -17,8 +17,8 @@ function showModal(elem) {
     headerEl?.classList.add('index')
     wraperMobileMenuEl?.classList.add('no-scroll')
     body?.classList.add('no-scroll')
-    wraperMobileMenuEl?.classList.remove('is-hidden-mobile')
-    // menuMobileEl.classList.add('active')
+    // wraperMobileMenuEl?.classList.remove('is-hidden-mobile')
+     menuMobileEl.classList.add('active-mobile-menu')
     burgerBtnEl?.classList.add('is-hidden-btn')
     closeModalBtnEl?.classList.remove('is-hidden-btn')
 
@@ -26,8 +26,10 @@ function showModal(elem) {
 
 function closeModal(elem) {
     wraperMobileMenuEl?.classList.remove('no-scroll')
-    wraperMobileMenuEl?.classList.add('is-hidden-mobile')
+    //wraperMobileMenuEl?.classList.add('is-hidden-mobile')
     burgerBtnEl?.classList.remove('is-hidden-btn')
     closeModalBtnEl?.classList.add('is-hidden-btn')
+    body?.classList.remove('no-scroll')
+     menuMobileEl.classList.remove('active-mobile-menu')
 
 }
