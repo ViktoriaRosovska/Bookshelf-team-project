@@ -131,7 +131,7 @@ function createMarkup(data) {
   <p class="author-about-book-modal"> ${bookAuthor}</p>
   <p class="text-about-book-modal">${descriptionMarkup}</p>
   <ul class="shop-modal-list"> <li class="shop-modal-item"><a href="${marketAmazon}" target="_blank"
-    > <img
+    > <img class="amazon"
      width="62"
     height="19"
     srcset="
@@ -142,7 +142,7 @@ function createMarkup(data) {
     alt="Amazon"
   /></a></li>
   <li class="shop-modal-item"><a href="${marketAppleBooks}" target="_blank"
-    > <img
+    > <img class="marketApple"
     width="33"
     height="32"
     srcset="

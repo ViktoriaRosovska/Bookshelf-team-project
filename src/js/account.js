@@ -11,7 +11,7 @@ class Account {
             userPassword: password
         }
         this.userStorage.push(user);
-            localStorage.setItem(this.LOCAL_KEY, JSON.stringify(this.userStorage)); 
+        localStorage.setItem(this.LOCAL_KEY, JSON.stringify(this.userStorage)); 
         
     }
     signOut() {
