@@ -1,5 +1,6 @@
 import { APIService } from './API-service';
 import createMarkup from './book-categories-rendering';
+import renderCategories from './bestsellers';
 
 const api = new APIService();
 
@@ -46,7 +47,12 @@ async function onCategoryListSearchCategory(e) {
         e.target.classList.add('active');
        
     }
-
-    await createMarkup(e.target.textContent);
+    if (e.target.textContent !== "All categories") {
+        await createMarkup(e.target.textContent);
+    } else {
+        await renderCategories();
+        }
 }
+
+
 

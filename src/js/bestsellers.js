@@ -3,7 +3,8 @@ import { APIService } from './API-service';
 const api = new APIService();
 
 const bookCollection = document.querySelector('.books-collection');
-
+const allCategoriesBooks = document.querySelector('.js-all-categories');
+const bookCollectionBest = document.querySelector('.books-gallery');
 
 async function getBestSellers() {
   const response = await api.fetchBestSellersBooks();
@@ -13,6 +14,7 @@ async function getBestSellers() {
 
 function createBookCategoryMarkup(category) {
   return `
+  <h1 class="collection-title">Best Sellers <span>Books</span></h1>
     <li class="book-category-item">
       <p class="book-category">${category.list_name}</p>
       <ul class="top-books bestsel-books js-list-rendering">
@@ -38,14 +40,15 @@ function createBookCategoryMarkup(category) {
   `;
 }
 
-async function renderCategories() {
+export default async function renderCategories() {
   let bookCategories = '';
   const topBooks = await getBestSellers();
   console.log(topBooks);
   for (let category of topBooks) {
+    console.log(category);
     bookCategories += createBookCategoryMarkup(category);
   }
-  bookCollection.innerHTML = bookCategories;
+  bookCollectionBest.innerHTML = bookCategories;
 }
 
 if (bookCollection) {
@@ -98,4 +101,7 @@ async function createBooksOnSeeMoreBtn(category) {
   bookCollection.innerHTML = collectionMarkup();
 }
 
-// ====================//
+// ========================//
+// On All Categories Click //
+// ========================//
+
