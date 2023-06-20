@@ -16,12 +16,17 @@ export default async function createMarkup(category) {
   const books = await res.data;
   console.log(books);
   function collectionMarkup() {
-    return `<h1 class="collection-title">Books</h1>
+    return `<h1 class="collection-title">${category}</h1>
     <ul class="top-books rendering-gap js-list-rendering">
     ${books
       .map(({ title, book_image, author, _id }) => {
         return `<li class="book-card" id="${_id}">
+        <div class="book-thumb">
       <img class="book-cover" src="${book_image}" alt="${title}">
+      <div class="quick-view">
+                <p class="quick-view-text">QUICK VIEW</p>
+                </div>
+                </div>
       <h2 class="book-name">${title}</h2>
       <h3 class="book-author">${author}</h3>
   </li>`;
