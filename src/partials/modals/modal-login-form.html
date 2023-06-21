@@ -1,89 +1,74 @@
 <div class="overlayLoginForm"></div>
 <div class="modal-login-form">
   <div>
-    <button class="modal-login-form-close-btn"></button>
+    <button class="modal-login-form-close-btn">
+      <svg class="button-close-icon" width="14" height="14">
+        <use href="./images/symbol-defs.svg#close-btn-icon"></use>
+      </svg>
+    </button>
+
+    <form class="modal-login-up" name="products-form-up">
+      <div class="modal-login-form-input">
+        <input
+          type="text"
+          class="modal-login-form-name"
+          placeholder="NAME"
+          required
+          minlength="4"
+          title="Name must be at least 4 letters long."
+        />
+
+        <input
+          type="email"
+          class="modal-login-form-email"
+          id="email"
+          name="email"
+          placeholder="EMAIL"
+          required
+          title="enter your email address, don't forget to use the obligatory symbol @ "
+        />
+
+        <input
+          type="password"
+          class="modal-login-form-password"
+          id="password"
+          name="password"
+          placeholder="PASSWORD"
+          required
+        />
+        <button type="button" class="modal-login-btn-up">SIGN UP</button>
+      </div>
+    </form>
+    <form class="modal-login-in" name="products-form-in">
+      <div class="modal-login-form-input">
+        <input
+          type="text"
+          class="modal-login-form-name modal-login-form-name-in"
+          placeholder="NAME"
+          required
+          minlength="4"
+          title="Name must be at least 4 letters long."
+        />
+
+        <input
+          type="password"
+          class="modal-login-form-password modal-login-form-password-in"
+          id="password"
+          name="password"
+          placeholder="PASSWORD"
+          required
+        />
+        <button type="button" class="modal-login-btn-in">SIGN IN</button>
+      </div>
+    </form>
+
+    <ul class="modal-login-list">
+      <li>
+        <button class="signUp sign">SIGN UP</button>
+      </li>
+      <li>
+        <button class="signIn sign underline">SIGN IN</button>
+      </li>
+    </ul>
   </div>
-
-  <form class="modal-login-out" name="products-form">
-    <div class="modal-login-form-input">
-      <input
-        type="text"
-        class="modal-login-form-name"
-        placeholder="NAME"
-        required
-        minlength="4"
-        title="Name must be at least 4 letters long."
-      />
-
-      <input
-        type="email"
-        class="modal-login-form-email"
-        id="email"
-        name="email"
-        placeholder="EMAIL"
-        required
-        title="enter your email address, don't forget to use the obligatory symbol @ "
-      />
-
-      <input
-        type="password"
-        class="modal-login-form-password"
-        id="password"
-        name="password"
-        placeholder="PASSWORD"
-        required
-      />
-    </div>
-
-    <button type="button" class="modal-login-btn">SIGN UP</button>
-    <ul class="modal-login-list">
-      <li>
-        <a href="">SIGN UP</a>
-      </li>
-      <li>
-        <a href="">SIGN IN</a>
-      </li>
-    </ul>
-  </form>
-  <form class="modal-login-in" name="products-form">
-    <div class="modal-login-form-input">
-      <input
-        type="text"
-        class="modal-login-form-name"
-        placeholder="NAME"
-        required
-        minlength="4"
-        title="Name must be at least 4 letters long."
-      />
-
-      <input
-        type="email"
-        class="modal-login-form-email"
-        id="email"
-        name="email"
-        placeholder="EMAIL"
-        required
-        title="enter your email address, don't forget to use the obligatory symbol @ "
-      />
-
-      <input
-        type="password"
-        class="modal-login-form-password"
-        id="password"
-        name="password"
-        placeholder="PASSWORD"
-        required
-      />
-    </div>
-
-    <button type="button" class="modal-login-btn">SIGN IN</button>
-    <ul class="modal-login-list">
-      <li>
-        <a href="">SIGN UP</a>
-      </li>
-      <li>
-        <a href="">SIGN IN</a>
-      </li>
-    </ul>
-  </form>
 </div>

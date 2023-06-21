@@ -6,9 +6,13 @@ const api = new APIService();
 const bookGallery = document.querySelector('.books-gallery');
 
 async function getBestSellers() {
+  try {
   const response = await api.fetchBestSellersBooks();
   const bestSellers = await response.data;
-  return bestSellers;
+    return bestSellers;
+  } catch (error) {
+    console.log(error);
+    }
 }
 
 function createBookCategoryMarkup(category) {
@@ -22,7 +26,7 @@ function createBookCategoryMarkup(category) {
             return `
               <li class="book-card flex-element" id=${book._id}>
               <div class="book-thumb">
-                <img class="book-cover" src="${book.book_image}" alt="${book.title}" loading="lazy" />
+                <img class="book-cover" src="${book.book_image}" alt="${book.title}" />
                 <div class="quick-view">
                 <p class="quick-view-text">QUICK VIEW</p>
                 </div>
@@ -41,6 +45,7 @@ function createBookCategoryMarkup(category) {
 
 export default async function renderCategories() {
   let bookCategories = '<ul class="top-books rendering-gap js-list-rendering">';
+  try {
   const topBooks = await getBestSellers();
   for (let category of topBooks) {
     bookCategories += createBookCategoryMarkup(category);
@@ -53,12 +58,19 @@ export default async function renderCategories() {
   bookCollection.addEventListener('click', onSeeMoreBtnClick);
 
   bookGallery.appendChild(bookCollection);
+} catch (eror) {
+  console.log(error);
+  }
 }
 
 
 
 if (bookGallery) {
-  renderCategories();
+  try {
+    renderCategories();
+  } catch (error) {
+    console.log(error);
+    }
 }
 
 async function onSeeMoreBtnClick(e) {
@@ -66,6 +78,7 @@ async function onSeeMoreBtnClick(e) {
     return;
   }
   const target = e.target;
+  try {
   if (target.matches('button[data-category]')) {
     const category = target.dataset.category;
 
@@ -74,7 +87,10 @@ async function onSeeMoreBtnClick(e) {
 
     highlightCategory(category);
     await createBooksOnSeeMoreBtn(category);
-  }
+    }
+  } catch (error) {
+    console.log(error);
+    }
 }
 
 function removeLastWord(category) {
@@ -90,6 +106,7 @@ function LastWord(category) {
 }
   
 async function createBooksOnSeeMoreBtn(category) {
+  try {
   const res = await api.fetchBooksByCategory(category);
   const books = await res.data;
   function collectionMarkup() {
@@ -100,7 +117,7 @@ async function createBooksOnSeeMoreBtn(category) {
         return `
         <li class="book-card" id=${_id}>
         <div class="book-thumb">
-         <img class="book-cover" src="${book_image}" alt="${title}" loading="lazy">
+         <img class="book-cover" src="${book_image}" alt="${title}">
          <div class="quick-view">
           <p class="quick-view-text">QUICK VIEW</p>
          </div>
@@ -114,7 +131,10 @@ async function createBooksOnSeeMoreBtn(category) {
     </ul>`;
   }
   const bookCollection = bookGallery.querySelector(".books-collection");
-  bookCollection.innerHTML = collectionMarkup();
+    bookCollection.innerHTML = collectionMarkup();
+  } catch (error) {
+    console.log(error);
+    }
 }
 
 

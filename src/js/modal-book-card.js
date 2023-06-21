@@ -34,6 +34,7 @@ const idBackdropModal = document.querySelector('.card-backdrop-modal');
 function openModalId() {
   idModal?.classList.remove('is-hidden');
   idBackdropModal?.classList.remove('is-hidden');
+  document.body.style.overflow = 'hidden';
 }
 
 function onIdClick(e) {
@@ -178,7 +179,7 @@ function onStorageAdd() {
 
   const dataToSave = storageObj;
   if (!realStorageArr || realStorageArr.length === 0) {
-    storageArr = [dataToSave];
+    storageArr.push(dataToSave);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(storageArr));
   } else {
     realStorageArr.push(dataToSave);
@@ -188,6 +189,7 @@ function onStorageAdd() {
   storageDescription.textContent =
     'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
   storageCheck();
+  
 }
 
 function onStorageDelete() {
@@ -211,6 +213,7 @@ function closeModal() {
   modal?.classList.add('is-hidden');
   document.body?.classList.remove('modal-open');
   document.removeEventListener('keydown', closeModalOnEsc);
+  document.body.style.overflow = '';
 }
 
 // Функція, яка закриває модальне вікно при кліку на backdrop

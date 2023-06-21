@@ -121,6 +121,48 @@ body.dark-theme .shop-text-backgr {
   color: rgba(255, 255, 255, 0.6);
 }
 
+body.dark-theme .tui-pagination .tui-page-btn {
+  color: var(--ligtht-theme);
+  border: 1px solid var(--ligtht-theme);
+}
+
+body.dark-theme .tui-pagination .tui-page-btn:hover {
+  background-color: var(--ligtht-theme);
+  color: var(--dark-theme-componemt);
+}
+
+body.dark-theme .tui-pagination .tui-is-selected,
+body.dark-theme .tui-pagination strong {
+  border: 1px solid var(--ligtht-theme);
+  background-color: var(--ligtht-theme);
+  color: var(--dark-theme-componemt);
+}
+
+
+body.dark-theme .tui-pagination .tui-first-child.tui-is-selected {
+  border: 1px solid var(--ligtht-theme);
+  background-color: var(--ligtht-theme);
+  color: var(--dark-theme-componemt);
+}
+
+body.dark-theme .tui-pagination .tui-last-child.tui-is-selected {
+  border: 1px solid var(--ligtht-theme);
+  background-color: var(--ligtht-theme);
+  color: var(--dark-theme-componemt);
+}
+
+.tui-page-inputs .tui-page-input {
+  color: var(--ligtht-theme);
+  border: 1px solid var(--ligtht-theme);
+}
+
+.tui-pagination .tui-next-is-ellip,
+.tui-pagination .tui-first + .tui-prev,
+.tui-pagination .tui-next + .tui-last {
+  border: 1px solid var(--ligtht-theme);
+}
+
+
 /* стилі для "footer" */
 
 body.dark-theme .footer_container {
@@ -182,9 +224,11 @@ body.dark-theme .modal-login-btn {
 }
 
 body.dark-theme .modal-login-form-close-btn {
-  background-color: #61ea45;
+  /* background-color: #61ea45; */
 }
-
+body.dark-theme .sign {
+  color: var(--ligtht-theme);
+}
 
 body.dark-theme .modal-login-btn:hover,
 body.dark-theme .modal-login-btn:focus {
