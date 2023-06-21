@@ -127,7 +127,7 @@ function decPassword(dbpass) {
 
 function login(user) {
   localStorage.setItem('user', JSON.stringify(user));
-  window.location = "home.html";
+  window.location = "index.html";
 }
 
 function getUsername() {
@@ -136,7 +136,7 @@ function getUsername() {
 
 function signout() {
   localStorage.removeItem('user');
-  window.location = "home.html";
+  window.location = "index.html";
 }
 window.onload = function () {
   getUsername();
