@@ -12,7 +12,7 @@ const userSelectEl = document.querySelector('.js-user-select')
 const userSelectBtnEl = document.querySelector('.js-user-select-btn')
 const logOutBtn = document.querySelector('.js-log-out-btn')
 const loginForm = document.querySelector('.overlayLoginForm')
-console.log(loginForm);
+// console.log(loginForm);
 
 if (window.location.href === shopList.href) {
     shopList.classList.add('current');
@@ -21,11 +21,17 @@ if (window.location.href === shopList.href) {
     // mobileMenuHome.classList.remove('current');
 }
 
+if (autorisatedUserBtn) {
+    autorisatedUserBtn.addEventListener('click', showUserSelect)
+}
 
-autorisatedUserBtn.addEventListener('click', showUserSelect)
-logOutBtn.addEventListener('click', isLogeOut)
-singUpBtnEl.addEventListener('click', showSingUpForm)
+if (logOutBtn) {
+    logOutBtn.addEventListener('click', isLogeOut)
+}
 
+if (singUpBtnEl) {
+    singUpBtnEl.addEventListener('click', showSingUpForm)
+}
 
 function showUserSelect() {
   userSelectEl.classList.toggle('active-user-select')
@@ -43,6 +49,10 @@ function showSingUpForm(event) {
     loginForm.classList.remove('is-hidden')
 }
 
+
+    
+
+   
   
 
 
