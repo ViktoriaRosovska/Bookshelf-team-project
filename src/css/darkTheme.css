@@ -182,9 +182,11 @@ body.dark-theme .modal-login-btn {
 }
 
 body.dark-theme .modal-login-form-close-btn {
-  background-color: #61ea45;
+  /* background-color: #61ea45; */
 }
-
+body.dark-theme .sign {
+  color: var(--ligtht-theme);
+}
 
 body.dark-theme .modal-login-btn:hover,
 body.dark-theme .modal-login-btn:focus {
