@@ -17,6 +17,7 @@
   background-color: #4F2EE8;
   border: none;
 }
+
 .modal-settings-photo{
   position: absolute;
   top: 15px;
@@ -52,6 +53,7 @@
   gap: 10px;
   margin-bottom: 33px;
 }
+
 .modal-settings-button{
   width: 158px;
   height: 30px;
@@ -75,15 +77,10 @@
   padding-left: 10px;
 }
 
-
 .modal-settings-button:focus,
 .modal-settings-button:hover {
 background: #FFFF00;
 }
-
-
-
-
 
 .modal-settings-button:last-child {
   margin-bottom: 0;
