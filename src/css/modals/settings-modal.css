@@ -1,34 +1,99 @@
-.settings-modal{
-    position: fixed;
-    top: 40px;
-    left: 157px;
-    width: 180px;
-    height: 256px;
-    background-color: #4F2EE8;
-    border: 1.5px solid var(--dark-theme-componemt);
-    border-radius: 18px;
-    padding: 40px;
+.modal-settings{
+  position: fixed;
+  top: 40px;
+  left: 200px;
+  width: 200px;
+  height: 520px;
+  background: #4F2EE8;
+  border: 2px solid #FFFF00;
+  border-radius: 18px;
+  padding: 200px 20px;
 }
 
-.settings-modal-text {
-  width: 94px;
-  height: 18px;
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  margin-bottom: 50px;
+.close-modal-settings{
+  position: absolute;
+  top: 10px;
+  right: 10px;
   background-color: #4F2EE8;
   border: none;
-  padding-left: 10px; 
-  white-space: nowrap;
-  text-align: left;
+}
+.modal-settings-photo{
+  position: absolute;
+  top: 15px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  color: #FFFF00;
+  border: 2px solid #FFFF00;
+  background-color: #565656;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.settings-modal-delete:last-child {
-    margin-bottom: 0; 
-  }
+.modal-settings-input{ 
+  width: 158px;
+  height: 30px;
+  border: 2px solid #111111;
+  border-radius: 18px;
+  display: flex;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.04em;
+  color: #565656;
+  background: #FFFF00;
+  border: none;
+  text-align: center;
+  white-space: nowrap;
+  gap: 10px;
+  margin-bottom: 33px;
+}
+.modal-settings-button{
+  width: 158px;
+  height: 30px;
+  border: 2px solid #111111;
+  border-radius: 18px;
+  display: flex;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.04em;
+  color: #111111;
+  background: #FFFfff;
+  border: none;
+  text-align: center;
+  white-space: nowrap;
+  gap: 10px;
+  margin-bottom: 33px;
+  padding-top: 4px;
+  padding-left: 10px;
+}
+
+
+.modal-settings-button:focus,
+.modal-settings-button:hover {
+background: #FFFF00;
+}
+
+
+
+
+
+.modal-settings-button:last-child {
+  margin-bottom: 0;
+}
+
+.button-svg{
+  fill: #565656;
+}
+
+.button-svg:focus,
+.button-svg:hover {
+  fill: #FFFF00;
+}
