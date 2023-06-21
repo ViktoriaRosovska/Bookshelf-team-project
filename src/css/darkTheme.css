@@ -148,16 +148,17 @@ body.dark-theme .tui-pagination .tui-last-child.tui-is-selected {
   color: var(--dark-theme-componemt);
 }
 
-.tui-page-inputs .tui-page-input {
+body.dark-theme.tui-page-inputs .tui-page-input {
   color: var(--ligtht-theme);
   border: 1px solid var(--ligtht-theme);
 }
 
-.tui-pagination .tui-next-is-ellip,
-.tui-pagination .tui-first + .tui-prev,
-.tui-pagination .tui-next + .tui-last {
+body.dark-theme.tui-pagination .tui-next-is-ellip,
+body.dark-theme.tui-pagination .tui-first + .tui-prev,
+body.dark-theme.tui-pagination .tui-next + .tui-last {
   border: 1px solid var(--ligtht-theme);
 }
+
 
 /* стилі для "footer" */
 
@@ -189,7 +190,9 @@ body.dark-theme .button-close-icon {
 body.dark-theme .add-storage-button,
 body.dark-theme .storage-delete-button,
 body.dark-theme .close-modal-btn {
+
   color: var(--ligtht-theme);
+
   background-color: transparent;
 }
 

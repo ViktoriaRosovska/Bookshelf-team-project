@@ -93,7 +93,7 @@ async function fetchBookById(bookId) {
 function storageCheck() {
   const storageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
   const idToFind = storageObj.id;
- console.log(addStorageBtn);
+
   if (!storageArr || storageArr.length === 0) {
    
     addStorageBtn.style.display = 'block';
