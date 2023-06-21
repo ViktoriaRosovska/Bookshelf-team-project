@@ -8,15 +8,21 @@
 
 .rendering-gap {
   flex-wrap: wrap;
-  gap: 22px;
+  row-gap: 40px;
 }
 
-.flex-element-rendering {
-  flex-basis: calc((100% - 40px) / 3);
-  /* border-radius: 15px;
-    border: 1px purple solid;
-    padding: 15px;
-    
-    align-items: center;
-    background-color: blanchedalmond; */
+@media screen and (min-width: 768px) {
+  .rendering-gap {
+    flex-wrap: wrap;
+    column-gap: 25px;
+    row-gap: 40px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .rendering-gap {
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 40px;
+  }
 }
