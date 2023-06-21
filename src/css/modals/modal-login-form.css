@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 900;
+  z-index: 1500;
   display: none;
   background-color: var(--color-blue-component);
 }
@@ -21,7 +21,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1000;
+  z-index: 2000;
 }
 
 ::placeholder {
@@ -53,26 +53,20 @@
 }
 .modal-login-form-close-btn {
   position: absolute;
+  z-index: 2500;
   top: 14px;
   right: 14px;
-  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
-  background: transparent;
-  border: transparent;
-}
-
-/* .modal-login-form-close-btn::before {
-  content: '';
-  background-image: url('/src/images/modal-login-form-close-btn.svg');
   width: 20px;
   height: 20px;
-  background-position: center;
-  background-repeat: no-repeat;
-} */
+  border: none;
+  background: none;
+  font-size: 16px;
+}
 
 .modal-login-form-input {
   display: flex;
@@ -134,10 +128,13 @@
 .sign {
   background: transparent;
   border: transparent;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .underline {
   text-decoration: underline;
+  color: var(--color-blue-component);
 }
 
 @media screen and (min-width: 768px) {
@@ -175,7 +172,7 @@
     line-height: 24px;
     letter-spacing: -0.01em;
     text-transform: uppercase;
-    color: #111111;
+    color: var(--dark-theme-componemt);
   }
 
   .modal-login-in,
@@ -196,9 +193,9 @@
   }
   .modal-login-form-close-btn {
     position: absolute;
+    border: 1px solid lightgreen;
     top: 24px;
     right: 24px;
-    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,7 +204,10 @@
     background: transparent;
     border: transparent;
     stroke: #111111;
+    width: 28px;
+    height: 28px;
   }
+
 
   .modal-login-form-input {
     display: flex;
@@ -263,11 +263,9 @@
     left: 50%;
     transform: translateX(-50%);
   }
+ 
   .sign {
-    background: transparent;
-    border: transparent;
-  }
-  .underline {
-    text-decoration: underline;
+    font-weight: 700;
+    font-size: 18px;
   }
 }

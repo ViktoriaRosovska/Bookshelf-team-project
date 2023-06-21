@@ -272,6 +272,10 @@ body.dark-theme .user-btn:hover {
   transform: scale(1.01);
 }
 
+.authorisation-btn.is-hidden-btn {
+  display: none;
+}
+
 .arr-icon {
   margin-left: 10px;
 }

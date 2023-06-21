@@ -5,7 +5,6 @@ const burgerBtnEl = document.querySelector('.js-burger')
 const closeModalBtnEl = document.querySelector('.js-close-menu')
 const headerEl = document.querySelector('.header-container')
 const body = document.body;
-// const pageShopingList = window.location
 
 const homeBtnEl = document.querySelector('.js-modal-home-btn')
 const listBtnEl = document.querySelector('.js-modal-list-btn')
@@ -24,7 +23,7 @@ function showModal(elem) {
 
 }
 
-function closeModal(elem) {
+function closeModal() {
     wraperMobileMenuEl?.classList.remove('no-scroll')
     //wraperMobileMenuEl?.classList.add('is-hidden-mobile')
     burgerBtnEl?.classList.remove('is-hidden-btn')
