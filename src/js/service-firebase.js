@@ -58,6 +58,27 @@ function validation() {
   return true;
 }
 
+function validation1() {
+  let nameregex = /^[a-zA-Z\s]+$/;
+  let passwordregex = /^[a-zA-Z0-9]{5,}/;
+
+  if (isEmptyOrSpaces(name1.value) || isEmptyOrSpaces(password1.value)) {
+    reportsWarning("You cannot left any field empty");
+    return false;
+  }
+
+  if (!nameregex.test(name1.value)) {
+    reportsWarning("Name must be at least 4 letters long");
+    return false;
+  }
+  if (!passwordregex.test(password1.value)) {
+    reportsWarning("Name must be at least 4 letters long");
+    return false;
+  }
+ 
+  return true;
+}
+
 function registerUser() {
   if (!validation()) {
     return;
@@ -87,7 +108,7 @@ const password1 = document.querySelector('.modal-login-form-password-in');
 const signInBtn = document.querySelector('.modal-login-btn-in');
 
 function authentificateUser() {
-   if (!validation()) {
+   if (!validation1()) {
     return;
   };
   const dbRef = ref(db);
