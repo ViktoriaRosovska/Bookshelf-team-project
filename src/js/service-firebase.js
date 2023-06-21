@@ -2,12 +2,10 @@
 import CryptoJS from "crypto-js";
 import { reportsSuccess, reportsFailure, reportsWarning } from "./notificationsNotiflix";
 
-
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, child, get} from 'firebase/database';
 import { } from 'firebase/auth';
 import { } from 'firebase/storage';
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyBEQW57F-dgQwZr4xo9wUxUnzM1AQy95gE",
@@ -34,30 +32,25 @@ function isEmptyOrSpaces(str) {
   return str === null || str.match(/^ *$/) !== null;
 }
 
-
 function validation() {
   let nameregex = /^[a-zA-Z\s]+$/;
   let passwordregex = /^[a-zA-Z0-9]{5,}/;
 
   if (isEmptyOrSpaces(name.value) || isEmptyOrSpaces(password.value) || isEmptyOrSpaces(email.value)) {
     reportsWarning("You cannot left any field empty");
-    // alert("You cannot left any field empty");
     return false;
   }
 
   if (!nameregex.test(name.value)) {
-    // alert("Name must be at least 4 letters long");
     reportsWarning("Name must be at least 4 letters long");
     return false;
   }
   const emailValid = email.value && email.value.includes("@");
   if (!emailValid) {
     reportsWarning("Enter your email address, don't forget to use the obligatory symbol @");
-    // alert("Enter your email address, don't forget to use the obligatory symbol @")
     return false;
   }
   if (!passwordregex.test(password.value)) {
-    // alert("Name must be at least 4 letters long")
     reportsWarning("Name must be at least 4 letters long");
     return false;
   }
@@ -72,7 +65,6 @@ function registerUser() {
   const dbRef = ref(db);
   get(child(dbRef, "Username/" + name.value)).then((snapshot) => {
     if (snapshot.exists()) {
-      // alert("Account already exist!");
       reportsWarning("Account already exist!");
     } else {
       const user = {
@@ -81,7 +73,6 @@ function registerUser() {
         password: cryptoPassword(),
       };
       set(ref(db, "Username/" + name.value), user).then(() => {
-        // alert("User added successfully");
         reportsSuccess("User added successfully");
         setTimeout(() => login(user), 1000);
       }).catch((error) => {
@@ -106,12 +97,10 @@ function authentificateUser() {
       if (dbpass == password1.value) {
         login(snapshot.val());
       } else {
-        // alert("Username or password is invalid");
         reportsFailure("Username or password is invalid");
       }
     } else {
       reportsFailure("User doesn't exist");
-      // alert("User doesn't exist");
     }
   });
 }
@@ -154,14 +143,18 @@ window.onload = function () {
       addEventListener("click", () => signout());
     
     document.querySelector(".select-user-container").
-      classList.remove("is-hidden");
+      classList.remove("is-hidden-btn");
     
     document.querySelector(".authorisation-btn").
-      classList.add("is-hidden");
+      classList.add("is-hidden-btn");
   }
-  // document.querySelector()
 
 }
-submit.addEventListener('click', registerUser);
+if (submit) {
+  submit.addEventListener('click', registerUser);
+}
 
-signInBtn.addEventListener('click', authentificateUser);
+if (signInBtn) {
+  signInBtn.addEventListener('click', authentificateUser);
+}
+
