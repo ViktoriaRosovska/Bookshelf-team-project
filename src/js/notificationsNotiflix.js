@@ -38,7 +38,7 @@ export function reportsFailure(message) {
   Notiflix.Notify.failure(`${message}`, {width: '380px'});
 }
 
-//reportsFailure('Sorry, no books were found.')
+//reportsFailure('Sorry, no books were found. Please try again.')
 
 export function reportsSuccess(message) {
   Notiflix.Notify.success(`${message}`, {width: '380px'})
