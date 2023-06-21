@@ -62,16 +62,9 @@
     padding: 0;
     background: transparent;
     border: transparent;
+    stroke: #111111;
 }
 
-.modal-login-form-close-btn::before {
-  content: '';
-  background-image: url('/src/images/modal-login-form-close-btn.svg');
-  width: 28px;
-  height: 28px;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 .modal-login-form-input {
    display: flex;
    flex-direction: column;  
