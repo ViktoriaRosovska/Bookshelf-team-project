@@ -9,13 +9,13 @@ var t="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"u
                 <p class="shop-author">${t.author}</p>
                 <ul class="shop-platform-list">
                   <li>
-                    <a href="${t.marketAmazon}" class="shop-link-amazon" noopener noreferrer></a>
+                    <a href="${t.marketAmazon}" class="shop-link-amazon" target="_blank" rel="noopener noreferrer"></a>
                   </li>
                   <li>
-                    <a href="${t.marketAppleBooks}" class="shop-link-applebook" noopener noreferrer></a>
+                    <a href="${t.marketAppleBooks}" class="shop-link-applebook" target="_blank" rel="noopener noreferrer"></a>
                   </li>
                   <li>
-                    <a href="${t.marketBookshop}" class="shop-link-bookshop"></a>
+                    <a href="${t.marketBookshop}" class="shop-link-bookshop" target="_blank" rel="noopener noreferrer"></a>
                   </li>
                 </ul>
               </div>
@@ -44,5 +44,5 @@ var t="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"u
                 </div>
               </div>
               <button type="button" class="shop-delete-btn js-delete-btn"></button>
-            </li>`).join("");r.innerHTML=a})}}r.addEventListener("click",function(t){if("BUTTON"===t.target.nodeName){let e=t.target.parentNode.getAttribute("id");!function(t){let e=JSON.parse(localStorage.getItem("storage-data")),n=e.filter(({id:e})=>e!==t);localStorage.setItem("storage-data",JSON.stringify(n)),r.innerHTML="",c(n),n&&0!==n.length||(a.removeAttribute("hidden",""),(0,o.Loading).remove("Loading..."))}(e)}}),c(JSON.parse(localStorage.getItem("storage-data"))),i("bMp0K"),i("hZAS5"),i("fPeBo"),i("bMZn5"),i("bXRWl");
-//# sourceMappingURL=shoplist.f540198a.js.map
+            </li>`).join("");r.innerHTML=a})}}r.addEventListener("click",function(t){if("BUTTON"===t.target.nodeName){let e=t.target.parentNode.getAttribute("id");!function(t){let e=document.querySelector(".tui-pagination"),n=JSON.parse(localStorage.getItem("storage-data")),i=n.filter(({id:e})=>e!==t);localStorage.setItem("storage-data",JSON.stringify(i)),r.innerHTML="",c(i),i&&0!==i.length||(a.removeAttribute("hidden",""),e.innerHTML="",(0,o.Loading).remove("Loading..."))}(e)}}),c(JSON.parse(localStorage.getItem("storage-data"))),i("bMp0K"),i("hZAS5"),i("fPeBo"),i("bMZn5"),i("bXRWl");
+//# sourceMappingURL=shoplist.86edeaed.js.map
