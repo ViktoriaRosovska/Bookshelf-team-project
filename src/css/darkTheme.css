@@ -7,7 +7,7 @@ body.dark-theme {
 
 body.dark-theme .header-container {
   background-color: var(--dark-theme-componemt);
-  border: 1.5px solid #ffffff;
+  border: 1.5px solid var(--ligtht-theme);
 }
 
 body.dark-theme .icon-bookshelf {
@@ -22,15 +22,15 @@ body.dark-theme .icon-bookshelf:focus {
 }
 
 body.dark-theme .list-btn-svg {
-  fill: #ffffff;
+  fill: var(--ligtht-theme);
 }
 
 body.dark-theme .list-btn.current .list-btn-svg {
-  fill: #111111;
+  fill: var(--dark-theme-componemt);
 }
 
 body.dark-theme .header-nav .current {
-  color: #111111;
+  color: var(--dark-theme-componemt);
 }
 
 body.dark-theme .current:hover,
@@ -38,22 +38,22 @@ body.dark-theme .current:focus {
   color: var(--ligtht-theme);
   fill: var(--ligtht-theme);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15),
-    3px 12px 38px -5px rgba(231, 166, 26, 0.72);
+    3px 12px 38px -5px #e7a61ab8;
 }
 
 body.dark-theme .checkbox {
-  background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+  background: linear-gradient(180deg, var(--color-blue-component) 0%, #686868 100%);
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-theme .close-menu-btn {
-  color: #ffffff;
+  color: var(--ligtht-theme);
   background-color: var(--dark-theme-componemt);
 }
 
 body.dark-theme .close-menu-icon,
 body.dark-theme .burger-meny-icon {
-  stroke: #ffffff;
+  stroke: var(--ligtht-theme);
 }
 
 /* стилі для "book-category" */
@@ -64,11 +64,11 @@ body.dark-theme .book-category__list-item {
 
 body.dark-theme .book-category__list-item:hover,
 body.dark-theme .book-category__list-item:focus {
-  color: #eac645;
+  color: var(--color-yellow-componemt)
 }
 
 body.dark-theme .active {
-  color: #eac645;
+  color: var(--color-yellow-componemt)
 }
 
 body.dark-theme ::-webkit-scrollbar-thumb {
@@ -78,7 +78,7 @@ body.dark-theme ::-webkit-scrollbar-thumb {
 /* стилі для "home-books" */
 
 body.dark-theme .book-card-btn {
-  color: #ffffff;
+  color: var(--ligtht-theme);
 }
 
 body.dark-theme .book-card-btn:hover,
@@ -89,16 +89,16 @@ body.dark-theme .book-card-btn:focus {
 /* стилі для "page shopping-list" */
 
 body.dark-theme .shop-main-title {
-  color: #ffffff;
+  color: var(--ligtht-theme);
 }
 
 body.dark-theme .shop-item-book {
-  background: #111111;
+  background: var(--dark-theme-componemt);
 }
 
 body.dark-theme .shop-secondary-title,
 body.dark-theme .shop-desc {
-  color: #ffffff;
+  color: var(--ligtht-theme);
 }
 
 body.dark-theme .shop-link-amazon,
@@ -158,41 +158,41 @@ body.dark-theme.tui-pagination .tui-first + .tui-prev,
 body.dark-theme.tui-pagination .tui-next + .tui-last {
   border: 1px solid var(--ligtht-theme);
 }
-body.dark-theme.tui-pagination .tui-is-disabled.tui-first:hover {
-  background: var(--dark-theme-componemt);
-}
+
 
 /* стилі для "footer" */
 
 body.dark-theme .footer_container {
-  border: 1.5px solid #ffffff;
+  border: 1.5px solid var(--ligtht-theme);
   background-color: var(--dark-theme-componemt);
 }
 
 body.dark-theme .footer_text_right,
 body.dark-theme .footer_text_left {
-  color: #ffffff;
+  color:var(--ligtht-theme);
 }
 
 /* стилі для "modal-shopping-list" */
 
 body.dark-theme .modal {
-  background: #202024;
+  background: var(--dark-theme);
 }
 
 body.dark-theme .title-about-book-modal,
 body.dark-theme .text-about-book-modal {
-  color: #ffffff;
+  color:var(--ligtht-theme);
 }
 
 body.dark-theme .button-close-icon {
-  stroke: #ffffff;
+  stroke:var(--ligtht-theme);
 }
 
 body.dark-theme .add-storage-button,
 body.dark-theme .storage-delete-button,
 body.dark-theme .close-modal-btn {
-  color: #fff;
+
+  color: var(--ligtht-theme);
+
   background-color: transparent;
 }
 
@@ -203,13 +203,17 @@ body.dark-theme .storage-delete-button:focus {
   background: var(--color-blue-component);
 }
 
+body.dark-theme .storage-info {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 /* стилі для "modal-login-form" */
 
 body.dark-theme .modal-login-form,
 body.dark-theme .modal-login-form-name,
 body.dark-theme .modal-login-form-email,
 body.dark-theme .modal-login-form-password {
-  background: #202024;
+  background: var(--dark-theme);
   border: 2px solid #f6f6f6;
 }
 
@@ -219,18 +223,19 @@ body.dark-theme ::placeholder {
 
 body.dark-theme .modal-login-btn {
   background: #f6f6f6;
-  color: #202024;
+  color: var(--dark-theme);
 }
 
-body.dark-theme .modal-login-form-close-btn {
-  /* background-color: #61ea45; */
-}
+/* body.dark-theme .modal-login-form-close-btn {
+   background-color: #61ea45; 
+} */
+
 body.dark-theme .sign {
   color: var(--ligtht-theme);
 }
 
 body.dark-theme .modal-login-btn:hover,
 body.dark-theme .modal-login-btn:focus {
-  color: #ffffff;
+  color:var(--ligtht-theme);
   background: var(--color-blue-component);
 }
