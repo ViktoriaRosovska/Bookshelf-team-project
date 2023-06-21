@@ -7,7 +7,7 @@
 }
 .rendering-gap {
   flex-wrap: wrap;
-<<<<<<< Updated upstream
+
   row-gap: 40px;
 }
 
@@ -24,24 +24,5 @@
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 40px;
-=======
-  
-}
-
-
-
-
-@media screen and (min-width: 768px) {
-  .rendering-gap {
-    flex-wrap: wrap;
-    gap: 25px;
->>>>>>> Stashed changes
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .rendering-gap {
-    flex-wrap: wrap;
-    gap: 24px;
   }
 }

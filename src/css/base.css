@@ -17,14 +17,7 @@ body {
   padding-bottom: 80px;
 }
 .container {
-<<<<<<< Updated upstream
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 320px;
-    max-width: 375px;
-    padding-left: 20px;
-    padding-right: 20px;
-=======
+
   margin-left: auto;
   margin-right: auto;
   min-width: 320px;
@@ -32,7 +25,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   /* border: 1px solid blue; */
->>>>>>> Stashed changes
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439.98px) {
