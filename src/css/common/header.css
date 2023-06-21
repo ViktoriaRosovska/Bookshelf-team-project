@@ -50,7 +50,7 @@
 
 .header-nav {
   position: relative;
-  width: 250px;
+  /* width: 250px; */
   height: 36px;
   display: flex;
   gap: 24px;
@@ -66,9 +66,9 @@
 }
 
 .home-btn {
-  position: absolute;
-  top: -3px;
-  left: 0px;
+  /* position: absolute;
+  top: 0px;
+  left: 0px; */
   padding: 8px 16px;
   border-radius: 36px;
   background-color: transparent;
@@ -86,14 +86,14 @@
 }
 
 .list-btn {
-  position: absolute;
-  top: -3px;
-  right: 0px;
+  /* position: absolute;
+  top: 0px;
+  right: 0px; */
   display: flex;
   height: 36px;
   align-items: center;
   border-radius: 36px;
-  padding: 7px 16px;
+  padding: 8px 16px;
   background-color: transparent;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -167,6 +167,7 @@
 }
 
 .user-name-btn {
+  text-transform: capitalize;
   width: 80px;
   overflow: hidden;
   text-overflow: ellipsis;
