@@ -1,78 +1,78 @@
 .book-category__list-item {
-    font-size: 16px;
-    line-height: calc(18 / 16);
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: rgba(17, 17, 17, 0.6);
-    margin-bottom: 24px;
-    height: 18px;
-    cursor: pointer;
-    user-select: none;
+  font-size: 16px;
+  line-height: calc(18 / 16);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.6);
+  margin-bottom: 24px;
+  height: 18px;
+  cursor: pointer;
+  user-select: none;
 }
 
-.book-category__list-item:hover, .book-category__list-item:focus {
-    color: var(--color-blue-component);
-    width: 318px;
-    overflow: hidden;
+.book-category__list-item:hover,
+.book-category__list-item:focus {
+  color: var(--color-blue-component);
+  width: 318px;
+  overflow: hidden;
 }
 
 .book-category__list-item:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .book-category__container {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .book-category__box {
-    width: 335px;
-    height: 228px;
-    overflow-y: scroll;
-    margin-bottom: 40px;
+  width: 335px;
+  height: 228px;
+  overflow-y: scroll;
+  margin-bottom: 40px;
 }
 
 @media screen and (min-width: 768px) {
-    .book-category__box {
-        width: 337px;
-        height: 472px;
-    }
-       
+  .book-category__box {
+    width: 337px;
+    height: 472px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .book-category__box {
-        width: 356px;
-    }
+  .book-category__box {
+    width: 356px;
+  }
 }
 
 .active {
-    color: var(--color-blue-component);
-    font-weight: 700;
-    text-transform: uppercase;
+  color: var(--color-blue-component);
+  font-weight: 700;
+  text-transform: uppercase;
 }
 ::-webkit-scrollbar {
-    width: 10px;    
+  width: 10px;
 }
 
 ::-moz-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
-    height: 167px;
-    background: transparent;
+  height: 167px;
+  background: transparent;
 }
 
 ::-moz-scrollbar-track {
-    height: 167px;
-    background: transparent;
+  height: 167px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #E0E0E0;
-    border-radius: 12px;
+  background: #e0e0e0;
+  border-radius: 12px;
 }
 
 ::-moz-scrollbar-thumb {
-    background: #E0E0E0;
-    border-radius: 12px;
+  background: #e0e0e0;
+  border-radius: 12px;
 }
