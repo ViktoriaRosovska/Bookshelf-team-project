@@ -5,9 +5,9 @@
   /* gap: 10px; */
   justify-content: center;
 }
-
 .rendering-gap {
   flex-wrap: wrap;
+
   row-gap: 40px;
 }
 

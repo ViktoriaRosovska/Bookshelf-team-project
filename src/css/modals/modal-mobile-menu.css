@@ -132,7 +132,7 @@
 
 }
 
-.fill.list-btn-svg {
+.list-btn-svg.fill {
     fill: #FFFFFF;
 }
 
@@ -154,6 +154,8 @@
 
 .log-out-btn {
     display: flex;
+    cursor: pointer;
+    z-index: 1500;
     padding-left: 24px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -169,8 +171,15 @@
     font-size: 14px;
     line-height: calc(18 / 14);
     text-transform: capitalize;
+}
+.log-out-btn.is-hidden, .mobile-menu-authorisation-btn.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    user-select: none;
+}
 
-    z-index: 2;
+.mobile-menu-authorisation-btn.is-hidden-btn {
+    display: none;
 }
 
 .log-out-icon {

@@ -26,7 +26,9 @@ const name = document.querySelector('.modal-login-form-name');
 const email = document.querySelector('.modal-login-form-email');
 const password = document.querySelector('.modal-login-form-password');
 const submit = document.querySelector('.modal-login-btn-up');
-
+const logOutBtn = document.querySelector('.log-out-btn');
+const authorisationMobileBtn = document.querySelector(".mobile-menu-authorisation-btn");
+const authorisationDesktop = document.querySelector('.authorisation-btn-desktop');
 
 function isEmptyOrSpaces(str) {
   return str === null || str.match(/^ *$/) !== null;
@@ -51,6 +53,27 @@ function validation() {
     return false;
   }
   if (!passwordregex.test(password.value)) {
+    reportsWarning("Name must be at least 4 letters long");
+    return false;
+  }
+ 
+  return true;
+}
+
+function validation1() {
+  let nameregex = /^[a-zA-Z\s]+$/;
+  let passwordregex = /^[a-zA-Z0-9]{5,}/;
+
+  if (isEmptyOrSpaces(name1.value) || isEmptyOrSpaces(password1.value)) {
+    reportsWarning("You cannot left any field empty");
+    return false;
+  }
+
+  if (!nameregex.test(name1.value)) {
+    reportsWarning("Name must be at least 4 letters long");
+    return false;
+  }
+  if (!passwordregex.test(password1.value)) {
     reportsWarning("Name must be at least 4 letters long");
     return false;
   }
@@ -87,7 +110,7 @@ const password1 = document.querySelector('.modal-login-form-password-in');
 const signInBtn = document.querySelector('.modal-login-btn-in');
 
 function authentificateUser() {
-   if (!validation()) {
+   if (!validation1()) {
     return;
   };
   const dbRef = ref(db);
@@ -121,6 +144,8 @@ function decPassword(dbpass) {
 function login(user) {
   localStorage.setItem('user', JSON.stringify(user));
   window.location = "index.html";
+  authorisationMobileBtn.classList.add('is-hidden-btn');
+  authorisationDesktop.classList.add('is-hidden-btn');
 }
 
 function getUsername() {
@@ -136,17 +161,14 @@ window.onload = function () {
 
   if (currentuser)
   {
-    document.querySelector(".user-btn span").
-      textContent = currentuser.name;
-
-    document.querySelector(".log-out-btn-big").
-      addEventListener("click", () => signout());
-    
-    document.querySelector(".select-user-container").
-      classList.remove("is-hidden-btn");
-    
-    document.querySelector(".authorisation-btn").
-      classList.add("is-hidden-btn");
+    authorisationMobileBtn.classList.add("is-hidden-btn");
+    authorisationDesktop.classList.add('is-hidden-btn');
+    document.querySelector(".user-btn span").textContent = currentuser.name;
+    document.querySelector('.user-modal').classList.remove('is-hidden');
+    document.querySelector('.user-modal h2').textContent = currentuser.name;
+    document.querySelector(".log-out-btn-big").addEventListener("click", () => signout());
+    document.querySelector(".select-user-container").classList.remove("is-hidden-btn");
+    logOutBtn.classList.remove('is-hidden');
   }
 
 }
@@ -158,3 +180,8 @@ if (signInBtn) {
   signInBtn.addEventListener('click', authentificateUser);
 }
 
+if (logOutBtn) {
+  logOutBtn.addEventListener('click', signout);
+  authorisationMobileBtn.classList.remove('is-hidden');
+  authorisationDesktop.classList.remove('is-hidden-btn');
+}
