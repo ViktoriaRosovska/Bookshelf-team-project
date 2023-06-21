@@ -1,68 +1,70 @@
 :root {
-    /* Variables */
-    --ligtht-theme: #FFFFFF;
-    --dark-theme-componemt: #111111;
-    --dark-theme: #202024;
-    --color-blue-component: #4F2EE8;
-    --color-yellow-componemt: #EAC645;
+  /* Variables */
+  --ligtht-theme: #ffffff;
+  --dark-theme-componemt: #111111;
+  --dark-theme: #202024;
+  --color-blue-component: #4f2ee8;
+  --color-yellow-componemt: #eac645;
 }
 
 body {
-    font-family: "DM Sans", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
 }
 .section {
-   padding-top: 40px;
-   padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 80px;
 }
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 320px;
-    max-width: 375px;
-    padding-left: 20px;
-    padding-right: 20px;
+
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 320px;
+  max-width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
+  /* border: 1px solid blue; */
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439.98px) {
-    .section {
-       padding-bottom: 100px;
-    } 
-    .container {
-        max-width: 768px;
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-    .home-aside {
-        display: flex;
-        gap: 32px;
-    }
+  .section {
+    padding-bottom: 100px;
+  }
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .home-aside {
+    display: flex;
+    gap: 32px;
+  }
 }
 @media screen and (min-width: 1440px) {
-    .container {
-        max-width: 1440px;
-        padding-left: 24px;
-        padding-right: 24px;
-    }
+  .container {
+    max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 
-        .home-aside {
-            display: block;
-            
-        }
-        .home-box {
-            display: flex;
-            gap: 40px;
-        }
+  .home-aside {
+    display: block;
+  }
+  .home-box {
+    display: flex;
+    gap: 40px;
+  }
 }
 
 .main-info {
-    display: block;
+  display: block;
 }
 @media screen and (min-width: 768px) and (max-width: 1439.98px) {
-    .main-info {
-       display: flex;
-       flex-direction: row;
-       gap: 32px;
-    }
+  .main-info {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
 }
