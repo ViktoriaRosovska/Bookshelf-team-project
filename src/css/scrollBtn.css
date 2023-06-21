@@ -10,6 +10,7 @@
     color: var(--ligtht-theme);
     border-color:  rgba(255, 255, 255, 0.3);
     background-color: var(--color-blue-component);
+    z-index: 1000;
 }
 
 .scrollBtn.scrollBtn-hide {
