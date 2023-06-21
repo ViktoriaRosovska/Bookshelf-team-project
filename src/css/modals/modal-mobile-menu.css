@@ -1,4 +1,6 @@
-@media screen and (max-width: 767.98px) {}
+* {
+    -webkit-tap-highlight-color: transparent;
+}
 
 @media screen and (min-width: 768px) {
 
