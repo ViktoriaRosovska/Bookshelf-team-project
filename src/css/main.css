@@ -17,7 +17,8 @@
 @import url('./shopping-list/shop-page.css');
 @import url('./shopping-list/shopping-list-card.css');
 
-@import url('./modals/modal-login-form.css');
+@import url('./modals//modal-login-form-sign-in.css');
+@import url('./modals//modal-login-form-sign-up.css');
 @import url('./modals/modal-shopping-list.css');
 @import url('./modals/modal-mobile-menu.css');
 
