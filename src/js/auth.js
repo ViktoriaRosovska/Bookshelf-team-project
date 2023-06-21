@@ -4,8 +4,13 @@ const formIn = document.querySelector('.modal-login-in');
 const formUp = document.querySelector('.modal-login-up');
 const formIndiv = document.querySelector('.modal-login-form-input');
 
-signUp.addEventListener('click', onSignUpClick);
-signIn.addEventListener('click', onSignInClick);
+if (signUp) {
+    signUp.addEventListener('click', onSignUpClick);
+}
+
+if (signIn) {
+    signIn.addEventListener('click', onSignInClick);
+} 
 
 function onSignInClick() {
     signIn.classList.add('underline');
@@ -13,7 +18,6 @@ function onSignInClick() {
     formIn.style.display = "block";
     formUp.style.display = "none";
 }
-
 
 function onSignUpClick() {
     signUp.classList.add('underline');
