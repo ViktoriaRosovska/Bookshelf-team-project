@@ -180,7 +180,7 @@ function onStorageAdd() {
 
   const dataToSave = storageObj;
   if (!realStorageArr || realStorageArr.length === 0) {
-    storageArr.push(dataToSave);
+    storageArr = [dataToSave];
     localStorage.setItem(STORAGE_KEY, JSON.stringify(storageArr));
   } else {
     realStorageArr.push(dataToSave);
