@@ -53,8 +53,8 @@
 }
 @media screen and (min-width: 768px) {
   .close-modal-btn {
-    top: 31px;
-    right: 31px;
+    top: 24px;
+    right: 24px;
     width: 14px;
     height: 14px;
   }
@@ -167,6 +167,7 @@
 
   border: 2px solid var(--color-blue-component);
   border-radius: 40px;
+  background-color: transparent;
 
   font-size: 14px;
   letter-spacing: -0.01em;
@@ -186,9 +187,9 @@
     margin-top: 40px;
   }
 }
-/* .add-storage-button {
+.add-storage-button {
   padding: 14px 28px;
-} */
+}
 .storage-delete-button {
   padding: 14px 10px;
   margin-bottom: 8px;

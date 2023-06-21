@@ -450,7 +450,9 @@
   background: var(--dark-theme-componemt);
 }
 
-.tui-pagination .tui-is-disabled:hover {
+.tui-pagination .tui-page-btn.tui-is-disabled.tui-first:hover,
+.tui-pagination .tui-page-btn.tui-is-disabled.tui-last:hover,
+.tui-pagination .tui-page-btn.tui-is-disabled.tui-next:hover,
+.tui-pagination .tui-page-btn.tui-is-disabled.tui-prev:hover {
   background: var(--dark-theme-componemt);
 }
-

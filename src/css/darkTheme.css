@@ -33,7 +33,6 @@ body.dark-theme .header-nav .current {
   color: #111111;
 }
 
-
 body.dark-theme .current:hover,
 body.dark-theme .current:focus {
   color: var(--ligtht-theme);
@@ -102,9 +101,8 @@ body.dark-theme .shop-desc {
   color: #ffffff;
 }
 
-body.dark-theme .shop-link-amazon, 
-body.dark-theme .amazon
- {
+body.dark-theme .shop-link-amazon,
+body.dark-theme .amazon {
   filter: brightness(0) invert(1);
 }
 
@@ -113,7 +111,7 @@ body.dark-theme .shop-link-applebook:hover,
 body.dark-theme .shop-link-bookshop:hover,
 body.dark-theme .shop-link-amazon:focus,
 body.dark-theme .shop-link-applebook:focus,
-body.dark-theme .shop-link-bookshop:focus{
+body.dark-theme .shop-link-bookshop:focus {
   box-shadow: 0px 3px 3px rgba(251, 251, 251, 0.15);
 }
 
@@ -138,7 +136,6 @@ body.dark-theme .tui-pagination strong {
   color: var(--dark-theme-componemt);
 }
 
-
 body.dark-theme .tui-pagination .tui-first-child.tui-is-selected {
   border: 1px solid var(--ligtht-theme);
   background-color: var(--ligtht-theme);
@@ -151,17 +148,19 @@ body.dark-theme .tui-pagination .tui-last-child.tui-is-selected {
   color: var(--dark-theme-componemt);
 }
 
-.tui-page-inputs .tui-page-input {
+body.dark-theme.tui-page-inputs .tui-page-input {
   color: var(--ligtht-theme);
   border: 1px solid var(--ligtht-theme);
 }
 
-.tui-pagination .tui-next-is-ellip,
-.tui-pagination .tui-first + .tui-prev,
-.tui-pagination .tui-next + .tui-last {
+body.dark-theme.tui-pagination .tui-next-is-ellip,
+body.dark-theme.tui-pagination .tui-first + .tui-prev,
+body.dark-theme.tui-pagination .tui-next + .tui-last {
   border: 1px solid var(--ligtht-theme);
 }
-
+body.dark-theme.tui-pagination .tui-is-disabled.tui-first:hover {
+  background: var(--dark-theme-componemt);
+}
 
 /* стилі для "footer" */
 
@@ -193,8 +192,8 @@ body.dark-theme .button-close-icon {
 body.dark-theme .add-storage-button,
 body.dark-theme .storage-delete-button,
 body.dark-theme .close-modal-btn {
-   color: #fff;
-   background-color: transparent;
+  color: #fff;
+  background-color: transparent;
 }
 
 body.dark-theme .add-storage-button:hover,
