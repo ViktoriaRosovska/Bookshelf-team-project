@@ -1,4 +1,4 @@
- LOCAL_KEY = "user";
+const LOCAL_KEY = "user";
 class Account {
 
     signIn(name, email, password ) {
