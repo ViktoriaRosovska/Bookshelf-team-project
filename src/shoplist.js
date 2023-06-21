@@ -7,3 +7,6 @@ import './js/sponsors-list';
 import './js/shopping-list';
 import './js/modal-mobile-menu';
 import './js/modal-login-form';
+import './js/service-firebase';
+import './js/auth';
+import './js/notificationsNotiflix';
