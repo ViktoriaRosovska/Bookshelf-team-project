@@ -55,13 +55,13 @@ function renderBookCard(array) {
                 <p class="shop-author">${el.author}</p>
                 <ul class="shop-platform-list">
                   <li>
-                    <a href="${el.marketAmazon}" class="shop-link-amazon" noopener noreferrer></a>
+                    <a href="${el.marketAmazon}" class="shop-link-amazon" target="_blank" rel="noopener noreferrer"></a>
                   </li>
                   <li>
-                    <a href="${el.marketAppleBooks}" class="shop-link-applebook" noopener noreferrer></a>
+                    <a href="${el.marketAppleBooks}" class="shop-link-applebook" target="_blank" rel="noopener noreferrer"></a>
                   </li>
                   <li>
-                    <a href="${el.marketBookshop}" class="shop-link-bookshop"></a>
+                    <a href="${el.marketBookshop}" class="shop-link-bookshop" target="_blank" rel="noopener noreferrer"></a>
                   </li>
                 </ul>
               </div>
@@ -136,6 +136,7 @@ function onBtnTrashClick(evt) {
 }
 
 function removeBookFromLocalStorage(bookId) {
+  const pagination = document.querySelector('.tui-pagination');
   const data = JSON.parse(localStorage.getItem('storage-data'));
   const newData = data.filter(({ id }) => id !== bookId);
   localStorage.setItem('storage-data', JSON.stringify(newData));
@@ -143,6 +144,7 @@ function removeBookFromLocalStorage(bookId) {
   renderBookCard(newData);
   if (!newData || newData.length === 0) {
     shopBgd.removeAttribute('hidden', '');
+    pagination.innerHTML = '';
     Loading.remove('Loading...');
   }
 }
