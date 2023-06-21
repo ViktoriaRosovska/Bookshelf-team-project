@@ -1,77 +1,38 @@
-// кнопки, которые открывают модальное окно
-const btns = document.querySelectorAll('.authorisation-btn, .mobile-menu-authorisation-btn');
+// кнопка, що відкриває модальне вікно
+const btn = document.querySelector('.authorisation-btn');
 
-// модальные окна
-const signUpModal = document.querySelector('.modal-login-form-sign-up');
-const signInModal = document.querySelector('.modal-login-form-sign-in');
-const overlayLoginForm = document.querySelector('.overlayLoginFormUp');
+// модальне вікно
+const modal = document.querySelector('.modal-login-form');
 
-// крестик для закрытия модального окна
-const closeBtnSignUp = document.querySelector('.modal-login-form-close-btn-up');
-const closeBtnSignIn = document.querySelector('.modal-login-form-close-btn');
+// хрестик для закриття модального вікна
+const closeBtn = document.querySelector('.modal-login-form-close-btn');
+const overlayLoginForm = document.querySelector('.overlayLoginForm');
 
-// Функция отображения модального окна SIGN UP
-function showSignUpModal() {
-  signUpModal.style.display = 'block';
-  overlayLoginForm.style.display = 'block';
-}
-
-// Функция отображения модального окна SIGN IN
-function showSignInModal() {
-  signUpModal.style.display = 'none';
-  overlayLoginForm.style.display = 'none';
-  signInModal.style.display = 'block';
-}
-
-// Функция скрытия модальных окон
+// Функція приховування модального вікна
 function hideModal() {
-  signUpModal.style.display = 'none';
-  signInModal.style.display = 'none';
+  modal.style.display = 'none';
   overlayLoginForm.style.display = 'none';
 }
 
-if (signUpModal) {
-  // привязка обработчика события к кнопкам
-  btns.forEach(function(btn) {
-    btn.addEventListener('click', showSignUpModal);
-  });
+if (modal) {
+  // клік відкриває модальне вікно
+  btn.onclick = function () {
+    modal.style.display = 'block';
+    overlayLoginForm.style.display = 'block';
+  };
 
-  // При нажатии на крестик закрываем модальное окно SIGN UP
-  closeBtnSignUp.addEventListener('click', hideModal);
+  // При натисканні на хрестик закриваємо модальне вікно
+  closeBtn.onclick = hideModal;
 
-  // При клике вне модального окна или на бекдропе закрываем его
-  window.addEventListener('click', function(event) {
-    if (event.target === signUpModal || event.target === overlayLoginForm) {
+  // При кліку поза модальним вікном або на бекдропі закриваємо його
+  window.onclick = function (event) {
+    if (event.target === modal || event.target === overlayLoginForm) {
       hideModal();
     }
-  });
+  };
 
-  // При нажатии кнопки Esc закрываем модальное окно SIGN UP
-  window.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      hideModal();
-    }
-  });
-
-  // Обработчик события для ссылки "SIGN IN"
-  const signInLink = document.querySelector('.sign-in-link');
-  signInLink.addEventListener('click', function(event) {
-    event.preventDefault(); // Предотвращение стандартного поведения ссылки
-    showSignInModal();
-  });
-
-  // При нажатии на крестик закрываем модальное окно SIGN IN
-  closeBtnSignIn.addEventListener('click', hideModal);
-
-  // При клике вне модального окна или на бекдропе закрываем его
-  window.addEventListener('click', function(event) {
-    if (event.target === signInModal || event.target === overlayLoginForm) {
-      hideModal();
-    }
-  });
-
-  // При нажатии кнопки Esc закрываем модальное окно SIGN IN
-  window.addEventListener('keydown', function(event) {
+  // При натисканні кнопки Esc закриваємо модальне вікно
+  window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
       hideModal();
     }

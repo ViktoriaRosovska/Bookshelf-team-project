@@ -56,8 +56,8 @@
   margin-bottom: 40px;
 }
 .image-about-book-modal{
-  width: 192px;
-  height: 281px;
+  width: 287px;
+  height: 408px;
   margin: auto;
 }
 .add-storage-button {
@@ -184,16 +184,4 @@
     margin-bottom: 14px;
   }
 
-  .modal__shopping-button {
-    width: 211px;
-    height: 46px;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    color: #111111;
-  }
 }
