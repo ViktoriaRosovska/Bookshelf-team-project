@@ -24,10 +24,11 @@ function getItemsPerPage() {
   }
 }
 
-renderBookCardPagination(data); // визиваємо функцію рендера розмітки карток з пагінацією
+renderBookCard(data); // визиваємо функцію рендера розмітки карток
 
 // функція pендеру карток з книгами з localStorage
-function renderBookCardPagination(array) {
+function renderBookCard(array) {
+  Loading.standard('Loading...');
   if (!array || array.length === 0) {
     Loading.remove('Loading...');
     return;
@@ -40,21 +41,48 @@ function renderBookCardPagination(array) {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const visibleData = array.slice(startIndex, endIndex);
-    renderBook(visibleData);
+
+    const markup = visibleData
+      .map(el => {
+        return `
+          <li id=${el.id} class="shop-item-book">
+            <img class="shop-book-img" alt="Wrapper of book" src="${el.book_image}" />
+            <div class="shop-info-book">
+              <h2 class="shop-secondary-title">${el.title}</h2>
+              <p class="shop-category">${el.list_name}</p>
+              <p class="shop-desc">${el.description}</p>
+              <div class="shop-author-wrapper">
+                <p class="shop-author">${el.author}</p>
+                <ul class="shop-platform-list">
+                  <li>
+                    <a href="${el.marketAmazon}" class="shop-link-amazon" noopener noreferrer></a>
+                  </li>
+                  <li>
+                    <a href="${el.marketAppleBooks}" class="shop-link-applebook" noopener noreferrer></a>
+                  </li>
+                  <li>
+                    <a href="${el.marketBookshop}" class="shop-link-bookshop"></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button type="button" class="shop-delete-btn js-delete-btn"></button>
+          </li>`;
+      })
+      .join('');
+
+    Loading.remove('Loading...');
+    shopList.innerHTML = markup;
 
     // створення пагінації
     const totalItems = array.length;
     const totalPages = Math.ceil(totalItems / itemsPerPage);
-    let amount = 2;
-    if (window.innerWidth > 768) {
-      amount = 3;
-    }
 
     const options = {
       totalItems,
       itemsPerPage,
-      visiblePages: amount,
-      // centerAlign: true,
+      visiblePages: 5,
+      centerAlign: true,
     };
 
     const pagination = new Pagination('#pagination', options);
@@ -65,44 +93,39 @@ function renderBookCardPagination(array) {
       const startIndex = (currentPage - 1) * itemsPerPage;
       const endIndex = startIndex + itemsPerPage;
       const visibleData = array.slice(startIndex, endIndex);
-      renderBook(visibleData);
+
+      const newMarkup = visibleData
+        .map(el => {
+          return `
+            <li id=${el.id} class="shop-item-book">
+              <img class="shop-book-img" alt="Wrapper of book" src="${el.book_image}" />
+              <div class="shop-info-book">
+                <h2 class="shop-secondary-title">${el.title}</h2>
+                <p class="shop-category">${el.list_name}</p>
+                <p class="shop-desc">${el.description}</p>
+                <div class="shop-author-wrapper">
+                  <p class="shop-author">${el.author}</p>
+                  <ul class="shop-platform-list">
+                    <li>
+                      <a href="${el.marketAmazon}" class="shop-link-amazon" noopener noreferrer></a>
+                    </li>
+                    <li>
+                      <a href="${el.marketAppleBooks}" class="shop-link-applebook" noopener noreferrer></a>
+                    </li>
+                    <li>
+                      <a href="${el.marketBookshop}" class="shop-link-bookshop"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <button type="button" class="shop-delete-btn js-delete-btn"></button>
+            </li>`;
+        })
+        .join('');
+
+      shopList.innerHTML = newMarkup;
     });
   }
-}
-function renderBook(array) {
-  //функція, яка створює розмітку карток
-  Loading.standard('Loading...');
-  const markup = array
-    .map(el => {
-      return `
-          <li id=${el.id} class="shop-item-book">
-            <img class="shop-book-img" alt="Wrapper of book" src="${el.book_image}" loading="lazy"/>
-            <div class="shop-info-book">
-              <h2 class="shop-secondary-title">${el.title}</h2>
-              <p class="shop-category">${el.list_name}</p>
-              <p class="shop-desc">${el.description}</p>
-              <div class="shop-author-wrapper">
-                <p class="shop-author">${el.author}</p>
-                <ul class="shop-platform-list">
-                  <li>
-                    <a href="${el.marketAmazon}" class="shop-link-amazon" target="blank" rel="noopener noreferrer"></a>
-                  </li>
-                  <li>
-                    <a href="${el.marketAppleBooks}" class="shop-link-applebook" target="blank" rel="noopener noreferrer"></a>
-                  </li>
-                  <li>
-                    <a href="${el.marketBookshop}" class="shop-link-bookshop" target="blank" rel="noopener noreferrer"></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <button type="button" class="shop-delete-btn js-delete-btn"></button>
-          </li>`;
-    })
-    .join('');
-
-  Loading.remove('Loading...');
-  shopList.innerHTML = markup;
 }
 
 function onBtnTrashClick(evt) {
@@ -117,7 +140,7 @@ function removeBookFromLocalStorage(bookId) {
   const newData = data.filter(({ id }) => id !== bookId);
   localStorage.setItem('storage-data', JSON.stringify(newData));
   shopList.innerHTML = '';
-  renderBookCardPagination(newData);
+  renderBookCard(newData);
   if (!newData || newData.length === 0) {
     shopBgd.removeAttribute('hidden', '');
     Loading.remove('Loading...');
