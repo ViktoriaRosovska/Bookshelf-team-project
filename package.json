@@ -26,8 +26,10 @@
     "tui-pagination": "^3.4.1"
   },
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.9.2",
     "@parcel/resolver-glob": "^2.9.2",
     "@parcel/transformer-sass": "^2.9.2",
+    "@parcel/transformer-webmanifest": "^2.9.2",
     "buffer": "^6.0.3",
     "parcel": "^2.9.2",
     "parcel-reporter-clean-dist": "^1.0.4",
