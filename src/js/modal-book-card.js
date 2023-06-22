@@ -1,3 +1,11 @@
+import {reportsFailure} from './notificationsNotiflix';
+import { Loading } from 'notiflix';
+
+// Loading.standard('Loading...');
+// Loading.remove('Loading...');
+
+// reportsFailure('Sorry, no books were found. Please try again.')
+
 const allModal = document.querySelector('#allModal'); //
 
 // const bookList = document.querySelector('.js-list-rendering'); // з js Сергія + я додала, що в li додавався id
@@ -57,12 +65,22 @@ async function createModal(bookId) {
   }
  
   try {
+    if (!response.ok) {
+      // idModal?.classList.add('is-hidden');
+      throw new Error();
+       return
+    }
+     Loading.standard('Loading...');
     const data = await fetchBookById(bookId);
+
     storageCheck();
+    Loading.remove('Loading...');
     createMarkup(data);
     return data;
   } catch (error) {
+     Loading.remove('Loading...');
     console.log('Error', error);
+    reportsFailure('Sorry, no books were found. Please try again.')
     // throw error;
   }
 }
