@@ -1,8 +1,10 @@
-import {reportsFailure, reportsWarning} from './notificationsNotiflix';
+import {reportsInfo} from './notificationsNotiflix';
 import { Loading } from 'notiflix';
 
 import { scrollBtn } from './scrollBtn';
 import { isAuthenticated } from './service-firebase';
+
+
 
 const allModal = document.querySelector('#allModal'); 
 
@@ -206,9 +208,18 @@ function onStorageAdd() {
 
   storageDescription.textContent =
     'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
-  storageCheck();
+  
+  const localArray = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  if (localArray.length === 1) {
+      reportsInfo(`You added book to the shopping list. You have ${localArray.length} book in your shopping list`)
+    } else {
+      reportsInfo(`You added book to the shopping list. You have ${localArray.length} books in your shopping list`)
+    }
+       storageCheck();
   
 }
+
+
 
 function onStorageDelete() {
   storageDescription.textContent = '';
@@ -217,6 +228,15 @@ function onStorageDelete() {
   const storageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
   const indexToDelete = storageArr.findIndex(obj => obj.id === idToDelete);
   storageArr.splice(indexToDelete, 1);
+
+  if (storageArr.length === 1) {
+    reportsInfo(`You removed book from your shopping list. You have ${storageArr.length} book in your shopping list`)
+  } else if(storageArr.length === 0||!storageArr.length){
+    reportsInfo('Your shopping list is empty')
+  } else {
+   (`You added book to the shopping list. You have ${storageArr.length} books in your shopping list`)
+  }
+
   localStorage.setItem(STORAGE_KEY, JSON.stringify(storageArr));
   storageCheck();
 }
