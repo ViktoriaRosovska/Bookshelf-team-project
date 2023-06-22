@@ -1,4 +1,4 @@
-const scrollBtn = {
+export const scrollBtn = {
     btn: document.querySelector('.scrollBtn'),
     show() {
         this.btn.classList.remove('scrollBtn-hide');
