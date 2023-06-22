@@ -21,48 +21,24 @@ function onSettingModalShow() {
 
 
 const delate = document.querySelector('.js-photo-delate')
+const input = document.querySelector('.input-photo-save')
 
+input.addEventListener('click', save)
  delate.addEventListener('click', delatePhoto)
 
  function delatePhoto(params) {
     image1.src = localStorage.removeItem('myImage')
 }
  
-// function readURL(input) {
-//         if (input.files && input.files[0]) {
-//             var reader = new FileReader();
+function save ()  {
+    let f = file1.files[0];
+    if (f) {
+        image1.src = URL.createObjectURL(f);
+        localStorage.setItem('myImage', image1.src);
+    }
 
-//             reader.onload = function (e) {
-//                 $('#image1').attr('src', e.target.result);
+    image1.src = localStorage.getItem('myImage')
+}
 
-//                 var widthImg = $('#image').width();
-//                 console.log("widthImg = " + widthImg);
-//                 var widthContent = 342;
-//                 console.log("widthContent = " + widthContent);
 
-//                 //если ширина картинки больше, чем наш контент, то добавляем коеффициент сжатия
-//                 if (+widthImg > +widthContent) {
-//                     var koef = +widthImg / +widthContent;
-                    
-//                     $("#koef").val(Math.round(koef*1000));
-//                     $('#image1').attr('src', e.target.result).css('width', '100%');
-//                 }
-//                 else {
-
-//                 }
-//                 //addJCrop(1);
-//                 //jcrop_api.animateTo(getRandom());
-//             }
-//             reader.readAsDataURL(input.files[0]);
-//         }
-//     }
-
-// $("#file1").change(function () {
-//         $('#image1').attr('src', "~/Content/nophoto.png");
-//         readURL(this);
-
-//         //$('input[type="file"]').hide();
-//         //$('.buttonSubmitImg').show();
-//         //CropResult.isUpload = true;
-//     });
 
