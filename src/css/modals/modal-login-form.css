@@ -24,6 +24,18 @@
   z-index: 2000;
 }
 
+.sign {
+  background: transparent;
+  border: transparent;
+  font-weight: 700;
+  font-size: 14px;
+  
+}
+
+.underline {
+  text-decoration: underline;
+  color: var(--color-blue-component);
+}
 ::placeholder {
   font-family: 'DM Sans';
   font-style: normal;
@@ -125,19 +137,10 @@
   transform: translateX(-50%);
 }
 
-.sign {
-  background: transparent;
-  border: transparent;
-  font-weight: 700;
-  font-size: 14px;
-}
 
-.underline {
-  text-decoration: underline;
-  color: var(--color-blue-component);
-}
 
 @media screen and (min-width: 768px) {
+
   .overlayLoginForm {
     position: fixed;
     top: 0;
@@ -188,12 +191,12 @@
     align-items: center;
   }
 
-  .modal-login-up {
+  .modal-login-in {
     display: none;
   }
   .modal-login-form-close-btn {
     position: absolute;
-    border: 1px solid lightgreen;
+    /* border: 1px solid lightgreen; */
     top: 24px;
     right: 24px;
     display: flex;
@@ -268,4 +271,5 @@
     font-weight: 700;
     font-size: 18px;
   }
+ 
 }

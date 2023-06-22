@@ -239,3 +239,7 @@ body.dark-theme .modal-login-btn:focus {
   color:var(--ligtht-theme);
   background: var(--color-blue-component);
 }
+
+body.dark-theme .underline {
+  color: var(--color-blue-component);
+}

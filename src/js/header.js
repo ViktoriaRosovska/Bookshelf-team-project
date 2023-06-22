@@ -45,7 +45,6 @@ function isLogeOut() {
 }
 
 function showSingUpForm(event) {
-    console.log(event);
     loginForm.classList.remove('is-hidden')
 }
 
