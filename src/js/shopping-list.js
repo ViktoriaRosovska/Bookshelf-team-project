@@ -7,8 +7,10 @@ const shopBgd = document.querySelector('.js-shop-background'); //посилан�
 const currentPage = 1;
 const itemsPerPage = getItemsPerPage();
 const paginat = document.querySelector('#pagination');
+const removeBtn = document.querySelector('.remove-books');
 
 shopList.addEventListener('click', onBtnTrashClick);
+removeBtn.addEventListener('click', onBtnRemoveClick);
 
 let data = JSON.parse(localStorage.getItem('storage-data')); // отримаємо данні з localStorage
 
@@ -32,15 +34,11 @@ function renderBookCardPagination(array) {
     Loading.remove('Loading...');
     return;
   }
+
   if (shopBgd) {
     shopBgd.setAttribute('hidden', '');
+    removeBtn.removeAttribute('hidden', '');
   }
-
-  // if (array.length < itemsPerPage || array.length === itemsPerPage) {
-
-  //   paginat.innerHTML = '';
-  //   return;
-  // }
 
   if (shopList) {
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -125,6 +123,7 @@ function removeBookFromLocalStorage(bookId) {
   renderBookCardPagination(newData);
   if (!newData || newData.length === 0) {
     shopBgd.removeAttribute('hidden', '');
+    removeBtn.setAttribute('hidden', '');
     paginat.innerHTML = '';
   }
 
@@ -133,4 +132,13 @@ function removeBookFromLocalStorage(bookId) {
   }
   Loading.remove('Loading...');
 }
-console.log(itemsPerPage);
+
+function onBtnRemoveClick() {
+  Loading.standard('Loading...');
+  localStorage.removeItem('storage-data');
+  shopList.innerHTML = '';
+  shopBgd.removeAttribute('hidden', '');
+  removeBtn.setAttribute('hidden', '');
+  paginat.innerHTML = '';
+  Loading.remove('Loading...');
+}
