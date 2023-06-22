@@ -1,11 +1,6 @@
 import {reportsFailure} from './notificationsNotiflix';
 import { Loading } from 'notiflix';
 
-// Loading.standard('Loading...');
-// Loading.remove('Loading...');
-
-// reportsFailure('Sorry, no books were found. Please try again.')
-
 const allModal = document.querySelector('#allModal'); //
 
 // const bookList = document.querySelector('.js-list-rendering'); // з js Сергія + я додала, що в li додавався id
