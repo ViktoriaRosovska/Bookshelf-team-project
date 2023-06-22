@@ -8,9 +8,24 @@ const body = document.body;
 
 const homeBtnEl = document.querySelector('.js-modal-home-btn')
 const listBtnEl = document.querySelector('.js-modal-list-btn')
+const iconListBtn = document.querySelector('.list-btn-svg-menu')
 
 burgerBtnEl?.addEventListener('click', showModal)
 closeModalBtnEl?.addEventListener('click', closeModal)
+
+
+if (window.location.href === listBtnEl.href) {
+    listBtnEl.classList.add('current');
+    homeBtnEl.classList.remove('current');
+     iconListBtn.classList.remove('fill');
+    homeBtnEl.classList.add('pudding');
+   
+} else if (window.location.href === homeBtnEl.href) {
+    homeBtnEl.classList.remove('pudding');
+    listBtnEl.classList.add('padding');
+     iconListBtn.classList.add('fill');
+}
+
 
 function showModal(elem) {
     headerEl?.classList.add('index')
@@ -32,3 +47,14 @@ function closeModal() {
      menuMobileEl.classList.remove('active-mobile-menu')
 
 }
+
+const home = document.querySelector('.modal-home-btn');
+const list = document.querySelector('.modal-list-btn');
+
+list.addEventListener('click', () => {
+    if  ((window.location.href === "shoplist") &&
+        (list.textContent === "Shopping list")) {
+        list.classList.add("current");
+    }
+});
+

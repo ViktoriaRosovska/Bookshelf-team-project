@@ -7,6 +7,11 @@
 
   border-radius: 8px;
   margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.book-descr {
+  cursor: pointer;
 }
 
 .quick-view {
@@ -52,6 +57,7 @@
 .top-books {
   display: flex;
   gap: 24px;
+  
   
 }
 

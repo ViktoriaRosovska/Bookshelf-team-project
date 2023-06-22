@@ -29,6 +29,12 @@ const submit = document.querySelector('.modal-login-btn-up');
 const logOutBtn = document.querySelector('.log-out-btn');
 const authorisationMobileBtn = document.querySelector(".mobile-menu-authorisation-btn");
 const authorisationDesktop = document.querySelector('.authorisation-btn-desktop');
+const shoppingListDesk = document.querySelector('.shoppingListDesk');
+const name1 = document.querySelector('.modal-login-form-name-in');
+const password1 = document.querySelector('.modal-login-form-password-in');
+const signInBtn = document.querySelector('.modal-login-btn-in');
+const shoppingListMob = document.querySelector('.shoppingListMob');
+const userMobile = document.querySelector('.user-modal');
 
 function isEmptyOrSpaces(str) {
   return str === null || str.match(/^ *$/) !== null;
@@ -81,6 +87,10 @@ function validation1() {
   return true;
 }
 
+function getId() {
+        return Math.random().toString(16).slice(2);
+    }
+
 function registerUser() {
   if (!validation()) {
     return;
@@ -91,13 +101,14 @@ function registerUser() {
       reportsWarning("Account already exist!");
     } else {
       const user = {
-        name: name.value,
-        email: email.value,
+        id: getId(),
+        name: name.value.trim().toLowerCase(),
+        email: email.value.trim().toLowerCase(),
         password: cryptoPassword(),
       };
       set(ref(db, "Username/" + name.value), user).then(() => {
         reportsSuccess("User added successfully");
-        setTimeout(() => login(user), 1000);
+        setTimeout(() => login(user), 500);
       }).catch((error) => {
         alert("error" + error);
       })
@@ -105,16 +116,13 @@ function registerUser() {
   })
 }
 
-const name1 = document.querySelector('.modal-login-form-name-in');
-const password1 = document.querySelector('.modal-login-form-password-in');
-const signInBtn = document.querySelector('.modal-login-btn-in');
 
 function authentificateUser() {
    if (!validation1()) {
     return;
   };
   const dbRef = ref(db);
-  get(child(dbRef, "Username/" + name1.value)).then((snapshot) => {
+  get(child(dbRef, "Username/" + name1.value.trim().toLowerCase())).then((snapshot) => {
     if (snapshot.exists()) {
       let dbpass = decPassword(snapshot.val().password);
       if (dbpass == password1.value) {
@@ -144,8 +152,9 @@ function decPassword(dbpass) {
 function login(user) {
   localStorage.setItem('user', JSON.stringify(user));
   window.location = "index.html";
-  authorisationMobileBtn.classList.add('is-hidden-btn');
+  authorisationMobileBtn.classList.add('is-hidden');
   authorisationDesktop.classList.add('is-hidden-btn');
+  shoppingListDesk.classList.remove('is-hidden-btn');
 }
 
 function getUsername() {
@@ -161,7 +170,8 @@ window.onload = function () {
 
   if (currentuser)
   {
-    authorisationMobileBtn.classList.add("is-hidden-btn");
+    userMobile.classList.remove('is-hidden');
+    authorisationMobileBtn.classList.add("is-hidden");
     authorisationDesktop.classList.add('is-hidden-btn');
     document.querySelector(".user-btn span").textContent = currentuser.name;
     document.querySelector('.user-modal').classList.remove('is-hidden');
@@ -169,6 +179,8 @@ window.onload = function () {
     document.querySelector(".log-out-btn-big").addEventListener("click", () => signout());
     document.querySelector(".select-user-container").classList.remove("is-hidden-btn");
     logOutBtn.classList.remove('is-hidden');
+    shoppingListDesk.classList.remove('is-hidden-btn');
+    shoppingListMob.classList.remove('is-hidden');
   }
 
 }
@@ -184,4 +196,6 @@ if (logOutBtn) {
   logOutBtn.addEventListener('click', signout);
   authorisationMobileBtn.classList.remove('is-hidden');
   authorisationDesktop.classList.remove('is-hidden-btn');
+  shoppingListDesk.classList.add('is-hidden-btn');
+  shoppingListMob.classList.add('is-hidden');
 }

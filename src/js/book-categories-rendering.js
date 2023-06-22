@@ -42,8 +42,10 @@ export default async function createMarkup(category) {
                 <p class="quick-view-text">QUICK VIEW</p>
                 </div>
                 </div>
+                <div class="book-descr">
       <h2 class="book-name">${title}</h2>
       <h3 class="book-author">${author}</h3>
+      </div>
   </li>`;
       })
       .join('')}
