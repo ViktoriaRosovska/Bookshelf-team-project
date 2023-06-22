@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import CryptoJS from "crypto-js";
+import sodium from 'libsodium-wrappers-sumo';
 import { reportsSuccess, reportsFailure, reportsWarning } from "./notificationsNotiflix";
 
 import { initializeApp } from "firebase/app";
@@ -93,63 +93,60 @@ function getId() {
         return Math.random().toString(16).slice(2);
     }
 
-function registerUser() {
+async function registerUser() {
   if (!validation()) {
     return;
   };
+
+  await sodium.ready;
+
   const dbRef = ref(db);
-  get(child(dbRef, "Username/" + name.value)).then((snapshot) => {
-    if (snapshot.exists()) {
-      reportsWarning("Account already exist!");
-    } else {
-      const user = {
-        id: getId(),
-        name: name.value.trim().toLowerCase(),
-        email: email.value.trim().toLowerCase(),
-        password: cryptoPassword(),
-      };
-      set(ref(db, "Username/" + name.value), user).then(() => {
-        reportsSuccess("User added successfully");
-        setTimeout(() => login(user), 500);
-      }).catch((error) => {
-        alert("error" + error);
-      })
+  const snapshot = await get(child(dbRef, "Username/" + name.value));
+  if (snapshot.exists()) {
+    reportsWarning("Account already exist!");
+  } else {
+    const pwd = sodium.crypto_pwhash_str(password.value, sodium.crypto_pwhash_OPSLIMIT_INTERACTIVE, sodium.crypto_pwhash_MEMLIMIT_INTERACTIVE);
+    const user = {
+      id: getId(),
+      name: name.value.trim().toLowerCase(),
+      email: email.value.trim().toLowerCase(),
+      password: pwd,
+    };
+    try {
+      await set(ref(db, "Username/" + name.value), user);
+      reportsSuccess("User added successfully");
+      setTimeout(() => login(user), 500);
     }
-  })
+    catch (error) {
+      reportsFailure("Can't register user: " +  error);
+    }
+  }
 }
 
 
-function authentificateUser() {
+async function authentificateUser() {
    if (!validation1()) {
     return;
   };
+
+  await sodium.ready;
+
   const dbRef = ref(db);
-  get(child(dbRef, "Username/" + name1.value.trim().toLowerCase())).then((snapshot) => {
-    if (snapshot.exists()) {
-      let dbpass = decPassword(snapshot.val().password);
-      if (dbpass == password1.value) {
-        login(snapshot.val());
-      } else {
-        reportsFailure("Username or password is invalid");
-      }
+  const snapshot = await get(child(dbRef, "Username/" + name1.value.trim().toLowerCase()));
+  if (snapshot.exists()) {
+    const valid = sodium.crypto_pwhash_str_verify(snapshot.val().password, password1.value);
+    if (valid) {
+      login(snapshot.val());
     } else {
-      reportsFailure("User doesn't exist");
+      reportsFailure("Username or password is invalid");
     }
-  });
+  } else {
+    reportsFailure("User doesn't exist");
+  }
 }
 
 
 let currentuser = null;
-
-function cryptoPassword() {
-  const pass = CryptoJS.AES.encrypt(password1.value, password1.value);
-  return pass.toString();
-}
-function decPassword(dbpass) {
-  const pass = CryptoJS.AES.decrypt(dbpass, password1.value);
-  return pass.toString(CryptoJS.enc.Utf8);
-}
-
 
 function login(user) {
   localStorage.setItem('user', JSON.stringify(user));
@@ -172,7 +169,10 @@ window.onload = function () {
 
   if (currentuser)
   {
-    shopBtnAdd.removeAttribute("disabled", "")
+    if (shopBtnAdd) {
+       shopBtnAdd.removeAttribute("disabled", "")
+    }
+   
     userMobile.classList.remove('is-hidden');
     authorisationMobileBtn.classList.add("is-hidden");
     authorisationDesktop.classList.add('is-hidden-btn');
