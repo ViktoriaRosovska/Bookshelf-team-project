@@ -116,10 +116,7 @@ function LastWord(category) {
   
 async function createBooksOnSeeMoreBtn(category) {
   try {
-    if (!response.ok) {
-      throw new Error();
-       return
-    }
+  
     Loading.standard('Loading...');
   const res = await api.fetchBooksByCategory(category);
     const books = await res.data;
