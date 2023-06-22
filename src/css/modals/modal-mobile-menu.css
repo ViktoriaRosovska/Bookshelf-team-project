@@ -5,6 +5,7 @@
 }
 
 @media screen and (max-width: 767.98px) {}
+
 * {
     -webkit-tap-highlight-color: transparent;
 }
@@ -211,7 +212,7 @@
     user-select: none;
 }
 
-.mobile-menu-authorisation-btn.is-hidden-btn {
+.mobile-menu-authorisation-btn.is-hidden {
     display: none;
 }
 
