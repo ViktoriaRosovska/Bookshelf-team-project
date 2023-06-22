@@ -102,7 +102,7 @@ function registerUser() {
       };
       set(ref(db, "Username/" + name.value), user).then(() => {
         reportsSuccess("User added successfully");
-        setTimeout(() => login(user), 1000);
+        setTimeout(() => login(user), 500);
       }).catch((error) => {
         alert("error" + error);
       })
@@ -149,7 +149,7 @@ function decPassword(dbpass) {
 function login(user) {
   localStorage.setItem('user', JSON.stringify(user));
   window.location = "index.html";
-  authorisationMobileBtn.classList.add('is-hidden-btn');
+  authorisationMobileBtn.classList.add('is-hidden');
   authorisationDesktop.classList.add('is-hidden-btn');
 }
 
@@ -166,14 +166,14 @@ window.onload = function () {
 
   if (currentuser)
   {
-    authorisationMobileBtn.classList.add("is-hidden-btn");
+    authorisationMobileBtn.classList.add("is-hidden");
     authorisationDesktop.classList.add('is-hidden-btn');
     document.querySelector(".user-btn span").textContent = currentuser.name;
     document.querySelector('.user-modal').classList.remove('is-hidden-btn');
     document.querySelector('.user-modal h2').textContent = currentuser.name;
     document.querySelector(".log-out-btn-big").addEventListener("click", () => signout());
     document.querySelector(".select-user-container").classList.remove("is-hidden-btn");
-    logOutBtn.classList.remove('is-hidden-btn');
+    logOutBtn.classList.remove('is-hidden');
   }
 
 }
