@@ -34,7 +34,7 @@ const name1 = document.querySelector('.modal-login-form-name-in');
 const password1 = document.querySelector('.modal-login-form-password-in');
 const signInBtn = document.querySelector('.modal-login-btn-in');
 const shoppingListMob = document.querySelector('.shoppingListMob');
-const userMobile = document.querySelector('user-modal');
+const userMobile = document.querySelector('.user-modal');
 
 function isEmptyOrSpaces(str) {
   return str === null || str.match(/^ *$/) !== null;
