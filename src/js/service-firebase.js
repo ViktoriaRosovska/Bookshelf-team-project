@@ -33,8 +33,10 @@ const shoppingListDesk = document.querySelector('.shoppingListDesk');
 const name1 = document.querySelector('.modal-login-form-name-in');
 const password1 = document.querySelector('.modal-login-form-password-in');
 const signInBtn = document.querySelector('.modal-login-btn-in');
-const shoppingListMob = document.querySelector('.shoppingListMob');
+// const shoppingListMob = document.querySelector('.shoppingListMob');
 const userMobile = document.querySelector('.user-modal');
+const shopBtnAdd = document.querySelector('.modal__shopping-button');
+// const shopBtnDelete = document.querySelector('.storage-delete-button');
 
 function isEmptyOrSpaces(str) {
   return str === null || str.match(/^ *$/) !== null;
@@ -170,6 +172,7 @@ window.onload = function () {
 
   if (currentuser)
   {
+    shopBtnAdd.removeAttribute("disabled", "")
     userMobile.classList.remove('is-hidden');
     authorisationMobileBtn.classList.add("is-hidden");
     authorisationDesktop.classList.add('is-hidden-btn');
@@ -180,7 +183,7 @@ window.onload = function () {
     document.querySelector(".select-user-container").classList.remove("is-hidden-btn");
     logOutBtn.classList.remove('is-hidden');
     shoppingListDesk.classList.remove('is-hidden-btn');
-    shoppingListMob.classList.remove('is-hidden');
+    userMobile.classList.remove('is-hidden');
   }
 
 }
@@ -197,5 +200,7 @@ if (logOutBtn) {
   authorisationMobileBtn.classList.remove('is-hidden');
   authorisationDesktop.classList.remove('is-hidden-btn');
   shoppingListDesk.classList.add('is-hidden-btn');
-  shoppingListMob.classList.add('is-hidden');
+  userMobile.classList.add('is-hidden');
 }
+
+
