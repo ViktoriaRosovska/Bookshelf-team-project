@@ -1,3 +1,9 @@
+.modal-list-btn.current,
+.modal-home-btn.current {
+
+    background-color: var(--color-yellow-componemt);
+}
+
 @media screen and (max-width: 767.98px) {}
 
 @media screen and (min-width: 768px) {
@@ -114,11 +120,6 @@
     padding-left: 0px;
 }
 
-.modal-list-btn.current,
-.modal-home-btn.current {
-
-    background-color: var(--color-yellow-componemt);
-}
 
 .modal-home-btn:hover,
 .modal-home-btn:focus,

@@ -32,3 +32,14 @@ function closeModal() {
      menuMobileEl.classList.remove('active-mobile-menu')
 
 }
+
+const home = document.querySelector('.modal-home-btn');
+const list = document.querySelector('.modal-list-btn');
+
+list.addEventListener('click', () => {
+    if  ((window.location.href === "shoplist") &&
+        (list.textContent === "Shopping list")) {
+        list.classList.add("current");
+    }
+});
+
