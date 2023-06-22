@@ -1,4 +1,4 @@
-import {reportsInfo} from './notificationsNotiflix';
+import {reportsInfo, reportsSuccess, reportsFailure, reportsWarning} from './notificationsNotiflix';
 import { Loading } from 'notiflix';
 
 import { scrollBtn } from './scrollBtn';
