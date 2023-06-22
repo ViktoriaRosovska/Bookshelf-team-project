@@ -1,17 +1,24 @@
 import { APIService } from './API-service';
 import { highlightCategory } from './book-categories';
 
+import {reportsFailure} from './notificationsNotiflix';
+import { Loading } from 'notiflix';
+
 const api = new APIService();
 
 const bookGallery = document.querySelector('.books-gallery');
 
 async function getBestSellers() {
   try {
-  const response = await api.fetchBestSellersBooks();
+    Loading.standard('Loading...');
+    const response = await api.fetchBestSellersBooks();
+    Loading.remove('Loading...');
   const bestSellers = await response.data;
     return bestSellers;
   } catch (error) {
     console.log(error);
+    Loading.remove('Loading...');
+     reportsFailure('Sorry, no books were found. Please try again.')
     }
 }
 
@@ -53,13 +60,12 @@ export default async function renderCategories() {
   bookCategories += '</ul>';
   bookGallery.innerHTML = `<h1 class="collection-title">Best Sellers <span>Books</span></h1>`;
   const bookCollection = document.createElement("div");
-  bookCollection.className = "books-collection";
+    bookCollection.className = "books-collection";
   bookCollection.innerHTML = bookCategories;
   bookCollection.addEventListener('click', onSeeMoreBtnClick);
-
   bookGallery.appendChild(bookCollection);
-} catch (eror) {
-  console.log(error);
+} catch (error) {
+    console.log(error);
   }
 }
 
@@ -90,6 +96,7 @@ async function onSeeMoreBtnClick(e) {
     }
   } catch (error) {
     console.log(error);
+     
     }
 }
 
@@ -107,8 +114,14 @@ function LastWord(category) {
   
 async function createBooksOnSeeMoreBtn(category) {
   try {
+    if (!response.ok) {
+      throw new Error();
+       return
+    }
+    Loading.standard('Loading...');
   const res = await api.fetchBooksByCategory(category);
-  const books = await res.data;
+    const books = await res.data;
+    Loading.remove('Loading...');
   function collectionMarkup() {
     return `
     <ul class="top-books rendering-gap js-list-rendering">
@@ -134,6 +147,8 @@ async function createBooksOnSeeMoreBtn(category) {
     bookCollection.innerHTML = collectionMarkup();
   } catch (error) {
     console.log(error);
+     Loading.remove('Loading...');
+    reportsFailure('Sorry, no books  were found. Please try again.');
     }
 }
 
