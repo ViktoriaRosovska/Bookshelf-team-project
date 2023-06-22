@@ -34,6 +34,7 @@ const name1 = document.querySelector('.modal-login-form-name-in');
 const password1 = document.querySelector('.modal-login-form-password-in');
 const signInBtn = document.querySelector('.modal-login-btn-in');
 const shoppingListMob = document.querySelector('.shoppingListMob');
+const userMobile = document.querySelector('.user-modal');
 
 function isEmptyOrSpaces(str) {
   return str === null || str.match(/^ *$/) !== null;
@@ -169,10 +170,11 @@ window.onload = function () {
 
   if (currentuser)
   {
+    userMobile.classList.remove('is-hidden');
     authorisationMobileBtn.classList.add("is-hidden");
     authorisationDesktop.classList.add('is-hidden-btn');
     document.querySelector(".user-btn span").textContent = currentuser.name;
-    document.querySelector('.user-modal').classList.remove('is-hidden-btn');
+    document.querySelector('.user-modal').classList.remove('is-hidden');
     document.querySelector('.user-modal h2').textContent = currentuser.name;
     document.querySelector(".log-out-btn-big").addEventListener("click", () => signout());
     document.querySelector(".select-user-container").classList.remove("is-hidden-btn");

@@ -12,6 +12,10 @@
   border-bottom-right-radius: 8px;
 }
 
+.authorisation-btn-desktop.is-hidden-btn {
+  display: none;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -123,9 +127,6 @@
 .list-btn-svg:focus {
   fill: white;
 }
-
-
-
 
 .current {
   background-color: var(--color-yellow-componemt);
