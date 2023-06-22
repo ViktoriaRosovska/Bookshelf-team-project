@@ -1,4 +1,4 @@
-import {reportsFailure, reportsWarning} from './notificationsNotiflix';
+import {reportsSuccess, reportsFailure, reportsWarning} from './notificationsNotiflix';
 import { Loading } from 'notiflix';
 import { scrollBtn } from './scrollBtn';
 import { isAuthenticated } from './service-firebase';
