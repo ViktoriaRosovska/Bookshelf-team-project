@@ -1,19 +1,21 @@
-import {reportsFailure} from './notificationsNotiflix';
+import {reportsFailure, reportsWarning} from './notificationsNotiflix';
 import { Loading } from 'notiflix';
 
-const allModal = document.querySelector('#allModal'); //
+import { scrollBtn } from './scrollBtn';
+import { isAuthenticated } from './service-firebase';
 
-// const bookList = document.querySelector('.js-list-rendering'); // з js Сергія + я додала, що в li додавався id
-const bookList = document.querySelector('.books-gallery'); // проблема була в назві стилю
-const addStorageBtn = document.querySelector('.add-storage-button'); //
-const removeStorageBtn = document.querySelector('.remove-storage-btn'); //
-const storageDescription = document.querySelector('.storage-info'); //
+const allModal = document.querySelector('#allModal'); 
+
+
+const bookList = document.querySelector('.books-gallery'); 
+const addStorageBtn = document.querySelector('.add-storage-button'); 
+const removeStorageBtn = document.querySelector('.remove-storage-btn'); 
+const storageDescription = document.querySelector('.storage-info'); 
 
 import { APIService } from './API-service';
 
 const apiBook = new APIService();
 
-// імпорт іконок для верстки картки книги в модальному вікні
 import amazonPng from '../images/amazon-icon1x.png';
 import amazonPng2x from '../images/amazon-icon2x.png';
 import appleBookPng from '../images/applebook-icon1x.png';
@@ -35,6 +37,9 @@ const idModal = document.querySelector('.about-book-modal');
 const idBackdropModal = document.querySelector('.card-backdrop-modal');
 
 function openModalId() {
+   if (addStorageBtn.hasAttribute("disabled", "")) {
+    reportsWarning("Please sign up to show a shopping list");
+  }
   idModal?.classList.remove('is-hidden');
   idBackdropModal?.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';
@@ -60,7 +65,10 @@ async function createModal(bookId) {
   }
  
   try {
-     Loading.standard('Loading...');
+
+   
+    Loading.standard('Loading...');
+
     const data = await fetchBookById(bookId);
 
     storageCheck();
@@ -71,7 +79,7 @@ async function createModal(bookId) {
      Loading.remove('Loading...');
     console.log('Error', error);
     reportsFailure('Sorry, no books were found. Please try again.')
-    // throw error;
+
   }
 }
 
@@ -94,12 +102,13 @@ async function fetchBookById(bookId) {
     return data;
   } catch (error) {
     console.log('Error', error);
-    // throw error;
   }
 }
 
 function storageCheck() {
-  const storageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  const storageArr = isAuthenticated()
+    ? JSON.parse(localStorage.getItem(STORAGE_KEY))
+    : null;
   const idToFind = storageObj.id;
 
   if (!storageArr || storageArr.length === 0) {
@@ -127,7 +136,7 @@ function createMarkup(data) {
   const marketAppleBooks = data.buy_links[1].url;
   const marketBookshop = data.buy_links[4].url;
   const bookDescription = data.description;
-  // //перевірка на наявність опису книги в api
+  
   let descriptionMarkup = bookDescription;
   if (bookDescription === '') {
     descriptionMarkup =

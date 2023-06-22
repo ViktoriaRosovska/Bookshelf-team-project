@@ -11,7 +11,6 @@
   transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
 .is-hidden {
   opacity: 0;
   pointer-events: none;
@@ -180,7 +179,11 @@
   color: var(--dark-theme-componemt);
   text-align: center;
   cursor: pointer;
+
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 @media screen and (min-width: 768px) {
   .modal__shopping-button {
     width: 500px;
@@ -190,8 +193,18 @@
     margin-top: 40px;
   }
 }
+.modal__shopping-button:hover,
+.modal__shopping-button:focus {
+  background-color: var(--color-blue-component);
+  color: var(--ligtht-theme);
+}
 .add-storage-button {
   padding: 14px 28px;
+}
+
+.add-storage-button:disabled {
+  background-color: #b4afaf;
+  color: #11111124;
 }
 .storage-delete-button {
   padding: 14px 10px;
