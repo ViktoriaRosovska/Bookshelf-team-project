@@ -1,20 +1,26 @@
 .modal-settings{
-  position: fixed;
-  top: 40px;
-  left: 200px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 200px;
   height: 520px;
-  background: #4F2EE8;
-  border: 2px solid #FFFF00;
+  background: var(--color-blue-component);
+  border: 2px solid var(--color-yellow-componemt);
   border-radius: 18px;
   padding: 200px 20px;
+  z-index: 2000;
+}
+
+.modal-settings.is-hidden-btn {
+  display: none;
 }
 
 .close-modal-settings{
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #4F2EE8;
+  background-color: var(--colo);
   border: none;
 }
 
@@ -24,8 +30,8 @@
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  color: #FFFF00;
-  border: 2px solid #FFFF00;
+  color: var(--color-yellow-componemt);
+  border: 2px solid var(--color-yellow-componemt);
   background-color: #565656;
   text-align: center;
   display: flex;
@@ -46,7 +52,7 @@
   line-height: 20px;
   letter-spacing: -0.04em;
   color: #565656;
-  background: #FFFF00;
+  background: var(--color-yellow-componemt);
   border: none;
   text-align: center;
   white-space: nowrap;
@@ -79,7 +85,7 @@
 
 .modal-settings-button:focus,
 .modal-settings-button:hover {
-background: #FFFF00;
+background: var(--color-yellow-componemt);
 }
 
 .modal-settings-button:last-child {
@@ -92,5 +98,5 @@ background: #FFFF00;
 
 .button-svg:focus,
 .button-svg:hover {
-  fill: #FFFF00;
+  fill: var(--color-yellow-componemt);
 }

@@ -17,5 +17,5 @@ import './js/scrollBtn';
 import './js/service-firebase';
 
 import './js/notificationsNotiflix';
-// import './js/account';
 import './js/auth';
+import './js/settings';
