@@ -53,8 +53,7 @@
   gap: 10px;
   margin-bottom: 33px;
 }
-
-.modal-settings-button{
+.modal-settings-button {
   width: 158px;
   height: 30px;
   border: 2px solid #111111;
@@ -75,12 +74,14 @@
   margin-bottom: 33px;
   padding-top: 4px;
   padding-left: 10px;
+  transition: background 700ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-settings-button:focus,
 .modal-settings-button:hover {
-background: #FFFF00;
+  background: #FFFF00;
 }
+
 
 .modal-settings-button:last-child {
   margin-bottom: 0;
