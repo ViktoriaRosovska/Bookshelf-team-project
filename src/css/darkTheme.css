@@ -218,21 +218,46 @@ body.dark-theme .modal-login-form-password {
   border: 2px solid #f6f6f6;
 }
 
+.modal-login-form-name:-webkit-autofill,
+.modal-login-form-name:-webkit-autofill:hover,
+.modal-login-form-name:-webkit-autofill:focus,
+.modal-login-form-email:-webkit-autofill,
+.modal-login-form-email:-webkit-autofill:hover,
+.modal-login-form-email:-webkit-autofill:focus,
+.modal-login-form-password:-webkit-autofill,
+.modal-login-form-password:-webkit-autofill:hover,
+.modal-login-form-password:-webkit-autofill:focus {
+  border: 1px solid  var(--ligtht-theme);
+  -webkit-text-fill-color:  var(--ligtht-theme);
+  -webkit-box-shadow: 0 0 0px 1000px var(--dark-theme) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
 body.dark-theme ::placeholder {
   color: #f6f6f6;
 }
 
-body.dark-theme .modal-login-btn {
+body.dark-theme .modal-login-btn-up,
+body.dark-theme .modal-login-btn-in {
   background: #f6f6f6;
   color: var(--dark-theme);
 }
 
-/* body.dark-theme .modal-login-form-close-btn {
-   background-color: #61ea45; 
-} */
+/* стиль для кнопки закриття при ховері для світлої теми */
+.modal-login-form-close-btn:hover .button-close-icon,
+.modal-login-form-close-btn:focus .button-close-icon {
+  stroke:var(--color-blue-component);
+}
+
+body.dark-theme .modal-login-form-close-btn:hover .button-close-icon,
+body.dark-theme .modal-login-form-close-btn:focus .button-close-icon {
+  stroke:var(--color-blue-component);
+}
+
 
 body.dark-theme .sign {
-  color: var(--ligtht-theme);
+  color: rgb(246, 246, 246, 0.5);
 }
 
 body.dark-theme .modal-login-btn:hover,

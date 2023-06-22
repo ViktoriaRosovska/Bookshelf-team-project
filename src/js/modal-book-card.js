@@ -1,9 +1,11 @@
 import {reportsFailure, reportsWarning} from './notificationsNotiflix';
 import { Loading } from 'notiflix';
+
 import { scrollBtn } from './scrollBtn';
 import { isAuthenticated } from './service-firebase';
 
 const allModal = document.querySelector('#allModal'); 
+
 
 const bookList = document.querySelector('.books-gallery'); 
 const addStorageBtn = document.querySelector('.add-storage-button'); 
@@ -63,8 +65,10 @@ async function createModal(bookId) {
   }
  
   try {
+
    
     Loading.standard('Loading...');
+
     const data = await fetchBookById(bookId);
 
     storageCheck();
