@@ -47,6 +47,8 @@
   height: 12px;
   border: none;
   cursor: pointer;
+  transition: fill 0.3s ease;
+  stroke: #111111;
   transition: stroke 0.3s ease;
   background: transparent;
   fill: var(--dark-theme-componemt);

@@ -10,3 +10,4 @@ import './js/modal-login-form';
 import './js/service-firebase';
 import './js/auth';
 import './js/notificationsNotiflix';
+import './js/settings';
