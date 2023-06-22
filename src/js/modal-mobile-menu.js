@@ -9,7 +9,6 @@ const body = document.body;
 const homeBtnEl = document.querySelector('.js-modal-home-btn')
 const listBtnEl = document.querySelector('.js-modal-list-btn')
 const iconListBtn = document.querySelector('.list-btn-svg-menu')
-console.log(iconListBtn);
 
 burgerBtnEl?.addEventListener('click', showModal)
 closeModalBtnEl?.addEventListener('click', closeModal)

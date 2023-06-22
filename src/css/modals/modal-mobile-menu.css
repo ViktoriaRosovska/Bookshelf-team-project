@@ -36,9 +36,6 @@
     right: 0;
     bottom: 0;
 
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
     align-items: flex-start;
     width: 375px;
     margin-left: auto;
@@ -108,7 +105,6 @@
 
     transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1), color 550ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1), text-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1), font-size 350ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1), color 550ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1), text-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1), font-size 350ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .modal-list-btn {
@@ -128,7 +124,6 @@
 
     transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1), color 350ms cubic-bezier(0.4, 0, 0.2, 1), fill 350ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1), text-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1), stroke 350ms cubic-bezier(0.4, 0, 0.2, 1), font-size 350ms cubic-bezier(0.4, 0, 0.2, 1);
     color: #FFFFFF;
-    /* padding-left: 0px; */
 }
 
 .modal-home-btn.padding,
@@ -141,7 +136,6 @@
 
     font-weight: 700;
     color: var(--dark-theme-componemt);
-    /* fill: #000000; */
     background-color: var(--color-yellow-componemt);
 }
 
@@ -227,7 +221,6 @@
     flex-wrap: wrap;
     gap: 17px 32px;
     width: 420px;
-    /* height: 439px; */
     rotate: -15deg;
     z-index: -1;
 }
