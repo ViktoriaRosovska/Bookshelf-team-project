@@ -29,7 +29,7 @@
   border: transparent;
   font-weight: 700;
   font-size: 14px;
-  
+  line-height: 1.29;
 }
 
 .underline {
@@ -44,7 +44,7 @@
   line-height: 18px;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: #111111;
+  color: var(--dark-theme-componemt);
 }
 
 .modal-login-in,
@@ -60,9 +60,6 @@
   align-items: center;
 }
 
-.modal-login-in {
-  display: none;
-}
 .modal-login-form-close-btn {
   position: absolute;
   z-index: 2500;
@@ -270,6 +267,7 @@
   .sign {
     font-weight: 700;
     font-size: 18px;
+    line-height: 1.33;
   }
  
 }
