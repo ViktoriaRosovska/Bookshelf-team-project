@@ -65,11 +65,7 @@ async function createModal(bookId) {
   }
  
   try {
-    if (!response.ok) {
-      // idModal?.classList.add('is-hidden');
-      throw new Error();
-       return
-    }
+   
      Loading.standard('Loading...');
     const data = await fetchBookById(bookId);
 
