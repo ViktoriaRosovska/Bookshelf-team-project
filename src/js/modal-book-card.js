@@ -1,25 +1,23 @@
-import {reportsSuccess, reportsFailure, reportsWarning} from './notificationsNotiflix';
+import {reportsInfo, reportsSuccess, reportsFailure, reportsWarning} from './notificationsNotiflix';
 import { Loading } from 'notiflix';
+
 import { scrollBtn } from './scrollBtn';
 import { isAuthenticated } from './service-firebase';
-// Loading.standard('Loading...');
-// Loading.remove('Loading...');
 
-// reportsFailure('Sorry, no books were found. Please try again.')
 
-const allModal = document.querySelector('#allModal'); //
 
-// const bookList = document.querySelector('.js-list-rendering'); // з js Сергія + я додала, що в li додавався id
-const bookList = document.querySelector('.books-gallery'); // проблема була в назві стилю
-const addStorageBtn = document.querySelector('.add-storage-button'); //
-const removeStorageBtn = document.querySelector('.remove-storage-btn'); //
-const storageDescription = document.querySelector('.storage-info'); //
+const allModal = document.querySelector('#allModal'); 
+
+
+const bookList = document.querySelector('.books-gallery'); 
+const addStorageBtn = document.querySelector('.add-storage-button'); 
+const removeStorageBtn = document.querySelector('.remove-storage-btn'); 
+const storageDescription = document.querySelector('.storage-info'); 
 
 import { APIService } from './API-service';
 
 const apiBook = new APIService();
 
-// імпорт іконок для верстки картки книги в модальному вікні
 import amazonPng from '../images/amazon-icon1x.png';
 import amazonPng2x from '../images/amazon-icon2x.png';
 import appleBookPng from '../images/applebook-icon1x.png';
@@ -69,8 +67,10 @@ async function createModal(bookId) {
   }
  
   try {
+
    
     Loading.standard('Loading...');
+
     const data = await fetchBookById(bookId);
 
     storageCheck();
@@ -81,7 +81,7 @@ async function createModal(bookId) {
      Loading.remove('Loading...');
     console.log('Error', error);
     reportsFailure('Sorry, no books were found. Please try again.')
-    // throw error;
+
   }
 }
 
@@ -104,7 +104,6 @@ async function fetchBookById(bookId) {
     return data;
   } catch (error) {
     console.log('Error', error);
-    // throw error;
   }
 }
 
@@ -139,7 +138,7 @@ function createMarkup(data) {
   const marketAppleBooks = data.buy_links[1].url;
   const marketBookshop = data.buy_links[4].url;
   const bookDescription = data.description;
-  // //перевірка на наявність опису книги в api
+  
   let descriptionMarkup = bookDescription;
   if (bookDescription === '') {
     descriptionMarkup =
@@ -209,9 +208,18 @@ function onStorageAdd() {
 
   storageDescription.textContent =
     'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
-  storageCheck();
+  
+  const localArray = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  if (localArray.length === 1) {
+      reportsInfo(`You added book to the shopping list. You have ${localArray.length} book in your shopping list`)
+    } else {
+      reportsInfo(`You added book to the shopping list. You have ${localArray.length} books in your shopping list`)
+    }
+       storageCheck();
   
 }
+
+
 
 function onStorageDelete() {
   storageDescription.textContent = '';
@@ -220,6 +228,15 @@ function onStorageDelete() {
   const storageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
   const indexToDelete = storageArr.findIndex(obj => obj.id === idToDelete);
   storageArr.splice(indexToDelete, 1);
+
+  if (storageArr.length === 1) {
+    reportsInfo(`You removed book from your shopping list. You have ${storageArr.length} book in your shopping list`)
+  } else if(storageArr.length === 0||!storageArr.length){
+    reportsInfo('Your shopping list is empty')
+  } else {
+   (`You added book to the shopping list. You have ${storageArr.length} books in your shopping list`)
+  }
+
   localStorage.setItem(STORAGE_KEY, JSON.stringify(storageArr));
   storageCheck();
 }
