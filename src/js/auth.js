@@ -15,13 +15,14 @@ if (signIn) {
 function onSignInClick() {
     signIn.classList.add('underline');
     signUp.classList.remove('underline');
+    formIn.classList.remove('is-hidden')
+    formUp.classList.add('is-hidden');
     formIn.style.display = "block";
-    formUp.style.display = "none";
 }
 
 function onSignUpClick() {
     signUp.classList.add('underline');
     signIn.classList.remove('underline');
-    formIn.style.display = "none";
-    formUp.style.display = "block";
+    formIn.classList.add('is-hidden')
+    formUp.classList.remove('is-hidden');
 }
