@@ -1,10 +1,10 @@
-.modal-settings{
+.modal-settings {
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 200px;
-  height: 520px;
+  width: 240px;
+  height: 320px;
   background: var(--color-blue-component);
   border: 2px solid var(--color-yellow-componemt);
   border-radius: 18px;
@@ -16,7 +16,7 @@
   display: none;
 }
 
-.close-modal-settings{
+.close-modal-settings {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -24,11 +24,11 @@
   border: none;
 }
 
-.modal-settings-photo{
+.modal-settings-photo {
   position: absolute;
   top: 15px;
-  height: 150px;
-  width: 150px;
+  height: 190px;
+  width: 190px;
   border-radius: 50%;
   color: var(--color-yellow-componemt);
   border: 2px solid var(--color-yellow-componemt);
@@ -37,10 +37,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 
-.modal-settings-input{ 
-  width: 158px;
+.modal-settings-input {
+  width: 190px;
   height: 30px;
   border: 2px solid #111111;
   border-radius: 18px;
@@ -60,8 +61,8 @@
   margin-bottom: 33px;
 }
 
-.modal-settings-button{
-  width: 158px;
+.modal-settings-button {
+  width: 190px;
   height: 30px;
   border: 2px solid #111111;
   border-radius: 18px;
@@ -85,18 +86,52 @@
 
 .modal-settings-button:focus,
 .modal-settings-button:hover {
-background: var(--color-yellow-componemt);
+  background: var(--color-yellow-componemt);
 }
 
 .modal-settings-button:last-child {
   margin-bottom: 0;
 }
 
-.button-svg{
+.button-svg {
   fill: #565656;
+  margin-right: 20px;
+  margin-left: 5px;
 }
 
 .button-svg:focus,
 .button-svg:hover {
   fill: var(--color-yellow-componemt);
+}
+
+input.input-photo {
+  display: block;
+
+  background-color: antiquewhite;
+  border-radius: 30px;
+  width: 190px;
+  margin-top: -25px;
+  opacity: 0;
+
+}
+
+.add-photo {
+  margin: 0;
+  margin-top: 30px;
+  width: 190px;
+}
+
+
+
+.input-photo-save {
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 30px;
+  height: 30px;
+  width: 190px;
+  border: none;
+  margin-bottom: 0px;
+  margin-top: 20px;
+  padding-left: 70px;
+
 }

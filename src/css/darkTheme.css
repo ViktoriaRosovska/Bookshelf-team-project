@@ -154,8 +154,8 @@ body.dark-theme.tui-page-inputs .tui-page-input {
 }
 
 body.dark-theme.tui-pagination .tui-next-is-ellip,
-body.dark-theme.tui-pagination .tui-first + .tui-prev,
-body.dark-theme.tui-pagination .tui-next + .tui-last {
+body.dark-theme.tui-pagination .tui-first+.tui-prev,
+body.dark-theme.tui-pagination .tui-next+.tui-last {
   border: 1px solid var(--ligtht-theme);
 }
 
@@ -169,7 +169,7 @@ body.dark-theme .footer_container {
 
 body.dark-theme .footer_text_right,
 body.dark-theme .footer_text_left {
-  color:var(--ligtht-theme);
+  color: var(--ligtht-theme);
 }
 
 /* стилі для "modal-shopping-list" */
@@ -180,11 +180,11 @@ body.dark-theme .modal {
 
 body.dark-theme .title-about-book-modal,
 body.dark-theme .text-about-book-modal {
-  color:var(--ligtht-theme);
+  color: var(--ligtht-theme);
 }
 
 body.dark-theme .button-close-icon {
-  stroke:var(--ligtht-theme);
+  stroke: var(--ligtht-theme);
 }
 
 body.dark-theme .add-storage-button,
@@ -214,6 +214,7 @@ body.dark-theme .modal-login-form-name,
 body.dark-theme .modal-login-form-email,
 body.dark-theme .modal-login-form-password {
   background: var(--dark-theme);
+  color: var(--ligtht-theme);
   border: 2px solid #f6f6f6;
 }
 
@@ -236,6 +237,6 @@ body.dark-theme .sign {
 
 body.dark-theme .modal-login-btn:hover,
 body.dark-theme .modal-login-btn:focus {
-  color:var(--ligtht-theme);
+  color: var(--ligtht-theme);
   background: var(--color-blue-component);
 }
