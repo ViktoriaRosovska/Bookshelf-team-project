@@ -38,7 +38,7 @@ function openModalId() {
   idModal?.classList.remove('is-hidden');
   idBackdropModal?.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';
-  
+  scrollBtn.hide();
 }
 
 function onIdClick(e) {
@@ -223,6 +223,7 @@ function closeModal() {
   document.body?.classList.remove('modal-open');
   document.removeEventListener('keydown', closeModalOnEsc);
   document.body.style.overflow = '';
+  scrollBtn.show();
 }
 
 // Функція, яка закриває модальне вікно при кліку на backdrop
