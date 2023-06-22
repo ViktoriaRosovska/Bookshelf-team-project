@@ -50,7 +50,6 @@
 
 .header-nav {
   position: relative;
-  /* width: 250px; */
   height: 36px;
   display: flex;
   gap: 24px;
@@ -66,9 +65,6 @@
 }
 
 .home-btn {
-  /* position: absolute;
-  top: 0px;
-  left: 0px; */
   padding: 8px 16px;
   border-radius: 36px;
   background-color: transparent;
@@ -86,9 +82,7 @@
 }
 
 .list-btn {
-  /* position: absolute;
-  top: 0px;
-  right: 0px; */
+
   display: flex;
   height: 36px;
   align-items: center;
@@ -109,9 +103,7 @@
 
 .list-btn-svg {
   margin-left: 4px;
-  fill: var(--dark-theme-componemt)
 }
-
 
 .home-btn:hover,
 .home-btn:focus,
@@ -123,9 +115,15 @@
   fill: white;
   text-shadow: 0px 1px 2px #000000;
   transform: scale(1.01);
-  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15), 1px 5px 18px -1px rgba(231, 166, 26, 0.72); */
+
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15), 1px 5px 18px -1px rgba(231, 166, 26, 0.72);
 }
+
+.list-btn-svg:hover,
+.list-btn-svg:focus {
+  fill: white;
+}
+
 
 
 
@@ -161,7 +159,6 @@
   cursor: pointer;
   min-width: 186px;
   max-width: 186px;
-  /* text-overflow: ellipsis; */
 
   transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
