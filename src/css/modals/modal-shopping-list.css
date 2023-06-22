@@ -193,6 +193,11 @@
 .add-storage-button {
   padding: 14px 28px;
 }
+
+.add-storage-button:disabled {
+  background-color: #b4afaf;
+  color: #11111124;
+}
 .storage-delete-button {
   padding: 14px 10px;
   margin-bottom: 8px;

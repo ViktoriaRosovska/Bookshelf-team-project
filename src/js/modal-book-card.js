@@ -1,4 +1,4 @@
-import {reportsFailure} from './notificationsNotiflix';
+import {reportsFailure, reportsWarning} from './notificationsNotiflix';
 import { Loading } from 'notiflix';
 import { scrollBtn } from './scrollBtn';
 
@@ -34,6 +34,9 @@ const idModal = document.querySelector('.about-book-modal');
 const idBackdropModal = document.querySelector('.card-backdrop-modal');
 
 function openModalId() {
+   if (addStorageBtn.hasAttribute("disabled", "")) {
+    reportsWarning("Please sign up to show a shopping list");
+  }
   idModal?.classList.remove('is-hidden');
   idBackdropModal?.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';
