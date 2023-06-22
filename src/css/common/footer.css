@@ -26,10 +26,6 @@
 }
 }
 
-.authorisation-btn-desktop.is-hidden-btn {
-    display: none;
-}
-
 .footer_icon {
     fill: var(--color-blue-component);
 }
