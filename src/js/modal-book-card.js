@@ -35,6 +35,7 @@ function openModalId() {
   idModal?.classList.remove('is-hidden');
   idBackdropModal?.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';
+  
 }
 
 function onIdClick(e) {
@@ -92,7 +93,7 @@ async function fetchBookById(bookId) {
 function storageCheck() {
   const storageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
   const idToFind = storageObj.id;
- console.log(addStorageBtn);
+
   if (!storageArr || storageArr.length === 0) {
    
     addStorageBtn.style.display = 'block';
@@ -179,7 +180,7 @@ function onStorageAdd() {
 
   const dataToSave = storageObj;
   if (!realStorageArr || realStorageArr.length === 0) {
-    storageArr.push(dataToSave);
+    storageArr = [dataToSave];
     localStorage.setItem(STORAGE_KEY, JSON.stringify(storageArr));
   } else {
     realStorageArr.push(dataToSave);

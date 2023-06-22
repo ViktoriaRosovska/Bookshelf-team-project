@@ -77,7 +77,6 @@
     height: 22px;
 }
 
-
 .sponsors-slideUp__btn,
 .sponsors-slideDown__btn {
     display: flex;
@@ -103,7 +102,9 @@
 .sponsors-slideUp__btn:hover,
 .sponsors-slideDown__btn:hover, .sponsors-slideUp__btn:focus,
 .sponsors-slideDown__btn:focus {
-    border: 1px solid var(--color-blue-component);
+    width: 32px;
+    height: 32px;
+    box-shadow: 0 4px 4px #00000026, 3px 12px 38px -5px #2622707e;;
 }
 
 .sponsors-slideDown__btn.hide {

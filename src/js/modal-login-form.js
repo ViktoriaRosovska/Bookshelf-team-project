@@ -21,10 +21,10 @@
 // if (btnAuthMom) {
 //   btnAuthMom.addEventListener('click', showModal);
 // }
-
-// if (closeBtn) {
-//   closeBtn.addEventListener('click', hideModal);
-// }
+const closeBtn = document.querySelector('.modal-login-form-close-btn');
+if (closeBtn) {
+  closeBtn.addEventListener('click', hideModal);
+}
 
 // if (overlayLoginForm) {
 //   overlayLoginForm.addEventListener('click', hideModal);
@@ -40,7 +40,7 @@
 const btnAuth = document.querySelector('.authorisation-btn');
 const btnAuthMom = document.querySelector('.mobile-menu-authorisation-btn');
 const modal = document.querySelector('.modal-login-form');
-const closeBtn = document.querySelector('.modal-login-form-close-btn');
+
 const overlayLoginForm = document.querySelector('.overlayLoginForm');
 
 function showModal() {
