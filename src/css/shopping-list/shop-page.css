@@ -105,6 +105,46 @@
     }
   }
 }
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+/**
+  |============================
+  | кнопка очистки списку
+  |============================
+*/
+.remove-books {
+  padding: 4px 10px;
+  border-radius: 36px;
+  background-color: var(--color-blue-component);
+  border: none;
+  color: var(--ligtht-theme);
+  margin-top: 0px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: calc(12 / 10);
+  text-transform: uppercase;
+  height: 28px;
+  transition: background-color 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.remove-books:hover,
+.remove-books:focus {
+  background-color: var(--color-yellow-componemt);
+}
+
+@media screen and (min-width: 768px) {
+  .remove-books {
+    padding: 6px 12px;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    height: 32px;
+  }
+}
+
 /**
   |============================
   |Стилі для карток
@@ -253,6 +293,7 @@
   background-color: var(--color-blue-component);
   background-position: center;
   background-image: url('/src/images/delete-book.svg');
+  transition: background-color 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .shop-delete-btn:hover,

@@ -42,11 +42,9 @@ body.dark-theme .current:focus {
 }
 
 body.dark-theme .checkbox {
-  background: linear-gradient(
-    180deg,
-    var(--color-blue-component) 0%,
-    #686868 100%
-  );
+  background: linear-gradient(180deg,
+      var(--color-blue-component) 0%,
+      #686868 100%);
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -158,8 +156,8 @@ body.dark-theme.tui-page-inputs .tui-page-input {
 }
 
 body.dark-theme.tui-pagination .tui-next-is-ellip,
-body.dark-theme.tui-pagination .tui-first + .tui-prev,
-body.dark-theme.tui-pagination .tui-next + .tui-last {
+body.dark-theme.tui-pagination .tui-first+.tui-prev,
+body.dark-theme.tui-pagination .tui-next+.tui-last {
   border: 1px solid var(--ligtht-theme);
 }
 
@@ -216,6 +214,7 @@ body.dark-theme .modal-login-form-name,
 body.dark-theme .modal-login-form-email,
 body.dark-theme .modal-login-form-password {
   background: var(--dark-theme);
+  color: var(--ligtht-theme);
   border: 2px solid #f6f6f6;
 }
 
@@ -240,8 +239,4 @@ body.dark-theme .modal-login-btn:hover,
 body.dark-theme .modal-login-btn:focus {
   color: var(--ligtht-theme);
   background: var(--color-blue-component);
-}
-
-body.dark-theme .underline {
-  color: var(--color-blue-component);
 }

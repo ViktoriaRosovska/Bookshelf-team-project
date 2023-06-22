@@ -2,24 +2,18 @@ import {reportsFailure, reportsWarning} from './notificationsNotiflix';
 import { Loading } from 'notiflix';
 import { scrollBtn } from './scrollBtn';
 import { isAuthenticated } from './service-firebase';
-// Loading.standard('Loading...');
-// Loading.remove('Loading...');
 
-// reportsFailure('Sorry, no books were found. Please try again.')
+const allModal = document.querySelector('#allModal'); 
 
-const allModal = document.querySelector('#allModal'); //
-
-// const bookList = document.querySelector('.js-list-rendering'); // з js Сергія + я додала, що в li додавався id
-const bookList = document.querySelector('.books-gallery'); // проблема була в назві стилю
-const addStorageBtn = document.querySelector('.add-storage-button'); //
-const removeStorageBtn = document.querySelector('.remove-storage-btn'); //
-const storageDescription = document.querySelector('.storage-info'); //
+const bookList = document.querySelector('.books-gallery'); 
+const addStorageBtn = document.querySelector('.add-storage-button'); 
+const removeStorageBtn = document.querySelector('.remove-storage-btn'); 
+const storageDescription = document.querySelector('.storage-info'); 
 
 import { APIService } from './API-service';
 
 const apiBook = new APIService();
 
-// імпорт іконок для верстки картки книги в модальному вікні
 import amazonPng from '../images/amazon-icon1x.png';
 import amazonPng2x from '../images/amazon-icon2x.png';
 import appleBookPng from '../images/applebook-icon1x.png';
@@ -81,7 +75,7 @@ async function createModal(bookId) {
      Loading.remove('Loading...');
     console.log('Error', error);
     reportsFailure('Sorry, no books were found. Please try again.')
-    // throw error;
+
   }
 }
 
@@ -104,7 +98,6 @@ async function fetchBookById(bookId) {
     return data;
   } catch (error) {
     console.log('Error', error);
-    // throw error;
   }
 }
 
@@ -139,7 +132,7 @@ function createMarkup(data) {
   const marketAppleBooks = data.buy_links[1].url;
   const marketBookshop = data.buy_links[4].url;
   const bookDescription = data.description;
-  // //перевірка на наявність опису книги в api
+  
   let descriptionMarkup = bookDescription;
   if (bookDescription === '') {
     descriptionMarkup =

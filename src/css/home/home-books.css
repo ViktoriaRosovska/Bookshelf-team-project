@@ -7,6 +7,11 @@
 
   border-radius: 8px;
   margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.book-descr {
+  cursor: pointer;
 }
 
 .quick-view {
@@ -53,6 +58,7 @@
   display: flex;
   gap: 24px;
   
+  
 }
 
 .book-name {
@@ -78,6 +84,9 @@
 }
 
 @media screen and (max-width: 767px) {
+  .collection-title {
+    font-size: 19px;
+  }
   .bestsel-books li:nth-child(n + 2) {
     display: none;
   }
@@ -94,7 +103,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .collection-title {
-    font-size: 48px;
+    font-size: 40px;
   }
   .bestsel-books li:nth-child(n + 4) {
     display: none;
