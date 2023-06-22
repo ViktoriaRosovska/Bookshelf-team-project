@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import CryptoJS from "crypto-js";
+import sodium from 'libsodium-wrappers-sumo';
 import { reportsSuccess, reportsFailure, reportsWarning } from "./notificationsNotiflix";
 
 import { initializeApp } from "firebase/app";
@@ -52,7 +52,7 @@ function validation() {
   }
 
   if (!nameregex.test(name.value)) {
-    reportsWarning("Name must be at least 4 letters long");
+    reportsWarning("Name must contains only letters.");
     return false;
   }
   const emailValid = email.value && email.value.includes("@");
@@ -61,7 +61,7 @@ function validation() {
     return false;
   }
   if (!passwordregex.test(password.value)) {
-    reportsWarning("Name must be at least 4 letters long");
+    reportsWarning("Password must be at least 5 letters long");
     return false;
   }
  
@@ -70,7 +70,6 @@ function validation() {
 
 function validation1() {
   let nameregex = /^[a-zA-Z\s]+$/;
-  let passwordregex = /^[a-zA-Z0-9]{5,}/;
 
   if (isEmptyOrSpaces(name1.value) || isEmptyOrSpaces(password1.value)) {
     reportsWarning("You cannot left any field empty");
@@ -78,11 +77,7 @@ function validation1() {
   }
 
   if (!nameregex.test(name1.value)) {
-    reportsWarning("Name must be at least 4 letters long");
-    return false;
-  }
-  if (!passwordregex.test(password1.value)) {
-    reportsWarning("Name must be at least 4 letters long");
+    reportsWarning("Name must contains only letters.");
     return false;
   }
  
@@ -93,63 +88,61 @@ function getId() {
         return Math.random().toString(16).slice(2);
     }
 
-function registerUser() {
+async function registerUser() {
   if (!validation()) {
     return;
   };
+
+  await sodium.ready;
+
   const dbRef = ref(db);
-  get(child(dbRef, "Username/" + name.value)).then((snapshot) => {
-    if (snapshot.exists()) {
-      reportsWarning("Account already exist!");
-    } else {
-      const user = {
-        id: getId(),
-        name: name.value.trim().toLowerCase(),
-        email: email.value.trim().toLowerCase(),
-        password: cryptoPassword(),
-      };
-      set(ref(db, "Username/" + name.value), user).then(() => {
-        reportsSuccess("User added successfully");
-        setTimeout(() => login(user), 500);
-      }).catch((error) => {
-        alert("error" + error);
-      })
+  const snapshot = await get(child(dbRef, "Username/" + name.value));
+  if (snapshot.exists()) {
+    reportsWarning("Account already exist!");
+  } else {
+    const pwd = sodium.crypto_pwhash_str(password.value, sodium.crypto_pwhash_OPSLIMIT_INTERACTIVE, sodium.crypto_pwhash_MEMLIMIT_INTERACTIVE);
+    const user = {
+      id: getId(),
+      name: name.value.trim().toLowerCase(),
+      email: email.value.trim().toLowerCase(),
+      password: pwd,
+    };
+    try {
+      await set(ref(db, "Username/" + name.value), user);
+      reportsSuccess("User added successfully");
+      setTimeout(() => login(user), 500);
     }
-  })
+    catch (error) {
+      reportsFailure("Can't register user: " +  error);
+    }
+  }
 }
 
 
-function authentificateUser() {
+async function authentificateUser() {
    if (!validation1()) {
     return;
   };
+
+  await sodium.ready;
+
   const dbRef = ref(db);
-  get(child(dbRef, "Username/" + name1.value.trim().toLowerCase())).then((snapshot) => {
-    if (snapshot.exists()) {
-      let dbpass = decPassword(snapshot.val().password);
-      if (dbpass == password1.value) {
-        login(snapshot.val());
-      } else {
-        reportsFailure("Username or password is invalid");
-      }
+  const snapshot = await get(child(dbRef, "Username/" + name1.value.trim().toLowerCase()));
+  if (snapshot.exists()) {
+    const user = snapshot.val();
+    const valid = sodium.crypto_pwhash_str_verify(user.password, password1.value);
+    if (valid) {
+      login(user);
     } else {
-      reportsFailure("User doesn't exist");
+      reportsFailure("Username or password is invalid");
     }
-  });
+  } else {
+    reportsFailure("User doesn't exist");
+  }
 }
 
 
 let currentuser = null;
-
-function cryptoPassword() {
-  const pass = CryptoJS.AES.encrypt(password1.value, password1.value);
-  return pass.toString();
-}
-function decPassword(dbpass) {
-  const pass = CryptoJS.AES.decrypt(dbpass, password1.value);
-  return pass.toString(CryptoJS.enc.Utf8);
-}
-
 
 function login(user) {
   localStorage.setItem('user', JSON.stringify(user));
@@ -163,6 +156,10 @@ function getUsername() {
     currentuser = JSON.parse(localStorage.getItem('user'));
 }
 
+export function isAuthenticated() {
+  return currentuser != null;
+}
+
 function signout() {
   localStorage.removeItem('user');
   window.location = "index.html";
@@ -172,8 +169,10 @@ window.onload = function () {
 
   if (currentuser)
   {
-    shopBtnAdd.removeAttribute("disabled", "")
-    userMobile.classList.remove('is-hidden');
+    if (shopBtnAdd) {
+       shopBtnAdd.removeAttribute("disabled", "")
+    }
+   
     authorisationMobileBtn.classList.add("is-hidden");
     authorisationDesktop.classList.add('is-hidden-btn');
     document.querySelector(".user-btn span").textContent = currentuser.name;
@@ -181,6 +180,7 @@ window.onload = function () {
     document.querySelector('.user-modal h2').textContent = currentuser.name;
     document.querySelector(".log-out-btn-big").addEventListener("click", () => signout());
     document.querySelector(".select-user-container").classList.remove("is-hidden-btn");
+    document.querySelector(".header-nav.nav-modal").classList.remove("is-hidden");
     logOutBtn.classList.remove('is-hidden');
     shoppingListDesk.classList.remove('is-hidden-btn');
     userMobile.classList.remove('is-hidden');
