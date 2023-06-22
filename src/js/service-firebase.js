@@ -52,7 +52,7 @@ function validation() {
   }
 
   if (!nameregex.test(name.value)) {
-    reportsWarning("Name must be at least 4 letters long");
+    reportsWarning("Name must contains only letters.");
     return false;
   }
   const emailValid = email.value && email.value.includes("@");
@@ -61,7 +61,7 @@ function validation() {
     return false;
   }
   if (!passwordregex.test(password.value)) {
-    reportsWarning("Name must be at least 4 letters long");
+    reportsWarning("Password must be at least 5 letters long");
     return false;
   }
  
@@ -70,7 +70,6 @@ function validation() {
 
 function validation1() {
   let nameregex = /^[a-zA-Z\s]+$/;
-  let passwordregex = /^[a-zA-Z0-9]{5,}/;
 
   if (isEmptyOrSpaces(name1.value) || isEmptyOrSpaces(password1.value)) {
     reportsWarning("You cannot left any field empty");
@@ -78,11 +77,7 @@ function validation1() {
   }
 
   if (!nameregex.test(name1.value)) {
-    reportsWarning("Name must be at least 4 letters long");
-    return false;
-  }
-  if (!passwordregex.test(password1.value)) {
-    reportsWarning("Name must be at least 4 letters long");
+    reportsWarning("Name must contains only letters.");
     return false;
   }
  
@@ -134,9 +129,10 @@ async function authentificateUser() {
   const dbRef = ref(db);
   const snapshot = await get(child(dbRef, "Username/" + name1.value.trim().toLowerCase()));
   if (snapshot.exists()) {
-    const valid = sodium.crypto_pwhash_str_verify(snapshot.val().password, password1.value);
+    const user = snapshot.val();
+    const valid = sodium.crypto_pwhash_str_verify(user.password, password1.value);
     if (valid) {
-      login(snapshot.val());
+      login(user);
     } else {
       reportsFailure("Username or password is invalid");
     }
@@ -160,6 +156,10 @@ function getUsername() {
     currentuser = JSON.parse(localStorage.getItem('user'));
 }
 
+export function isAuthenticated() {
+  return currentuser != null;
+}
+
 function signout() {
   localStorage.removeItem('user');
   window.location = "index.html";
@@ -173,7 +173,6 @@ window.onload = function () {
        shopBtnAdd.removeAttribute("disabled", "")
     }
    
-    userMobile.classList.remove('is-hidden');
     authorisationMobileBtn.classList.add("is-hidden");
     authorisationDesktop.classList.add('is-hidden-btn');
     document.querySelector(".user-btn span").textContent = currentuser.name;
@@ -181,6 +180,7 @@ window.onload = function () {
     document.querySelector('.user-modal h2').textContent = currentuser.name;
     document.querySelector(".log-out-btn-big").addEventListener("click", () => signout());
     document.querySelector(".select-user-container").classList.remove("is-hidden-btn");
+    document.querySelector(".header-nav.nav-modal").classList.remove("is-hidden");
     logOutBtn.classList.remove('is-hidden');
     shoppingListDesk.classList.remove('is-hidden-btn');
     userMobile.classList.remove('is-hidden');

@@ -1,6 +1,7 @@
 import {reportsFailure, reportsWarning} from './notificationsNotiflix';
 import { Loading } from 'notiflix';
 import { scrollBtn } from './scrollBtn';
+import { isAuthenticated } from './service-firebase';
 // Loading.standard('Loading...');
 // Loading.remove('Loading...');
 
@@ -69,7 +70,7 @@ async function createModal(bookId) {
  
   try {
    
-     Loading.standard('Loading...');
+    Loading.standard('Loading...');
     const data = await fetchBookById(bookId);
 
     storageCheck();
@@ -108,7 +109,9 @@ async function fetchBookById(bookId) {
 }
 
 function storageCheck() {
-  const storageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  const storageArr = isAuthenticated()
+    ? JSON.parse(localStorage.getItem(STORAGE_KEY))
+    : null;
   const idToFind = storageObj.id;
 
   if (!storageArr || storageArr.length === 0) {
