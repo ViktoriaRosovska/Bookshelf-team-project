@@ -81,6 +81,10 @@ function validation1() {
   return true;
 }
 
+function getId() {
+        return Math.random().toString(16).slice(2);
+    }
+
 function registerUser() {
   if (!validation()) {
     return;
@@ -91,13 +95,14 @@ function registerUser() {
       reportsWarning("Account already exist!");
     } else {
       const user = {
-        name: name.value,
-        email: email.value,
+        id: getId(),
+        name: name.value.trim().toLowerCase(),
+        email: email.value.trim().toLowerCase(),
         password: cryptoPassword(),
       };
       set(ref(db, "Username/" + name.value), user).then(() => {
         reportsSuccess("User added successfully");
-        setTimeout(() => login(user), 1000);
+        setTimeout(() => login(user), 500);
       }).catch((error) => {
         alert("error" + error);
       })
@@ -114,7 +119,7 @@ function authentificateUser() {
     return;
   };
   const dbRef = ref(db);
-  get(child(dbRef, "Username/" + name1.value)).then((snapshot) => {
+  get(child(dbRef, "Username/" + name1.value.trim().toLowerCase())).then((snapshot) => {
     if (snapshot.exists()) {
       let dbpass = decPassword(snapshot.val().password);
       if (dbpass == password1.value) {
@@ -144,7 +149,7 @@ function decPassword(dbpass) {
 function login(user) {
   localStorage.setItem('user', JSON.stringify(user));
   window.location = "index.html";
-  authorisationMobileBtn.classList.add('is-hidden-btn');
+  authorisationMobileBtn.classList.add('is-hidden');
   authorisationDesktop.classList.add('is-hidden-btn');
 }
 
@@ -161,10 +166,10 @@ window.onload = function () {
 
   if (currentuser)
   {
-    authorisationMobileBtn.classList.add("is-hidden-btn");
+    authorisationMobileBtn.classList.add("is-hidden");
     authorisationDesktop.classList.add('is-hidden-btn');
     document.querySelector(".user-btn span").textContent = currentuser.name;
-    document.querySelector('.user-modal').classList.remove('is-hidden');
+    document.querySelector('.user-modal').classList.remove('is-hidden-btn');
     document.querySelector('.user-modal h2').textContent = currentuser.name;
     document.querySelector(".log-out-btn-big").addEventListener("click", () => signout());
     document.querySelector(".select-user-container").classList.remove("is-hidden-btn");

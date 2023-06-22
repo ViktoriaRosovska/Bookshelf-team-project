@@ -21,7 +21,7 @@ export class APIService {
   // запит на книги по категорії, приймає обрану категорію книги
   fetchBooksByCategory(selectedCategory) {
     return axios.get(
-      `${this.#BASE_URL}books/category?category=${selectedCategory}`
+      `${this.#BASE_URL}books/category12?category=${selectedCategory}`
     );
   }
 

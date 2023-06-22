@@ -24,6 +24,18 @@
   z-index: 2000;
 }
 
+.sign {
+  background: transparent;
+  border: transparent;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+}
+
+.underline {
+  text-decoration: underline;
+  color: var(--color-blue-component);
+}
 ::placeholder {
   font-family: 'DM Sans';
   font-style: normal;
@@ -32,7 +44,7 @@
   line-height: 18px;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: #111111;
+  color: var(--dark-theme-componemt);
 }
 
 .modal-login-in,
@@ -48,9 +60,6 @@
   align-items: center;
 }
 
-.modal-login-in {
-  display: none;
-}
 .modal-login-form-close-btn {
   position: absolute;
   z-index: 2500;
@@ -125,20 +134,6 @@
   transform: translateX(-50%);
 }
 
-.sign {
-  background: transparent;
-  border: transparent;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 18px;
-
-}
-
-.underline {
-  text-decoration: underline;
-  color: var(--color-blue-component);
-}
-
 @media screen and (min-width: 768px) {
   .modal-login-form {
     width: 579px;
@@ -153,7 +148,6 @@
 
   .modal-login-form-close-btn {
     position: absolute;
-    border: 1px solid lightgreen;
     top: 24px;
     right: 24px;
     display: flex;
@@ -203,6 +197,7 @@
   .sign {
     font-weight: 700;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 1.33;
   }
+ 
 }
