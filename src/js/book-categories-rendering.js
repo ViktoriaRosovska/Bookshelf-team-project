@@ -13,9 +13,7 @@ const api = new APIService();
 
 export default async function createMarkup(category) {
   const res = await api.fetchBooksByCategory(category);
-  console.log(res);
   const books = await res.data;
-  console.log(books);
 
   function removeLastWord(category) {
     let words = category.split(' ');
@@ -35,7 +33,9 @@ export default async function createMarkup(category) {
 
     ${books
       .map(({ title, book_image, author, _id }) => {
-        return `<li class="book-card" id="${_id}">
+
+        return `<li class="book-card" data-id="${_id}">
+
         <div class="book-thumb">
       <img class="book-cover" src="${book_image}" alt="${title}">
       <div class="quick-view">

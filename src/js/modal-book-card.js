@@ -50,15 +50,15 @@ function openModalId() {
 
 function onIdClick(e) {
 
-  if (
-    e.target.nodeName === 'BUTTON' ||
-    e.target.nodeName === 'UL' ||
-    e.target.nodeName === 'LI' ||
-    e.target.nodeName === 'P' ||
-    e.target.nodeName === 'DIV' ||
-    e.target.nodeName === 'H3' ||
-    e.target.nodeName === 'H1'
-  )
+
+
+  const bookCard = e.target.closest("li");
+  const isBookCard = bookCard &&
+    bookCard.hasAttribute("data-id") &&
+    bookCard.classList.contains("book-card");
+  
+  if (!isBookCard)
+
     return;
   else {
     e.target.parentNode.tagName.toLowerCase() === 'li';
