@@ -41,7 +41,7 @@ function isEmptyOrSpaces(str) {
 }
 
 function validation() {
-  let nameregex = /^[a-zA-Z\s]+$/;
+  let nameregex = /^[a-zA-ZА-Яа-я\s]+$/;
   let passwordregex = /^[a-zA-Z0-9]{5,}/;
 
   if (isEmptyOrSpaces(name.value) || isEmptyOrSpaces(password.value) || isEmptyOrSpaces(email.value)) {
@@ -67,7 +67,7 @@ function validation() {
 }
 
 function validation1() {
-  let nameregex = /^[a-zA-Z\s]+$/;
+  let nameregex = /^[a-zA-ZА-Яа-я\s]+$/;
 
   if (isEmptyOrSpaces(name1.value) || isEmptyOrSpaces(password1.value)) {
     reportsWarning("You cannot left any field empty");
