@@ -11,7 +11,7 @@
 }
 
 .book-descr {
-  cursor: default;
+  cursor: pointer;
 }
 
 .quick-view {

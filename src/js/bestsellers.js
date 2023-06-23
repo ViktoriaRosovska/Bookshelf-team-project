@@ -25,15 +25,15 @@ async function getBestSellers() {
 function createBookCategoryMarkup(category) {
   return `
   
-    <li class="book-category-item">
+    <div class="book-category-item">
       <p class="book-category">${category.list_name}</p>
       <ul class="top-books bestsel-books js-list-rendering">
         ${category.books
           .map(book => {
             return `
-              <li class="book-card flex-element">
+              <li class="book-card flex-element" id="${book._id}">
               <div class="book-thumb">
-                <img class="book-cover" src="${book.book_image}" alt="${book.title}" id=${book._id}/>
+                <img class="book-cover" src="${book.book_image}" alt="${book.title}" id="${book._id}"/>
                 <div class="quick-view">
                 <p class="quick-view-text">QUICK VIEW</p>
                 </div>
@@ -48,7 +48,7 @@ function createBookCategoryMarkup(category) {
           .join('')}
       </ul>
       <button class="book-card-btn" type="button" data-category="${category.list_name}">see more</button>
-    </li>
+    </div>
   `;
 }
 
@@ -127,9 +127,9 @@ async function createBooksOnSeeMoreBtn(category) {
     ${books
       .map(({ title, book_image, author, _id }) => {
         return `
-        <li class="book-card" id=${_id}>
+        <li class="book-card" id="${_id}">
         <div class="book-thumb">
-         <img class="book-cover" src="${book_image}" alt="${title}" id=${_id}>
+         <img class="book-cover" src="${book_image}" alt="${title}">
          <div class="quick-view">
           <p class="quick-view-text">QUICK VIEW</p>
          </div>
