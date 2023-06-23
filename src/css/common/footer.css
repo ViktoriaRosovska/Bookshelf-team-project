@@ -15,7 +15,7 @@
    
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
     .footer_container_shop {
         background-color: transparent;
     }
