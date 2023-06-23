@@ -49,17 +49,26 @@ function openModalId() {
 }
 
 function onIdClick(e) {
+
+
+
   const bookCard = e.target.closest("li");
   const isBookCard = bookCard &&
     bookCard.hasAttribute("data-id") &&
     bookCard.classList.contains("book-card");
   
   if (!isBookCard)
-    return;
 
-  const id = bookCard.getAttribute("data-id");
-  openModalId();
-  createModal(id);
+    return;
+  else {
+    e.target.parentNode.tagName.toLowerCase() === 'li';
+
+    const id = e.target.closest('li').id;
+    console.log(id)
+    openModalId();
+    createModal(id);
+  }
+
 }
 
 async function createModal(bookId) {

@@ -31,9 +31,11 @@ function createBookCategoryMarkup(category) {
         ${category.books
           .map(book => {
             return `
+
               <li class="book-card flex-element" data-id="${book._id}">
               <div class="book-thumb">
                 <img class="book-cover" src="${book.book_image}" alt="${book.title}"/>
+
                 <div class="quick-view">
                 <p class="quick-view-text">QUICK VIEW</p>
                 </div>
