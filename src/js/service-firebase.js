@@ -94,19 +94,19 @@ async function registerUser() {
   await sodium.ready;
 
   const dbRef = ref(db);
-  const snapshot = await get(child(dbRef, "Username/" + name.value));
+  const snapshot = await get(child(dbRef, "Username/" + name.value.trim()));
   if (snapshot.exists()) {
     reportsWarning("Account already exist!");
   } else {
     const pwd = sodium.crypto_pwhash_str(password.value, sodium.crypto_pwhash_OPSLIMIT_INTERACTIVE, sodium.crypto_pwhash_MEMLIMIT_INTERACTIVE);
     const user = {
       id: getId(),
-      name: name.value.trim().toLowerCase(),
-      email: email.value.trim().toLowerCase(),
+      name: name.value.trim(),
+      email: email.value.trim(),
       password: pwd,
     };
     try {
-      await set(ref(db, "Username/" + name.value), user);
+      await set(ref(db, "Username/" + name.value.trim()), user);
       reportsSuccess("User added successfully");
       setTimeout(() => login(user), 500);
     }
@@ -125,7 +125,7 @@ async function authentificateUser() {
   await sodium.ready;
 
   const dbRef = ref(db);
-  const snapshot = await get(child(dbRef, "Username/" + name1.value.trim().toLowerCase()));
+  const snapshot = await get(child(dbRef, "Username/" + name1.value.trim()));
   if (snapshot.exists()) {
     const user = snapshot.val();
     const valid = sodium.crypto_pwhash_str_verify(user.password, password1.value);
