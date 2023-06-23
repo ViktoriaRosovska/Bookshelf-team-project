@@ -103,3 +103,11 @@ body {
        width: 340px;
      }
 }
+
+.sign:hover, .sign:focus {
+  color: var(--color-blue-component);
+}
+
+@media screen and (max-width: 348px) {
+  
+}
