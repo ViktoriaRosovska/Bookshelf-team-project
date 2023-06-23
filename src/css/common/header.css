@@ -138,6 +138,7 @@
   margin-left: auto;
   align-items: center;
   height: 30px;
+  gap: 24px;
 }
 
 @media screen and (min-width: 768px) {
@@ -365,7 +366,7 @@ body.dark-theme .user-btn:hover {
   border: transparent;
   padding: 0px;
   cursor: pointer;
-  margin-left: 24px;
+  /* margin-left: 24px; */
 }
 
 .burger-meny-icon {
@@ -412,7 +413,7 @@ body.dark-theme .user-btn:hover {
   border: transparent;
   color: var(--dark-theme-componemt);
   cursor: pointer;
-  margin-left: auto;
+  margin-left: 24px;
 }
 
 .close-menu-icon {
