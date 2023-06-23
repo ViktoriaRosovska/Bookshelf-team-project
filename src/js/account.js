@@ -1,47 +1,47 @@
-const LOCAL_KEY = "user";
-class Account {
+// const LOCAL_KEY = "user";
+// class Account {
 
-    signIn(name, email, password ) {
-        const userAccount = {
-            userId: this.getId(),
-            userName: name,
-            userEmail: email,
-            userPassword: password
-        }
-        localStorage.setItem(LOCAL_KEY, JSON.stringify(userAccount));  
-    }
+//     signIn(name, email, password ) {
+//         const userAccount = {
+//             userId: this.getId(),
+//             userName: name,
+//             userEmail: email,
+//             userPassword: password
+//         }
+//         localStorage.setItem(LOCAL_KEY, JSON.stringify(userAccount));  
+//     }
 
-    signOut() {
-        localStorage.removeItem(LOCAL_KEY);
-    }
+//     signOut() {
+//         localStorage.removeItem(LOCAL_KEY);
+//     }
 
-    getId() {
-        return Math.random().toString(16).slice(2);
-    }
+//     getId() {
+//         return Math.random().toString(16).slice(2);
+//     }
 
-    isAuthentificated() {
-        const auth = localStorage.getItem(LOCAL_KEY);
-        if (auth) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    get user() {
-        const user = JSON.parse(localStorage.getItem(LOCAL_KEY));
-        return {
-            userId: user.userId,
-            userName: user.userName,
-            userEmail: userEmail,
-            userPassword: user.userPassword
-        }
-    }
+//     isAuthentificated() {
+//         const auth = localStorage.getItem(LOCAL_KEY);
+//         if (auth) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     }
+//     get user() {
+//         const user = JSON.parse(localStorage.getItem(LOCAL_KEY));
+//         return {
+//             userId: user.userId,
+//             userName: user.userName,
+//             userEmail: userEmail,
+//             userPassword: user.userPassword
+//         }
+//     }
    
-    signUp(id, name, email, password) {
+//     signUp(id, name, email, password) {
 
-    }
+//     }
     
-}
+// }
 
 // const userAccount = new Account();
 
