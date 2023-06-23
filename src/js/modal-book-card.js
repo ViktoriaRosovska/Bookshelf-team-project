@@ -52,11 +52,12 @@ function onIdClick(e) {
   if (
     e.target.nodeName === 'BUTTON' ||
     e.target.nodeName === 'UL' ||
+    e.target.nodeName === 'LI' ||
     e.target.nodeName === 'DIV' ||
     e.target.nodeName === 'H3'
   )
     return;
-  const id = e.target.closest('li').id;
+  const id = e.target.closest('img').id;
   openModalId();
   createModal(id);
 }
