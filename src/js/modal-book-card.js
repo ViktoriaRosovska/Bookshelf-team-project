@@ -50,7 +50,7 @@ function openModalId() {
 
 function onIdClick(e) {
   const bookCard = e.target.closest("li");
-  const isBookCard = bookCard.nodeName === "LI" &&
+  const isBookCard = bookCard &&
     bookCard.hasAttribute("data-id") &&
     bookCard.classList.contains("book-card");
   
