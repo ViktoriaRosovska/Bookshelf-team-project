@@ -192,16 +192,8 @@ body.dark-theme .add-storage-button,
 body.dark-theme .storage-delete-button,
 body.dark-theme .close-modal-btn {
   color: var(--ligtht-theme);
-
-  background-color: transparent;
 }
 
-body.dark-theme .add-storage-button:hover,
-body.dark-theme .storage-delete-button:hover,
-body.dark-theme .add-storage-button:focus,
-body.dark-theme .storage-delete-button:focus {
-  background: var(--color-blue-component);
-}
 
 body.dark-theme .storage-info {
   color: rgba(255, 255, 255, 0.5);
@@ -237,6 +229,13 @@ body.dark-theme .signUp,
 body.dark-theme .signIn {
   color: rgb(246, 246, 246, 0.5);
 }
+
+body.dark-theme .sign:hover,
+body.dark-theme .sign:focus {
+  color: var(--color-blue-component);
+}
+
+
 
 body.dark-theme .signUp.underline,
 body.dark-theme .signIn.underline {
