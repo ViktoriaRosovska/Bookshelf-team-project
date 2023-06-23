@@ -23,8 +23,8 @@ function onSettingModalShow() {
 const delate = document.querySelector('.js-photo-delate')
 const input = document.querySelector('.input-photo-save')
 
-input.addEventListener('click', save)
- delate.addEventListener('click', delatePhoto)
+input?.addEventListener('click', save)
+ delate?.addEventListener('click', delatePhoto)
 
  function delatePhoto(params) {
     image1.src = localStorage.removeItem('myImage')

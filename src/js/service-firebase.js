@@ -33,10 +33,8 @@ const shoppingListDesk = document.querySelector('.shoppingListDesk');
 const name1 = document.querySelector('.modal-login-form-name-in');
 const password1 = document.querySelector('.modal-login-form-password-in');
 const signInBtn = document.querySelector('.modal-login-btn-in');
-// const shoppingListMob = document.querySelector('.shoppingListMob');
 const userMobile = document.querySelector('.user-modal');
 const shopBtnAdd = document.querySelector('.modal__shopping-button');
-// const shopBtnDelete = document.querySelector('.storage-delete-button');
 
 function isEmptyOrSpaces(str) {
   return str === null || str.match(/^ *$/) !== null;
@@ -174,16 +172,22 @@ window.onload = function () {
     }
    
     authorisationMobileBtn.classList.add("is-hidden");
-    authorisationDesktop.classList.add('is-hidden-btn');
-    document.querySelector(".user-btn span").textContent = currentuser.name;
-    document.querySelector('.user-modal').classList.remove('is-hidden');
+    if (authorisationDesktop) {
+      authorisationDesktop.classList.add('is-hidden-btn');
+    }
+    
+    if (document.querySelector(".user-btn span")) {
+      document.querySelector(".user-btn span").textContent = currentuser.name;
+    }
+    
+    document.querySelector('.user-modal')?.classList.remove('is-hidden');
     document.querySelector('.user-modal h2').textContent = currentuser.name;
-    document.querySelector(".log-out-btn-big").addEventListener("click", () => signout());
-    document.querySelector(".select-user-container").classList.remove("is-hidden-btn");
-    document.querySelector(".header-nav.nav-modal").classList.remove("is-hidden");
-    logOutBtn.classList.remove('is-hidden');
-    shoppingListDesk.classList.remove('is-hidden-btn');
-    userMobile.classList.remove('is-hidden');
+    document.querySelector(".log-out-btn-big")?.addEventListener("click", () => signout());
+    document.querySelector(".select-user-container")?.classList.remove("is-hidden-btn");
+    document.querySelector(".header-nav.nav-modal")?.classList.remove("is-hidden");
+    logOutBtn?.classList.remove('is-hidden');
+    shoppingListDesk?.classList.remove('is-hidden-btn');
+    userMobile.classList?.remove('is-hidden');
   }
 
 }
@@ -198,8 +202,13 @@ if (signInBtn) {
 if (logOutBtn) {
   logOutBtn.addEventListener('click', signout);
   authorisationMobileBtn.classList.remove('is-hidden');
-  authorisationDesktop.classList.remove('is-hidden-btn');
-  shoppingListDesk.classList.add('is-hidden-btn');
+  if (authorisationDesktop) {
+    authorisationDesktop.classList.remove('is-hidden-btn');
+  }
+  if (shoppingListDesk) {
+    shoppingListDesk.classList.add('is-hidden-btn');
+  }
+  
   userMobile.classList.add('is-hidden');
 }
 

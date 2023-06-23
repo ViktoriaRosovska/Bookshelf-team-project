@@ -11,3 +11,4 @@ import './js/service-firebase';
 import './js/auth';
 import './js/notificationsNotiflix';
 import './js/settings';
+import './js/shop-page-footer';
