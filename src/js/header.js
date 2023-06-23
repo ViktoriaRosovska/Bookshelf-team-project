@@ -14,12 +14,16 @@ const logOutBtn = document.querySelector('.js-log-out-btn')
 const loginForm = document.querySelector('.overlayLoginForm')
 // console.log(loginForm);
 
-if (window.location.href === shopList.href) {
+
+if (shopList) {
+    if (window.location.href === shopList.href) {
     shopList.classList.add('current');
     // mobileMenuList.add('current');
     home.classList.remove('current');
     // mobileMenuHome.classList.remove('current');
 }
+}
+
 
 if (autorisatedUserBtn) {
     autorisatedUserBtn.addEventListener('click', showUserSelect)

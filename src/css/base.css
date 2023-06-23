@@ -11,20 +11,20 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 14px;
+  display: flex;
+  flex-direction: column;
 }
 .section {
   padding-top: 40px;
   padding-bottom: 80px;
 }
 .container {
-
   margin-left: auto;
   margin-right: auto;
   min-width: 320px;
   max-width: 375px;
   padding-left: 20px;
   padding-right: 20px;
-
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439.98px) {
@@ -66,4 +66,33 @@ body {
     flex-direction: row;
     gap: 32px;
   }
+}
+.group-thanks {
+  margin-left: 50px;
+  width: max-content;
+  font-size: 18px;
+  font-weight: 500; 
+   white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: type 5s steps(50, end);
+  animation: type 5s steps(50, end) infinite;
+}
+
+
+@keyframes type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 340px;
+  }
+}
+
+@-webkit-keyframes type {
+  from {
+    width: 0;
+  }
+     to {
+       width: 340px;
+     }
 }

@@ -7,8 +7,11 @@ const Theme = {
 };
 
 const STORAGE_KEY = 'theme';
+ 
+if (checkBoxEl) {
+  checkBoxEl.addEventListener('change', onCheckboxClick);
+}
 
-checkBoxEl.addEventListener('change', onCheckboxClick);
 
 savedThemeOnReloaded();
 
@@ -30,14 +33,18 @@ function savedThemeOnReloaded() {
   const savedValue = localStorage.getItem(STORAGE_KEY);
 
   if (savedValue) {
-    body.classList.add(savedValue);
+    body?.classList.add(savedValue);
   } else {
-    body.classList.add(Theme.LIGHT);
+    body?.classList.add(Theme.LIGHT);
   }
 
-  if (savedValue === Theme.DARK) {
+
+  if (checkBoxEl) {
+    if (savedValue === Theme.DARK) {
     checkBoxEl.checked = true;
   } else {
     checkBoxEl.checked = false;
   }
+  }
+  
 }
