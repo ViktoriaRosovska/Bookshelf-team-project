@@ -13,9 +13,7 @@ const api = new APIService();
 
 export default async function createMarkup(category) {
   const res = await api.fetchBooksByCategory(category);
-  console.log(res);
   const books = await res.data;
-  console.log(books);
 
   function removeLastWord(category) {
     let words = category.split(' ');

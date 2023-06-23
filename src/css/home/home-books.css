@@ -15,6 +15,7 @@
 }
 
 .quick-view {
+  pointer-events: none;
   position: absolute;
   display: flex;
   justify-content: center;
