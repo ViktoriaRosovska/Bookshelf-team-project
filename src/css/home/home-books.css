@@ -11,10 +11,11 @@
 }
 
 .book-descr {
-  cursor: default;
+  cursor: pointer;
 }
 
 .quick-view {
+  pointer-events: none;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -80,6 +81,7 @@
 }
 
 .book-category-item {
+ 
   margin-bottom: 40px;
 }
 

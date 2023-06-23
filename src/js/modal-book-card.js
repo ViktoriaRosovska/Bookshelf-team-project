@@ -53,13 +53,20 @@ function onIdClick(e) {
     e.target.nodeName === 'BUTTON' ||
     e.target.nodeName === 'UL' ||
     e.target.nodeName === 'LI' ||
+    e.target.nodeName === 'P' ||
     e.target.nodeName === 'DIV' ||
-    e.target.nodeName === 'H3'
+    e.target.nodeName === 'H3' ||
+    e.target.nodeName === 'H1'
   )
     return;
-  const id = e.target.closest('img').id;
-  openModalId();
-  createModal(id);
+  else {
+    e.target.parentNode.tagName.toLowerCase() === 'li';
+
+    const id = e.target.closest('li').id;
+    console.log(id)
+    openModalId();
+    createModal(id);
+  }
 }
 
 async function createModal(bookId) {

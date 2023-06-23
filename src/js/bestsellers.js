@@ -31,9 +31,9 @@ function createBookCategoryMarkup(category) {
         ${category.books
           .map(book => {
             return `
-              <li class="book-card flex-element">
+              <li class="book-card flex-element" id=${book._id}>
               <div class="book-thumb">
-                <img class="book-cover" src="${book.book_image}" alt="${book.title}" id=${book._id}/>
+                <img class="book-cover" src="${book.book_image}" alt="${book.title}" />
                 <div class="quick-view">
                 <p class="quick-view-text">QUICK VIEW</p>
                 </div>
@@ -129,7 +129,7 @@ async function createBooksOnSeeMoreBtn(category) {
         return `
         <li class="book-card" id=${_id}>
         <div class="book-thumb">
-         <img class="book-cover" src="${book_image}" alt="${title}" id=${_id}>
+         <img class="book-cover" src="${book_image}" alt="${title}">
          <div class="quick-view">
           <p class="quick-view-text">QUICK VIEW</p>
          </div>
