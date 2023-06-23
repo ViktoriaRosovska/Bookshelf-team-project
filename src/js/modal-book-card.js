@@ -49,15 +49,15 @@ function openModalId() {
 }
 
 function onIdClick(e) {
-  if (
-    e.target.nodeName === 'BUTTON' ||
-    e.target.nodeName === 'UL' ||
-    e.target.nodeName === 'LI' ||
-    e.target.nodeName === 'DIV' ||
-    e.target.nodeName === 'H3'
-  )
+  const bookCard = e.target.closest("li");
+  const isBookCard = bookCard.nodeName === "LI" &&
+    bookCard.hasAttribute("data-id") &&
+    bookCard.classList.contains("book-card");
+  
+  if (!isBookCard)
     return;
-  const id = e.target.closest('img').id;
+
+  const id = bookCard.getAttribute("data-id");
   openModalId();
   createModal(id);
 }

@@ -15,6 +15,14 @@
    
 }
 
+@media screen and (min-width: 768px) {
+    .footer_container_shop {
+        background-color: transparent;
+    }
+}
+
+
+
 .shop {
     position: absolute;
     bottom: 0;
