@@ -49,6 +49,7 @@ function openModalId() {
 }
 
 function onIdClick(e) {
+
   if (
     e.target.nodeName === 'BUTTON' ||
     e.target.nodeName === 'UL' ||
@@ -67,6 +68,7 @@ function onIdClick(e) {
     openModalId();
     createModal(id);
   }
+
 }
 
 async function createModal(bookId) {
