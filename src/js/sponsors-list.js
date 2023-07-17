@@ -1,9 +1,8 @@
 import { sponsors } from './sponsors-obj';
-import images from './images/sponsors/*.png';
+import images from '../images/sponsors/*.png';
 
 const sponsorsList = document.querySelector('.js-sponsors-list');
 let id = 0;
-// console.log(sponsorsList);
 
 const mqLarge = window.matchMedia('(min-width: 768px)');
 mqLarge?.addEventListener('change', () => (distance = mqLarge.matches ? 3 : 5));
@@ -38,13 +37,10 @@ sponsorsSlideDownBtn?.addEventListener('click', onScrollDownSponsors);
 sponsorsSlideUpBtn?.addEventListener('click', onScrollUpSponsors);
 
 function onScrollDownSponsors() {
-  // console.log(step);
-
   if (count < distance) {
     ++count;
     step += 52;
     sponsorsList.style.transform = `translateY(-${step}px)`;
-    console.log(count);
   }
 
   if (count === distance) {
@@ -58,8 +54,6 @@ function onScrollUpSponsors() {
     --count;
     step -= 52;
     sponsorsList.style.transform = `translateY(-${step}px)`;
-    console.log(step);
-    console.log(count);
   }
 
   if (count === 0) {
