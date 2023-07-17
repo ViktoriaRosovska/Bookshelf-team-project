@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://viktoriarosovska.github.io/Bookshelf-team-project/",
   "scripts": {
-    "start": "parcel src/*.html --no-cache",
+    "start": "parcel src/*.html --no-cache --host 0.0.0.0",
     "build": "parcel build src/*.html --public-url /Bookshelf-team-project/ --no-cache"
   },
   "repository": {
