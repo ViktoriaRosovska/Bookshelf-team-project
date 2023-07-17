@@ -52,7 +52,7 @@ function renderSponsorsList() {
       ({ url, title, img }) =>
         `<li class="sponsor-item"><span class="sup_number">${pad(
           (id += 1)
-        )}</span><a href="${url}" target="_blank"
+        )}</span><a href="${url}" class="sponsor-link" target="_blank"
           noopener noreferrer>IMG: ${images[img]}</a></li>`
     )
     .join('');
