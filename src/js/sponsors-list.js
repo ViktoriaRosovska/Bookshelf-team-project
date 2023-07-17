@@ -52,7 +52,8 @@ function renderSponsorsList() {
       ({ url, title, img }) =>
         `<li class="sponsor-item"><span class="sup_number">${pad(
           (id += 1)
-        )}</span>IMG: ${images[img]}</li>`
+        )}</span><a href=${url} target="_blank"
+          noopener noreferrer>IMG: ${images[img]}</a></li>`
     )
     .join('');
   sponsorsList?.insertAdjacentHTML('beforeend', markup);
