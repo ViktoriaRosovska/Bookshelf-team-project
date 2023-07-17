@@ -34,35 +34,20 @@ function renderSponsorsList() {
   //   sergiy_prytula,
   // ];
 
-  // const markup = sponsors
-  //   .map(
-  //     ({
-  //       url,
-  //       title,
-  //       img,
-  //     }) => `<li class="sponsor-item"><span class="sup_number">${pad(
-  //       (id += 1)
-  //     )}</span><a href=${url} class="sponsor-link" target="_blank"
-  //      noopener noreferrer><img class="sponsor-img" src=${images[id - 1]}\n
-  //     alt="${title}"/></a></li>`
-  //   )
-  //   .join('');
   const markup = sponsors
     .map(
-      ({ url, title, img }) =>
-        `<li class="sponsor-item"><span class="sup_number">${pad(
-          (id += 1)
-        )}</span><a href="${url}" class="sponsor-link" target="_blank"
-          noopener noreferrer>IMG: ${images[img]}</a></li>`
+      ({
+        url,
+        title,
+        img,
+      }) => `<li class="sponsor-item"><span class="sup_number">${pad(
+        (id += 1)
+      )}</span><a href=${url} class="sponsor-link" target="_blank"
+       noopener noreferrer><img class="sponsor-img" src=${images[img]}\n
+      alt="${title}"/></a></li>`
     )
     .join('');
   sponsorsList?.insertAdjacentHTML('beforeend', markup);
-
-  const markupd =
-    '<div style="color: black; background-color: white; white-space: pre; padding: 10px; border: 1px solid red; font-family: monospace;">' +
-    JSON.stringify({ sponsors, images }, undefined, 2) +
-    '</div>';
-  document.body.insertAdjacentHTML('afterbegin', markupd);
 }
 renderSponsorsList();
 
