@@ -13,18 +13,6 @@ import sergiy_prytula from '../images/sponsors/sergiy_prytula.png';
 
 import Newimage from '../images/sponsors/action_against.png';
 
-const images = [
-  save,
-  progecthope,
-  united24,
-  imc,
-  medecinssans,
-  razom,
-  actionagainst,
-  worldvision,
-  sergiy_prytula,
-];
-
 const sponsorsList = document.querySelector('.js-sponsors-list');
 let id = 0;
 
@@ -34,6 +22,18 @@ mqLarge?.addEventListener('change', () => (distance = mqLarge.matches ? 3 : 5));
 let distance = mqLarge.matches ? 3 : 5;
 
 function renderSponsorsList() {
+  const images = [
+    save,
+    progecthope,
+    united24,
+    imc,
+    medecinssans,
+    razom,
+    actionagainst,
+    worldvision,
+    sergiy_prytula,
+  ];
+
   const markup = sponsors
     .map(({ url, title, img }) => {
       return `<li class="sponsor-item"><span class="sup_number">${pad(
