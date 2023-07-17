@@ -1,6 +1,29 @@
 import { sponsors } from './sponsors-obj';
 // import images from '../images/sponsors/*.png';
-import Newimage from '../images/sponsors/action_against.png';
+
+import save from '../images/sponsors/save_the_children.png';
+import progecthope from '../images/sponsors/progecthope.png';
+import united24 from '../images/sponsors/united24.png';
+import imc from '../images/sponsors/imc.png';
+import medecinssans from '../images/sponsors/medecins_sans.png';
+import razom from '../images/sponsors/razom.png';
+import actionagainst from '../images/sponsors/action_against.png';
+import worldvision from '../images/sponsors/world_vision.png';
+import sergiy_prytula from '../images/sponsors/sergiy_prytula.png';
+
+// import Newimage from '../images/sponsors/action_against.png';
+
+const images = [
+  save,
+  progecthope,
+  united24,
+  imc,
+  medecinssans,
+  razom,
+  actionagainst,
+  worldvision,
+  sergiy_prytula,
+];
 
 const sponsorsList = document.querySelector('.js-sponsors-list');
 let id = 0;
@@ -11,15 +34,16 @@ mqLarge?.addEventListener('change', () => (distance = mqLarge.matches ? 3 : 5));
 let distance = mqLarge.matches ? 3 : 5;
 
 function renderSponsorsList() {
-  // const markup = sponsors
-  //   .map(({ url, title, img }) => {
-  //     const image = images[img];
-  //     return `<li class="sponsor-item"><span class="sup_number">${pad(
-  //       (id += 1)
-  //     )}</span><a href=${url} class="sponsor-link" target="_blank" noopener noreferrer><img class="sponsor-img" src="${image}" alt=${title}></a></li>`;
-  //   })
-  //   .join('');
-  const markup = `<img src="${Newimage}"/>`;
+  const markup = sponsors
+    .map(({ url, title, img }) => {
+      // const image = images[img];
+      return `<li class="sponsor-item"><span class="sup_number">${pad(
+        (id += 1)
+      )}</span><a href=${url} class="sponsor-link" target="_blank" noopener noreferrer><img class="sponsor-img" src="${
+        images[id - 1]
+      }" alt=${title}></a></li>`;
+    })
+    .join('');
   sponsorsList?.insertAdjacentHTML('beforeend', markup);
 }
 renderSponsorsList();
