@@ -49,14 +49,10 @@ function renderSponsorsList() {
   //   .join('');
   const markup = sponsors
     .map(
-      ({
-        url,
-        title,
-        img,
-      }) => `<li class="sponsor-item"><span class="sup_number">${pad(
-        (id += 1)
-      )}</span><a href=${url} class="sponsor-link" target="_blank"
-       noopener noreferrer>${images[img]}</a></li>`
+      ({ url, title, img }) =>
+        `<li class="sponsor-item"><span class="sup_number">${pad(
+          (id += 1)
+        )}</span>IMG: ${images[img]}</li>`
     )
     .join('');
   sponsorsList?.insertAdjacentHTML('beforeend', markup);
