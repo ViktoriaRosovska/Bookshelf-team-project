@@ -15,7 +15,7 @@ function renderSponsorsList() {
       ({ url, title, img }) =>
         `<li class="sponsor-item"><span class="sup_number">${pad(
           (id += 1)
-        )}</span><a href="${url}" target="_blank" noopener noreferrer class="sponsor-link1" ><img class="sponsor-img" src="${
+        )}</span><a href="${url}" target="_blank" noopener noreferrer class="sponsorsLink" ><img class="sponsor-img" src="${
           images[img]
         }" alt="${title}"/></a></li>`
     )

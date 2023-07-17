@@ -25,12 +25,12 @@
     padding-bottom: 102px;
   }
 }
-.sponsor-link1 {
+.sponsorsLink {
   transform: scale(1);
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.sponsor-link1:hover,
-.sponsor-link1:focus {
+.sponsorsLink:hover,
+.sponsorsLink:focus {
   transform: scale(1.025);
 }
 
