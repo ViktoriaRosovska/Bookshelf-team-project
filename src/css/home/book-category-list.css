@@ -31,13 +31,12 @@
   width: 335px;
   height: 228px;
   overflow-y: scroll;
-  margin-bottom: 40px;
 }
 
 @media screen and (min-width: 768px) {
   .book-category__box {
     width: 337px;
-    height: 472px;
+    height: 495px;
     padding-top: 10px;
   }
 }
