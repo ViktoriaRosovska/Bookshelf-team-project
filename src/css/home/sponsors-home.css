@@ -8,11 +8,11 @@
   width: 335px;
   overflow: hidden;
   border-radius: 16px;
-  background: radial-gradient(
+  /* background: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
     var(--color-blue-component) 18.03%,
     var(--ligtht-theme) 100%
-  );
+  ); */
   padding-bottom: 68px;
   padding-top: 24px;
   padding-left: 40px;
@@ -40,10 +40,10 @@
   left: 0;
 }
 
-.sponsor-img {
+/* .sponsor-img {
   filter: brightness(0) invert(1);
   height: 32px;
-}
+} */
 
 .sup_number {
   color: #ffffff;
