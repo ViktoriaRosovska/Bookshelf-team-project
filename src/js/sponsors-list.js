@@ -1,5 +1,6 @@
 import { sponsors } from './sponsors-obj';
-import images from '../images/sponsors/*.png';
+// import images from '../images/sponsors/*.png';
+import Newimage from '../images/sponsors/action_against.png';
 
 const sponsorsList = document.querySelector('.js-sponsors-list');
 let id = 0;
@@ -10,14 +11,15 @@ mqLarge?.addEventListener('change', () => (distance = mqLarge.matches ? 3 : 5));
 let distance = mqLarge.matches ? 3 : 5;
 
 function renderSponsorsList() {
-  const markup = sponsors
-    .map(({ url, title, img }) => {
-      const image = images[img];
-      return `<li class="sponsor-item"><span class="sup_number">${pad(
-        (id += 1)
-      )}</span><a href=${url} class="sponsor-link" target="_blank" noopener noreferrer><img class="sponsor-img" src="${image}" alt=${title}></a></li>`;
-    })
-    .join('');
+  // const markup = sponsors
+  //   .map(({ url, title, img }) => {
+  //     const image = images[img];
+  //     return `<li class="sponsor-item"><span class="sup_number">${pad(
+  //       (id += 1)
+  //     )}</span><a href=${url} class="sponsor-link" target="_blank" noopener noreferrer><img class="sponsor-img" src="${image}" alt=${title}></a></li>`;
+  //   })
+  //   .join('');
+  const markup = `<img src="${Newimage}"/>`;
   sponsorsList?.insertAdjacentHTML('beforeend', markup);
 }
 renderSponsorsList();
