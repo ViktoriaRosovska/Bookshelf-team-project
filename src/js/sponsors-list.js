@@ -38,9 +38,9 @@ function renderSponsorsList() {
     .map(({ url, title, img }) => {
       return `<li class="sponsor-item"><span class="sup_number">${pad(
         (id += 1)
-      )}</span><a href=${url} class="sponsor-link" target="_blank" noopener noreferrer><img class="sponsor-img" src="${
-        images[id - 1]
-      }" alt="${title}"/></a></li><img class="sponsor-img" src="${Newimage}"/>`;
+      )}</span><a href=${url} class="sponsor-link" target="_blank"
+       noopener noreferrer><img class="sponsor-img" src="${images[id - 1]}"\n
+      alt="${title}"/></a></li>`;
     })
 
     .join('');
@@ -48,6 +48,9 @@ function renderSponsorsList() {
 }
 renderSponsorsList();
 
+{
+  /* <img class="sponsor-img" src="${Newimage}" />; */
+}
 function pad(value) {
   return String(value).padStart(2, '0');
 }
