@@ -11,7 +11,7 @@ import actionagainst from '../images/sponsors/action_against.png';
 import worldvision from '../images/sponsors/world_vision.png';
 import sergiy_prytula from '../images/sponsors/sergiy_prytula.png';
 
-// import Newimage from '../images/sponsors/action_against.png';
+import Newimage from '../images/sponsors/action_against.png';
 
 const images = [
   save,
@@ -36,13 +36,13 @@ let distance = mqLarge.matches ? 3 : 5;
 function renderSponsorsList() {
   const markup = sponsors
     .map(({ url, title, img }) => {
-      // const image = images[img];
       return `<li class="sponsor-item"><span class="sup_number">${pad(
         (id += 1)
       )}</span><a href=${url} class="sponsor-link" target="_blank" noopener noreferrer><img class="sponsor-img" src="${
         images[id - 1]
-      }" alt=${title}></a></li>`;
+      }" alt="${title}"/></a></li><img class="sponsor-img" src="${Newimage}"/>`;
     })
+
     .join('');
   sponsorsList?.insertAdjacentHTML('beforeend', markup);
 }
