@@ -1,5 +1,5 @@
 import { sponsors } from './sponsors-obj';
-import images from '../images/sponsors/*.png';
+import images from './images/sponsors/*.png';
 
 const sponsorsList = document.querySelector('.js-sponsors-list');
 let id = 0;
