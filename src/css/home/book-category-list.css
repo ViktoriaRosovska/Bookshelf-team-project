@@ -38,6 +38,7 @@
   .book-category__box {
     width: 337px;
     height: 472px;
+    padding-top: 10px;
   }
 }
 
