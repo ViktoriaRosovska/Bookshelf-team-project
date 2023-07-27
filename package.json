@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://viktoriarosovska.github.io/Bookshelf-team-project/",
   "scripts": {
-    "start": "parcel src/*.html --no-cache --host 0.0.0.0",
+    "start": "parcel src/*.html --no-cache",
     "build": "parcel build src/*.html --public-url /Bookshelf-team-project/ --no-cache"
   },
   "repository": {
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
-    "firebase": "^9.22.2",
+    "firebase": "^9.23.0",
     "libsodium-wrappers-sumo": "^0.7.11",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.6",
