@@ -17,12 +17,13 @@ let data = JSON.parse(localStorage.getItem('storage-data')); // отримаєм
 function getItemsPerPage() {
   //функція визначення кількості карток, що відображаються, в залежності від розміру екрану
   const screenWidth = window.innerWidth;
-  if (screenWidth < 767.99) {
-    return 4;
+
+  if (screenWidth > 1440) {
+    return 3;
   } else if (screenWidth > 768 && screenWidth < 1439.98) {
+    return 3;
+  } else if (screenWidth < 767.99) {
     return 5;
-  } else if (screenWidth > 1440) {
-    return 6;
   }
 }
 
