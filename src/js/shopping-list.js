@@ -5,7 +5,7 @@ import Pagination from 'tui-pagination';
 const shopList = document.querySelector('.js-shop-list'); //посидання на список, куди додаються картки книжок
 const shopBgd = document.querySelector('.js-shop-background'); //посилання на div з базовою картинкою
 const currentPage = 1;
-const itemsPerPage = getItemsPerPage();
+let itemsPerPage = getItemsPerPage();
 const paginat = document.querySelector('#pagination');
 const removeBtn = document.querySelector('.remove-books');
 
@@ -14,9 +14,13 @@ removeBtn.addEventListener('click', onBtnRemoveClick);
 
 let data = JSON.parse(localStorage.getItem('storage-data')); // отримаємо данні з localStorage
 
+window.addEventListener('resize', () => {
+  location.reload();
+});
+
 function getItemsPerPage() {
   //функція визначення кількості карток, що відображаються, в залежності від розміру екрану
-  const screenWidth = window.innerWidth;
+  const screenWidth = document.documentElement.clientWidth;
 
   if (screenWidth > 1440) {
     return 3;
