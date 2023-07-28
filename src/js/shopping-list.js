@@ -14,9 +14,9 @@ removeBtn.addEventListener('click', onBtnRemoveClick);
 
 let data = JSON.parse(localStorage.getItem('storage-data')); // отримаємо данні з localStorage
 
-window.addEventListener('resize', () => {
-  location.reload();
-});
+// window.addEventListener('resize', () => {
+//   location.reload();
+// });
 
 function getItemsPerPage() {
   //функція визначення кількості карток, що відображаються, в залежності від розміру екрану

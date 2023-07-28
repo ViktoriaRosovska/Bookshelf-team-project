@@ -1,6 +1,6 @@
 const footer = document.querySelector('.footer_container_shop');
 const shopList = document.querySelector('.shoplist-wrapper-desc');
-console.log(shopList.offsetHeight - window.scrollY);
+// console.log(shopList.offsetHeight - window.scrollY);
 window.addEventListener('scroll', () => {
   if (shopList.offsetHeight - window.scrollY < 800) {
     footer.style.bottom = '0px';
