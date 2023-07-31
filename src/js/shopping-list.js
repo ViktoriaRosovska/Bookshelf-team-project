@@ -8,6 +8,7 @@ const currentPage = 1;
 let itemsPerPage = getItemsPerPage();
 const paginat = document.querySelector('#pagination');
 const removeBtn = document.querySelector('.remove-books');
+const amountBooks = document.querySelector('.amount-books');
 
 shopList.addEventListener('click', onBtnTrashClick);
 removeBtn.addEventListener('click', onBtnRemoveClick);
@@ -27,7 +28,7 @@ function getItemsPerPage() {
   } else if (screenWidth > 768 && screenWidth < 1439.98) {
     return 3;
   } else if (screenWidth < 767.99) {
-    return 5;
+    return 3;
   }
 }
 
@@ -84,6 +85,7 @@ function renderBookCardPagination(array) {
 function renderBook(array) {
   //функція, яка створює розмітку карток
   Loading.standard('Loading...');
+
   const markup = array
     .map(el => {
       return `
@@ -110,6 +112,7 @@ function renderBook(array) {
     })
     .join('');
   Loading.remove('Loading...');
+  amountBooks.innerHTML = `You have ${data.length} book(s) in your shopping-list`;
   shopList.innerHTML = markup;
 }
 

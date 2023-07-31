@@ -499,3 +499,6 @@
 .tui-pagination .tui-page-btn.tui-is-disabled.tui-prev:hover {
   background: var(--dark-theme-componemt);
 }
+.amount-books {
+  margin-top: 20px;
+}
