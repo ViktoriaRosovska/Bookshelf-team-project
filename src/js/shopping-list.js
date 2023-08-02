@@ -112,7 +112,9 @@ function renderBook(array) {
     })
     .join('');
   Loading.remove('Loading...');
-  amountBooks.innerHTML = `You have ${data.length} book(s) in your shopping-list`;
+
+  const dataAmount = JSON.parse(localStorage.getItem('storage-data'));
+  amountBooks.innerHTML = `You have ${dataAmount.length} book(s) in your shopping-list`;
   shopList.innerHTML = markup;
 }
 
